@@ -3,8 +3,10 @@ package com.donskifarrell.Hubblog.Activities;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import com.donskifarrell.Hubblog.Adapters.ArticlesAdapter;
+import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
 import com.donskifarrell.Hubblog.Data.Post;
 import com.donskifarrell.Hubblog.Data.Site;
@@ -35,7 +37,9 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         setContentView(R.layout.base_layout);
 
-        addSitesToSidebar();
+        LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
+        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+        sidebarList.setAdapter(new SidebarAdapter(this, hubblog.getSites()));
 
         final int selectedPosition;
         if (savedInstanceState != null) {
@@ -45,30 +49,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         }
 
         showArticle(selectedPosition);
-    }
-
-    private void addSitesToSidebar(){
-        LayoutInflater sidebar_list_inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.sidebar_layout);
-
-        for (Site site : hubblog.getSites()){
-            View sidebar_list = sidebar_list_inflater.inflate(R.layout.sidebar_list_layout, null);
-
-            LinearLayout header_layout = (LinearLayout) sidebar_list.findViewById(R.id.header_title);
-            TextView header = (TextView) header_layout.findViewById(R.id.title);
-            header.setText(site.getSiteName());
-
-            ListView articlesList = (ListView) sidebar_list.findViewById(R.id.articles);
-            articlesList.setAdapter(new ArticlesAdapter(this, site));
-            articlesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapter, View v, int position, long flags) {
-                    showArticle(position);
-                }
-            });
-
-            relativeLayout.addView(sidebar_list);
-        }
     }
 
     private void showArticle(int position){
@@ -84,7 +64,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         Site site = new Site();
         site.setAccountName(acc.getAccountName());
-        site.setSiteName("TestSiteName");
+        site.setSiteName("THE FIRST SITE");
         hubblog.addSite(site);
 
         Post post = new Post();
@@ -102,7 +82,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         hubblog.addPostToSite(site, post);
 
         site.setAccountName(acc.getAccountName());
-        site.setSiteName("TestSiteName 2");
+        site.setSiteName("SECOND SITE");
         hubblog.addSite(site);
 
         post = new Post();
