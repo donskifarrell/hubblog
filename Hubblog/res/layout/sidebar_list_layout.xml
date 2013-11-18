@@ -6,7 +6,7 @@
                 android:background="@color/actions_bg" >
 
     <include
-            android:id="@+id/title"
+            android:id="@+id/header_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             layout="@layout/sidebar_list_header_item" />

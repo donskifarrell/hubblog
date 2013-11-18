@@ -3,10 +3,7 @@ package com.donskifarrell.Hubblog.Activities;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
 import com.donskifarrell.Hubblog.Adapters.ArticlesAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
 import com.donskifarrell.Hubblog.Data.Post;
@@ -57,7 +54,8 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         for (Site site : hubblog.getSites()){
             View sidebar_list = sidebar_list_inflater.inflate(R.layout.sidebar_list_layout, null);
 
-            TextView header = (TextView) sidebar_list.findViewById(R.id.header_title);
+            LinearLayout header_layout = (LinearLayout) sidebar_list.findViewById(R.id.header_title);
+            TextView header = (TextView) header_layout.findViewById(R.id.title);
             header.setText(site.getSiteName());
 
             ListView articlesList = (ListView) sidebar_list.findViewById(R.id.articles);
