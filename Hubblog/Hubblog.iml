@@ -19,15 +19,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../ActionsContentView/libs/android-support-v4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: com.github.rtyley:roboguice-sherlock:1.5" level="project" />
     <orderEntry type="library" name="Maven: org.roboguice:roboguice:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject:guice:no_aop:4.0-beta" level="project" />
@@ -39,6 +30,8 @@
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.2" level="project" />
     <orderEntry type="library" name="actionbarsherlock-4.4.0" level="project" />
     <orderEntry type="library" name="android-support-v13" level="project" />
+    <orderEntry type="module" module-name="ActionsContentView" />
+    <orderEntry type="module" module-name="ViewPagerIndicator" />
   </component>
 </module>
 
