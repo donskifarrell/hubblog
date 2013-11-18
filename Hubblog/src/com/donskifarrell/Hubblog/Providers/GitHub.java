@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Utils;
+package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

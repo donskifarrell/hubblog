@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shared.ui.actionscontentview.ActionsContentView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res/com.donskifarrell.Hubblog"
+     android:id="@+id/base_layout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     app:actions_layout="@layout/sidebar_layout"
+     app:actions_spacing="0dp"
+     app:content_layout="@layout/content_layout"
+     app:effect_actions="@anim/paralax_drawer_slide_animation"
+     app:fade_max_value="@integer/default_pref_fade_max_value"
+     app:fade_type="actions"
+     app:fling_duration="@integer/default_pref_fling_delay"
+     app:shadow_drawable="@drawable/shadow"
+     app:shadow_width="@dimen/default_pref_shadow_width"
+     app:swiping_type="edge"
+     app:swiping_edge_width="@dimen/default_pref_swiping_edge_width" />

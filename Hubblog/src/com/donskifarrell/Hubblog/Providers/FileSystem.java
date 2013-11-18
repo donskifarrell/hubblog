@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Utils;
+package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Application;
 import android.os.Environment;
@@ -18,14 +18,14 @@ import java.util.List;
  * Time: 12:46
  */
 @Singleton
-public class FileManager {
+public class FileSystem {
     @Inject
     private Application application;
 
     private boolean mExternalStorageAvailable = false;
     private boolean mExternalStorageWritable = false;
     private String state = Environment.getExternalStorageState();
-    private final static String TAG = "Hubblog :: " + FileManager.class.getSimpleName();
+    private final static String TAG = "Hubblog :: " + FileSystem.class.getSimpleName();
 
     public List<Site> getSites(String accountName){
         // get site names and all posts in each site

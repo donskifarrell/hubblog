@@ -2,7 +2,7 @@ package com.donskifarrell.Hubblog.Data;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import com.donskifarrell.Hubblog.Utils.FileManager;
+import com.donskifarrell.Hubblog.Providers.FileSystem;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -22,7 +22,7 @@ public class Hubblog {
     private Application application;
 
     @Inject
-    private FileManager fileManager;
+    private FileSystem fileSystem;
 
     private final static String PREFS_ACCOUNTS = "Accounts";
     private final static String PREF_ACCOUNT_NAME = "AccountName";
@@ -115,7 +115,7 @@ public class Hubblog {
 
         sites = new LinkedList<Site>();
         for (Account account : this.getAccounts()){
-            sites.addAll(fileManager.getSites(account.getAccountName()));
+            sites.addAll(fileSystem.getSites(account.getAccountName()));
         }
 
         return sites;
@@ -138,14 +138,14 @@ public class Hubblog {
     }
 
     public void addSite(Site site) {
-        fileManager.saveSite(site);
+        fileSystem.saveSite(site);
 
         refreshSites = true;
         refreshSiteTitles = true;
     }
 
     public void addPostToSite(Site site, Post post) {
-        fileManager.savePost(site, post);
+        fileSystem.savePost(site, post);
 
         refreshSites = true;
     }
