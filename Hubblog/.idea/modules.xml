@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../ActionsContentView/ActionsContentView.iml" filepath="$PROJECT_DIR$/../ActionsContentView/ActionsContentView.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hubblog.iml" filepath="$PROJECT_DIR$/Hubblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/../ViewPagerIndicator/ViewPagerIndicator.iml" />
     </modules>
   </component>
 </project>
