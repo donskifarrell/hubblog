@@ -56,7 +56,7 @@ public class SidebarAdapter extends BaseAdapter {
 
     private View createView(int position, ViewGroup parent){
         final ViewHolder holder;
-        View convertView = inflater.inflate(R.layout.sidebar_list_layout, parent, false);
+        LinearLayout convertView = (LinearLayout) inflater.inflate(R.layout.sidebar_list_layout, parent, false);
 
         Site site = sites.get(position);
 
@@ -67,16 +67,14 @@ public class SidebarAdapter extends BaseAdapter {
         holder.headerTitle = (TextView) holder.headerLayout.findViewById(R.id.title);
         holder.headerTitle.setText(site.getSiteName());
 
-        holder.articlesList = (ListView) convertView.findViewById(R.id.articles);
-        holder.articlesList.setAdapter(new ArticlesAdapter(context, site));
-        holder.articlesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View v, int position, long flags) {
-                Toast.makeText( context,
-                        "Junk",
-                        Toast.LENGTH_LONG).show();
-            }
-        });
+        ArticlesAdapter articlesAdapter = new ArticlesAdapter(context, site);
+        holder.articlesList = new TextView[articlesAdapter.getCount()];
+
+        for (int idx = 0; idx < articlesAdapter.getCount(); idx++) {
+            View item = articlesAdapter.getView(idx, null, null);
+            holder.articlesList[idx] = (TextView) item;
+            convertView.addView(item);
+        }
 
         convertView.setTag(holder);
         return convertView;
@@ -86,6 +84,6 @@ public class SidebarAdapter extends BaseAdapter {
         private int position;
         private LinearLayout headerLayout;
         private TextView headerTitle;
-        private ListView articlesList;
+        private TextView[] articlesList;
     }
 }

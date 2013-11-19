@@ -12,14 +12,9 @@
             android:layout_height="wrap_content"
             layout="@layout/sidebar_list_header_item" />
 
-    <ListView
-            android:id="@+id/articles"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_below="@id/header_title"
-            android:cacheColorHint="@color/actions_bg"
-            android:divider="@null"
-            android:listSelector="@drawable/item_background_holo_light" />
+    <!--
+        The list of articles are added dynamically as single TextView elements.
+        They cannot be put into a ListView using an adapter as that will break scrolling.
+    -->
 
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.donskifarrell.Hubblog.Activities;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.*;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
@@ -37,13 +36,8 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
         LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
-        //ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
-        //sidebarList.setAdapter(new SidebarAdapter(this, hubblog.getSites()));
-
-        for (int i = 0; i < sidebarAdapter.getCount(); i++) {
-            View item = sidebarAdapter.getView(i, null, null);
-            sidebar_layout.addView(item);
-        }
+        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+        sidebarList.setAdapter(sidebarAdapter);
 
         final int selectedPosition;
         if (savedInstanceState != null) {
