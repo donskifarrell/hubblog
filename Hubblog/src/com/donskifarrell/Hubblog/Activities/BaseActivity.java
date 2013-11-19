@@ -1,10 +1,11 @@
 package com.donskifarrell.Hubblog.Activities;
 
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.ViewPager;
 import android.widget.*;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
+import com.donskifarrell.Hubblog.Adapters.TabsAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
 import com.donskifarrell.Hubblog.Data.Post;
 import com.donskifarrell.Hubblog.Data.Site;
@@ -12,6 +13,7 @@ import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
+import com.viewpagerindicator.TabPageIndicator;
 import shared.ui.actionscontentview.ActionsContentView;
 
 import java.text.DecimalFormat;
@@ -30,7 +32,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity
 
     private static final String STATE_POSITION = "state:layout_id";
     private String currentArticleTitle;
-    private ActionBarDrawerToggle drawerToggle;
     private ActionsContentView actionsContentView;
 
     @Override
@@ -42,20 +43,9 @@ public class BaseActivity extends RoboSherlockFragmentActivity
 
         setContentView(R.layout.base_layout);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        currentArticleTitle = this.getResources().getString(R.string.app_name);
-
-        actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
-        actionsContentView.setOnActionsContentListener(getSidebarListener());
-
-        LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
-        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
-
-        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
-        sidebarList.setAdapter(sidebarAdapter);
-
-        actionsContentView.showActions();
+        createActionBar();
+        createTabPager();
+        createSidebar();
 
         final int selectedPosition;
         if (savedInstanceState != null) {
@@ -66,10 +56,11 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         }
     }
 
-    public void showArticle(Post post){
+    public void showArticle(Post post) {
         currentArticleTitle = post.getTitle();
         actionsContentView.showContent();
 
+        // load edit article fragment and generate html content
         Toast.makeText(
                 this,
                 post.getTitle() + " showing!",
@@ -92,7 +83,34 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private ActionsContentView.OnActionsContentListener getSidebarListener(){
+    private void createActionBar() {
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        currentArticleTitle = this.getResources().getString(R.string.app_name);
+    }
+
+    private void createTabPager() {
+        TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager());
+
+        ViewPager pager = (ViewPager)findViewById(R.id.view_pager);
+        pager.setAdapter(tabsAdapter);
+
+        TabPageIndicator titleIndicator = (TabPageIndicator)findViewById(R.id.tab_page_indicator);
+        titleIndicator.setViewPager(pager);
+    }
+
+    private void createSidebar() {
+        actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
+        actionsContentView.setOnActionsContentListener(getSidebarListener());
+
+        LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
+        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+
+        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
+        sidebarList.setAdapter(sidebarAdapter);
+    }
+
+    private ActionsContentView.OnActionsContentListener getSidebarListener() {
         return new ActionsContentView.OnActionsContentListener() {
             @Override
             public void onContentStateChanged(ActionsContentView v, boolean isContentShown) {

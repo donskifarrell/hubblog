@@ -47,7 +47,7 @@
         <item name="android:homeAsUpIndicator">@drawable/ic_drawer</item>
 
         <!-- If you want to use the default ViewPagerIndicator-styles, use the following: -->
-<!--        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>-->
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
 
     </style>
 
