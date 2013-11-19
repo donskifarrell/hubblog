@@ -1,7 +1,6 @@
 package com.donskifarrell.Hubblog.Adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,16 +53,18 @@ public class ArticlesAdapter extends BaseAdapter {
 
             Post post = site.getPosts().get(position);
             final Drawable icon;
+
             if (post.getIsDraft()) {
-                icon = convertView.getContext().getResources().getDrawable(R.drawable.edit);
-            } else {
+                icon = convertView.getContext().getResources().getDrawable(R.drawable.edit_glow);
+                icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+                holder.articleTitle.setCompoundDrawables(icon, null, null, null);
+            }
+            else {
                 icon = convertView.getContext().getResources().getDrawable(R.drawable.checkmark);
+                icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+                holder.articleTitle.setCompoundDrawables(icon, null, null, null);
             }
 
-
-            icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
-            holder.articleTitle.setCompoundDrawables(icon, null, null, null);
-            holder.articleTitle.setDrawingCacheBackgroundColor(Color.BLUE);
             holder.articleTitle.setText(post.getTitle());
             convertView.setTag(holder);
         } else {
