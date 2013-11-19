@@ -90,6 +90,10 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         post.setCreatedDate(new Date());
         post.setContent("## Heading2 for post " + numberToWords.convertLessThanOneThousand(idx));
 
+        if (idx % 2 == 0) {
+            post.setIsDraft(false);
+        }
+
         return post;
     }
 

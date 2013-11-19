@@ -12,7 +12,7 @@ public class Post implements Serializable {
     private String title;
     private String site;
     private String content;
-    private boolean isDraft;
+    private boolean isDraft = true;
     private Date createdDate;
 
     public String getTitle() {
@@ -39,11 +39,11 @@ public class Post implements Serializable {
         this.content = content;
     }
 
-    public boolean getDraft() {
+    public boolean getIsDraft() {
         return isDraft;
     }
 
-    public void setDraft(boolean draft) {
+    public void setIsDraft(boolean draft) {
         isDraft = draft;
     }
 
