@@ -39,13 +39,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" afterPath="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384874205501" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384875363560" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
     <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384801269127" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
@@ -56,10 +56,11 @@
     <file path="/content_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384812015305" ignored="false" />
     <file path="/sidebar_list_item.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384875199473" ignored="false" />
     <file path="/sidebar_list_header_item.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384858319656" ignored="false" />
-    <file path="/BaseActivity.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384864591772" ignored="false" />
+    <file path="/BaseActivity.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384877166363" ignored="false" />
     <file path="/ArticlesAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384874983867" ignored="false" />
     <file path="/SidebarAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384857943198" ignored="false" />
     <file path="/Post.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384864587266" ignored="false" />
+    <file path="/strings.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384876634451" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,14 +126,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="43" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
+            <state line="40" column="45" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.24559194">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="25" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="48" selection-start="70" selection-end="88" vertical-scroll-proportion="-1.2">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -150,7 +172,7 @@
       <file leaf-file-name="ArticlesAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="23" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
+            <state line="31" column="0" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2068#2404#0" expanded="true" />
@@ -160,10 +182,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar_list_item.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sidebar_list_item.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="36" selection-start="398" selection-end="398" vertical-scroll-proportion="0.17555267">
+            <state line="18" column="0" selection-start="710" selection-end="710" vertical-scroll-proportion="-10.8">
               <folding />
             </state>
           </provider>
@@ -190,7 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystem.java" />
         <option value="$PROJECT_DIR$/../ActionsContentView/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
@@ -202,10 +223,11 @@
         <option value="$PROJECT_DIR$/res/layout/sidebar_layout.xml" />
         <option value="$PROJECT_DIR$/res/layout/sidebar_list_header_item.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Data/Post.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/SidebarAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" />
       </list>
     </option>
   </component>
@@ -464,6 +486,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ActionsContentView" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActionsContentView" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actionscontentview" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -761,7 +801,11 @@
       <created>1384874208512</created>
       <updated>1384874208512</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added sidebar item highlight on click">
+      <created>1384875366828</created>
+      <updated>1384875366828</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -836,7 +880,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added glow to edit image icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sidebar item highlight on click" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -868,6 +912,7 @@
     <MESSAGE value="Fixed sidebar so it shows list of all sites/articles and scrolls properly" />
     <MESSAGE value="Tweaking look and feel of sidebar - added icons" />
     <MESSAGE value="Added glow to edit image icon" />
+    <MESSAGE value="Added sidebar item highlight on click" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,81 +926,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/widget/AdapterView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="25" selection-start="3145" selection-end="3145" vertical-scroll-proportion="0.32154882">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/widget/ListView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="16" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.32154882">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/app/Instrumentation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="16" selection-start="5963" selection-end="5963" vertical-scroll-proportion="0.32013768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="19" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.32013768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/widget/AbsListView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="48" selection-start="88" selection-end="152" vertical-scroll-proportion="0.03058104">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/sidebar_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.16736402">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="718" selection-end="718" vertical-scroll-proportion="0.37656903">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_header_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="45" selection-start="620" selection-end="620" vertical-scroll-proportion="0.26785713">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Data/Post.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="35" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0">
@@ -983,17 +953,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="23" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2068#2404#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/SidebarAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="0" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
@@ -1003,23 +962,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="43" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="398" selection-end="398" vertical-scroll-proportion="0.17555267">
+        <state line="18" column="0" selection-start="710" selection-end="710" vertical-scroll-proportion="-10.8">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2068#2404#0" expanded="true" />
+            <element signature="e#2389#2390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/sidebar_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.15604681">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="48" selection-start="70" selection-end="88" vertical-scroll-proportion="-1.2">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ContentLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="6" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0867052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ContainerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="17" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0867052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/EffectsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="6" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.0867052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/BaseContainerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0867052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ActionsLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="6" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ActionsContentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="13" selection-start="1384" selection-end="1384" vertical-scroll-proportion="-19.271677">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="25" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="45" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.24559194">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

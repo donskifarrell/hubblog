@@ -1,7 +1,10 @@
 package com.donskifarrell.Hubblog.Activities;
 
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.view.View;
 import android.widget.*;
+import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
 import com.donskifarrell.Hubblog.Data.Post;
@@ -9,6 +12,7 @@ import com.donskifarrell.Hubblog.Data.Site;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
+import shared.ui.actionscontentview.ActionsContentView;
 
 import java.text.DecimalFormat;
 import java.util.Date;
@@ -24,6 +28,8 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
     public com.donskifarrell.Hubblog.Data.Hubblog hubblog;
 
     private static final String STATE_POSITION = "state:layout_id";
+    private ActionBarDrawerToggle drawerToggle;
+    private ActionsContentView actionsContentView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +40,19 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         setContentView(R.layout.base_layout);
 
-        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        drawerToggle = getActionBarDrawerToggle();
+
+        actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
+
         LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
         ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+
+        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
         sidebarList.setAdapter(sidebarAdapter);
+
+        actionsContentView.showActions();
 
         final int selectedPosition;
         if (savedInstanceState != null) {
@@ -47,6 +62,40 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         }
 
         showArticle(selectedPosition);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+
+            if (actionsContentView.isActionsShown()) {
+                actionsContentView.showContent();
+            } else {
+                actionsContentView.showActions();
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private ActionBarDrawerToggle getActionBarDrawerToggle(){
+        return new ActionBarDrawerToggle(
+                this, null, R.drawable.ic_drawer,
+                R.string.sidebar_open, R.string.sidebar_close) {
+
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                // Set the title on the action when drawer open
+                getSupportActionBar().setTitle("junk");
+                super.onDrawerOpened(drawerView);
+            }
+
+        };
     }
 
     private void showArticle(int position){
