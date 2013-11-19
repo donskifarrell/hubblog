@@ -39,16 +39,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/edit_glow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-ldpi/edit_glow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/edit_glow.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" afterPath="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384865483200" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384874205501" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
     <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384801269127" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
@@ -57,10 +54,10 @@
     <file path="/sidebar_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384815357370" ignored="false" />
     <file path="/sidebar_list_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384857355582" ignored="false" />
     <file path="/content_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384812015305" ignored="false" />
-    <file path="/sidebar_list_item.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384871517934" ignored="false" />
+    <file path="/sidebar_list_item.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384875199473" ignored="false" />
     <file path="/sidebar_list_header_item.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384858319656" ignored="false" />
     <file path="/BaseActivity.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384864591772" ignored="false" />
-    <file path="/ArticlesAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384874146540" ignored="false" />
+    <file path="/ArticlesAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384874983867" ignored="false" />
     <file path="/SidebarAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384857943198" ignored="false" />
     <file path="/Post.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384864587266" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -142,7 +139,7 @@
       <file leaf-file-name="SidebarAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/SidebarAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="25" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.0">
+            <state line="59" column="0" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,8 +150,12 @@
       <file leaf-file-name="ArticlesAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="31" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="55" column="23" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2068#2404#0" expanded="true" />
+                <element signature="e#2389#2390#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,7 +163,7 @@
       <file leaf-file-name="sidebar_list_item.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="57" selection-start="529" selection-end="530" vertical-scroll-proportion="0.23407023">
+            <state line="9" column="36" selection-start="398" selection-end="398" vertical-scroll-proportion="0.17555267">
               <folding />
             </state>
           </provider>
@@ -756,7 +757,11 @@
       <created>1384865487664</created>
       <updated>1384865487664</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added glow to edit image icon">
+      <created>1384874208512</created>
+      <updated>1384874208512</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -831,7 +836,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweaking look and feel of sidebar - added icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added glow to edit image icon" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -862,6 +867,7 @@
     <MESSAGE value="Re-jigged layout so full sidebar list is shown. Scrolling issue now, so need to re-jig layout again!" />
     <MESSAGE value="Fixed sidebar so it shows list of all sites/articles and scrolls properly" />
     <MESSAGE value="Tweaking look and feel of sidebar - added icons" />
+    <MESSAGE value="Added glow to edit image icon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -979,14 +985,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="55" column="23" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2068#2404#0" expanded="true" />
+            <element signature="e#2389#2390#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/SidebarAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="25" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.0">
+        <state line="59" column="0" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1004,7 +1014,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/sidebar_list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="57" selection-start="529" selection-end="530" vertical-scroll-proportion="0.23407023">
+        <state line="9" column="36" selection-start="398" selection-end="398" vertical-scroll-proportion="0.17555267">
           <folding />
         </state>
       </provider>

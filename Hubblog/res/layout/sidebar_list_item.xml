@@ -12,6 +12,7 @@
           android:singleLine="true"
           android:textAppearance="?android:attr/textAppearanceMedium"
           android:textColor="@android:color/white"
-          android:textIsSelectable="false" />
+          android:textIsSelectable="false"
+          android:background="@drawable/item_background_holo_light" />
 
 
