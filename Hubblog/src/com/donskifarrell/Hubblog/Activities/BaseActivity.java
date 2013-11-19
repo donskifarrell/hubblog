@@ -42,9 +42,9 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        drawerToggle = getActionBarDrawerToggle();
 
         actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
+        actionsContentView.setOnActionsContentListener(getSidebarListener());
 
         LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
         ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
@@ -80,27 +80,28 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ActionBarDrawerToggle getActionBarDrawerToggle(){
-        return new ActionBarDrawerToggle(
-                this, null, R.drawable.ic_drawer,
-                R.string.sidebar_open, R.string.sidebar_close) {
-
-            public void onDrawerClosed(View view) {
-                super.onDrawerClosed(view);
-            }
-
-            public void onDrawerOpened(View drawerView) {
-                // Set the title on the action when drawer open
-                getSupportActionBar().setTitle("junk");
-                super.onDrawerOpened(drawerView);
-            }
-
-        };
-    }
-
     private void showArticle(int position){
 
     }
+
+    private ActionsContentView.OnActionsContentListener getSidebarListener(){
+        return new ActionsContentView.OnActionsContentListener() {
+            @Override
+            public void onContentStateChanged(ActionsContentView v, boolean isContentShown) {
+            }
+
+            @Override
+            public void onContentStateInAction(ActionsContentView v, boolean isContentShowing) {
+                if (isContentShowing){
+                    getSupportActionBar().setTitle(R.string.app_name);
+                } else {
+                    getSupportActionBar().setTitle(R.string.sidebar_open);
+                }
+            }
+        };
+    }
+
+    /* Bootstrap code below here */
 
     EnglishNumberToWords numberToWords;
 

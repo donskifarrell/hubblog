@@ -44,6 +44,8 @@
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_hubblog</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Hubblog</item>
 
+        <item name="android:homeAsUpIndicator">@drawable/ic_drawer</item>
+
         <!-- If you want to use the default ViewPagerIndicator-styles, use the following: -->
 <!--        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>-->
 

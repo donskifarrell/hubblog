@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">Hubblog</string>
 
-    <string name="sidebar_open">Open navigation drawer</string>
+    <string name="sidebar_open">All Sites and Articles</string>
     <string name="sidebar_close">Close navigation drawer</string>
+
+
 </resources>
