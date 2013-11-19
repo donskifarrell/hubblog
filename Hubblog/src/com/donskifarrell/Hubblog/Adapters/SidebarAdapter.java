@@ -58,7 +58,9 @@ public class SidebarAdapter extends BaseAdapter {
             articlesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapter, View v, int position, long flags) {
-                    //showArticle(position);
+                    Toast.makeText( context,
+                            "Junk",
+                            Toast.LENGTH_LONG).show();
                 }
             });
 
