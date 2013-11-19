@@ -19,13 +19,13 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
  */
 public class EditArticleFragment extends RoboSherlockFragment {
     private ArticleWebViewAdapter articleWebViewAdapter;
-    private WebView articleWebView;
+    private WebView browser;
     private boolean isReady = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View preview = inflater.inflate(R.layout.edit_article_layout, container, false);
-        articleWebView = (WebView) preview.findViewById(R.id.article_web_view);
+        browser = (WebView) preview.findViewById(R.id.article_web_view);
 
         setupWebViewClient();
 
@@ -46,12 +46,15 @@ public class EditArticleFragment extends RoboSherlockFragment {
     }
 
     private void setupWebViewClient() {
-        articleWebView.getSettings().setJavaScriptEnabled(true);
-        articleWebView.addJavascriptInterface(new ArticleWebViewJsInterface(this), "previewInterface");
-        articleWebView.loadUrl("file:///android_asset/article_webclient/preview.html");
+        //browser.getSettings().setLoadWithOverviewMode(true);
+/*        browser.getSettings().setUseWideViewPort(true);
+        browser.getSettings().setBuiltInZoomControls(true);*/
+        browser.getSettings().setJavaScriptEnabled(true);
+        browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "previewInterface");
+        browser.loadUrl("file:///android_asset/article_webclient/preview.html");
 
-        articleWebViewAdapter = new ArticleWebViewAdapter(articleWebView);
-        articleWebView.setWebViewClient(articleWebViewAdapter);
+        articleWebViewAdapter = new ArticleWebViewAdapter(browser);
+        browser.setWebViewClient(articleWebViewAdapter);
     }
 
     @Override

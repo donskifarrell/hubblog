@@ -14,6 +14,7 @@ import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
 import com.viewpagerindicator.TabPageIndicator;
+import com.viewpagerindicator.UnderlinePageIndicator;
 import shared.ui.actionscontentview.ActionsContentView;
 
 import java.text.DecimalFormat;
@@ -95,8 +96,8 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         ViewPager pager = (ViewPager)findViewById(R.id.view_pager);
         pager.setAdapter(tabsAdapter);
 
-        TabPageIndicator titleIndicator = (TabPageIndicator)findViewById(R.id.tab_page_indicator);
-        titleIndicator.setViewPager(pager);
+        UnderlinePageIndicator pageIndicator = (UnderlinePageIndicator)findViewById(R.id.page_indicator);
+        pageIndicator.setViewPager(pager);
     }
 
     private void createSidebar() {
