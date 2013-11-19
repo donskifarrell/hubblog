@@ -2,13 +2,13 @@ package com.donskifarrell.Hubblog.Activities;
 
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.view.View;
 import android.widget.*;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
 import com.donskifarrell.Hubblog.Data.Post;
 import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
@@ -23,11 +23,13 @@ import java.util.Date;
  * Date: 18/11/13
  * Time: 17:48
  */
-public class BaseActivity extends RoboSherlockFragmentActivity {
+public class BaseActivity extends RoboSherlockFragmentActivity
+                          implements OnSidebarListItemSelected {
     @Inject
     public com.donskifarrell.Hubblog.Data.Hubblog hubblog;
 
     private static final String STATE_POSITION = "state:layout_id";
+    private String currentArticleTitle;
     private ActionBarDrawerToggle drawerToggle;
     private ActionsContentView actionsContentView;
 
@@ -42,6 +44,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        currentArticleTitle = this.getResources().getString(R.string.app_name);
 
         actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
         actionsContentView.setOnActionsContentListener(getSidebarListener());
@@ -58,10 +61,19 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         if (savedInstanceState != null) {
             selectedPosition = savedInstanceState.getInt(STATE_POSITION, 0);
         } else {
+            // todo: show help article?
             selectedPosition = 0;
         }
+    }
 
-        showArticle(selectedPosition);
+    public void showArticle(Post post){
+        currentArticleTitle = post.getTitle();
+        actionsContentView.showContent();
+
+        Toast.makeText(
+                this,
+                post.getTitle() + " showing!",
+                Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -80,10 +92,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void showArticle(int position){
-
-    }
-
     private ActionsContentView.OnActionsContentListener getSidebarListener(){
         return new ActionsContentView.OnActionsContentListener() {
             @Override
@@ -93,7 +101,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
             @Override
             public void onContentStateInAction(ActionsContentView v, boolean isContentShowing) {
                 if (isContentShowing){
-                    getSupportActionBar().setTitle(R.string.app_name);
+                    getSupportActionBar().setTitle(currentArticleTitle);
                 } else {
                     getSupportActionBar().setTitle(R.string.sidebar_open);
                 }

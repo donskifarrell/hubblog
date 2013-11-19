@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.donskifarrell.Hubblog.Data.Post;
 import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
 
 /**
@@ -24,10 +25,20 @@ public class ArticlesAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private static Drawable editIcon;
     private static Drawable tickIcon;
+    private Context context;
+    private OnSidebarListItemSelected callback;
 
-    public ArticlesAdapter(Context context, Site aSite) {
+    public ArticlesAdapter(Context aContext, Site aSite) {
+        context = aContext;
         inflater = LayoutInflater.from(context);
         site = aSite;
+
+        try {
+            callback = (OnSidebarListItemSelected) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnUpdatePreviewListener");
+        }
     }
 
     @Override
@@ -56,8 +67,6 @@ public class ArticlesAdapter extends BaseAdapter {
             holder.articleTitle = (TextView) convertView.findViewById(R.id.sidebar_item);
 
             Post post = site.getPosts().get(position);
-            final Drawable icon;
-
             if (post.getIsDraft()) {
                 holder.articleTitle.setCompoundDrawables(getEditIcon(convertView.getContext()), null, null, null);
             }
@@ -65,15 +74,13 @@ public class ArticlesAdapter extends BaseAdapter {
                 holder.articleTitle.setCompoundDrawables(getTickIcon(convertView.getContext()), null, null, null);
             }
 
+            holder.post = post;
             holder.articleTitle.setText(post.getTitle());
-            holder.articleTitle.setOnClickListener(new AdapterView.OnClickListener(){
+            holder.articleTitle.setOnClickListener(new AdapterView.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(
-                            view.getContext(),
-                            ((TextView)view).getText(),
-                            Toast.LENGTH_LONG).show();
+                    callback.showArticle(holder.post);
                 }
             });
 
@@ -90,7 +97,6 @@ public class ArticlesAdapter extends BaseAdapter {
             editIcon = context.getResources().getDrawable(R.drawable.edit_glow);
             editIcon.setBounds(0, 0, editIcon.getIntrinsicWidth(), editIcon.getIntrinsicHeight());
         }
-
         return editIcon;
     }
 
@@ -99,11 +105,11 @@ public class ArticlesAdapter extends BaseAdapter {
             tickIcon = context.getResources().getDrawable(R.drawable.checkmark);
             tickIcon.setBounds(0, 0, tickIcon.getIntrinsicWidth(), tickIcon.getIntrinsicHeight());
         }
-
         return tickIcon;
     }
 
     private class ViewHolder {
+        Post post;
         TextView articleTitle;
     }
 }
