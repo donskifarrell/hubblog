@@ -44,28 +44,48 @@ public class SidebarAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.sidebar_list_layout, parent, false);
+        if (convertView != null) {
+            ViewHolder holder = (ViewHolder) convertView.getTag();
 
-            Site site = sites.get(position);
-
-            LinearLayout header_layout = (LinearLayout) convertView.findViewById(R.id.header_title);
-            TextView header = (TextView) header_layout.findViewById(R.id.title);
-            header.setText(site.getSiteName());
-
-            ListView articlesList = (ListView) convertView.findViewById(R.id.articles);
-            articlesList.setAdapter(new ArticlesAdapter(context, site));
-            articlesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapter, View v, int position, long flags) {
-                    Toast.makeText( context,
-                            "Junk",
-                            Toast.LENGTH_LONG).show();
-                }
-            });
-
+            if (holder.position == position)
+                return convertView;
         }
 
+        return createView(position, parent);
+    }
+
+    private View createView(int position, ViewGroup parent){
+        final ViewHolder holder;
+        View convertView = inflater.inflate(R.layout.sidebar_list_layout, parent, false);
+
+        Site site = sites.get(position);
+
+        holder = new ViewHolder();
+        holder.position = position;
+
+        holder.headerLayout = (LinearLayout) convertView.findViewById(R.id.header_title);
+        holder.headerTitle = (TextView) holder.headerLayout.findViewById(R.id.title);
+        holder.headerTitle.setText(site.getSiteName());
+
+        holder.articlesList = (ListView) convertView.findViewById(R.id.articles);
+        holder.articlesList.setAdapter(new ArticlesAdapter(context, site));
+        holder.articlesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View v, int position, long flags) {
+                Toast.makeText( context,
+                        "Junk",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        convertView.setTag(holder);
         return convertView;
+    }
+
+    private class ViewHolder {
+        private int position;
+        private LinearLayout headerLayout;
+        private TextView headerTitle;
+        private ListView articlesList;
     }
 }

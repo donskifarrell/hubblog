@@ -42,45 +42,28 @@ public class ArticlesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.sidebar_list_item, parent, false);
-
-            TextView articleTitle = (TextView) convertView.findViewById(R.id.sidebar_item);
-
-            articleTitle.setText(site.getPostsTitleList()[position]);
-        }
-
-        return convertView;
-    }
-/*
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
         final ViewHolder holder;
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.sidebar_list_item, parent, false);
 
             holder = new ViewHolder();
-            holder.text = (TextView) convertView.findViewById(R.id.sidebar_item);
+            holder.articleTitle = (TextView) convertView.findViewById(R.id.sidebar_item);
 
-            holder.text.setText(site.getPostsTitleList()[position]);
+            final Drawable icon = convertView.getContext().getResources().getDrawable(R.drawable.ic_link_evernote);
+            icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+            holder.articleTitle.setCompoundDrawables(icon, null, null, null);
+
+            holder.articleTitle.setText(site.getPostsTitleList()[position]);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-*/
-/*        final Drawable icon = convertView.getContext().getResources().getDrawable(R.drawable.ic_link_evernote);
-        icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
-        holder.text.setCompoundDrawables(icon, null, null, null);*//*
-
-        holder.text.setText(site.getPostsTitleList()[position]);
-
         return convertView;
     }
-*/
 
-    private static class ViewHolder {
-        TextView text;
+    private class ViewHolder {
+        TextView articleTitle;
     }
 }
