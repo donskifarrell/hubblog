@@ -1,6 +1,5 @@
 package com.donskifarrell.Hubblog.Fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,7 +11,6 @@ import android.widget.ScrollView;
 import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Interfaces.ArticleContentUpdateListener;
 import com.donskifarrell.Hubblog.R;
-import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +18,7 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
  * Date: 18/11/13
  * Time: 19:37
  */
-public class EditMarkdownFragment extends RoboSherlockFragment {
+public class EditMarkdownFragment extends BasePageFragment {
     private ArticleContentUpdateListener callback;
     private EditText editMarkdown;
     private Article article;
@@ -36,25 +34,8 @@ public class EditMarkdownFragment extends RoboSherlockFragment {
         return scrollView;
     }
 
-    public void triggerMarkdownUpdate() {
+    public void triggerPageUpdate() {
         editMarkdown.setText(article.getContent());
-    }
-
-    public void setArticle(Article anArticle) {
-        article = anArticle;
-        editMarkdown.setText(article.getContent());
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        try {
-            callback = (ArticleContentUpdateListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement ArticleContentUpdateListener");
-        }
     }
 
     private TextWatcher getTextChangedListener() {

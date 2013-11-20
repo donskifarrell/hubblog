@@ -35,12 +35,12 @@ public class HubblogActivity extends BaseActivity
 
     public void triggerArticlePageUpdate(){
         // markdown page calls this to get article page to update
-        tabsAdapter.EditArticle().triggerArticleUpdate();
+        tabsAdapter.EditArticle().triggerPageUpdate();
     }
 
     public void triggerMarkdownPageUpdate(){
         // article page calls this to get markdown page to update
-        tabsAdapter.EditMarkdown().triggerMarkdownUpdate();
+        tabsAdapter.EditMarkdown().triggerPageUpdate();
     }
 
     protected ViewPager.OnPageChangeListener getPageChangeListener(){
