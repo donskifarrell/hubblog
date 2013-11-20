@@ -2,8 +2,15 @@
 <resources>
     <string name="app_name">Hubblog</string>
 
-    <string name="sidebar_open">All Articles</string>
+    <string name="sidebar_open_title">All Articles</string>
+    <string name="sidebar_open_subtitle">Select an article to view</string>
+
     <string name="sidebar_close">Close navigation drawer</string>
     <string name="article_markdown">## Hubblog How-to</string>
+
+
+    <string name="edit_article_subtitle">Edit Article</string>
+    <string name="edit_markdown_subtitle">Edit Markdown</string>
+
 
 </resources>

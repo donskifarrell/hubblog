@@ -13,11 +13,9 @@ import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
-import com.viewpagerindicator.TabPageIndicator;
 import com.viewpagerindicator.UnderlinePageIndicator;
 import shared.ui.actionscontentview.ActionsContentView;
 
-import java.text.DecimalFormat;
 import java.util.Date;
 
 /**
@@ -32,7 +30,11 @@ public class BaseActivity extends RoboSherlockFragmentActivity
     public com.donskifarrell.Hubblog.Data.Hubblog hubblog;
 
     private static final String STATE_POSITION = "state:layout_id";
+    private static final int EDIT_ARTICLE_TAB_POSITION = 0;
+    private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
+
     private String currentArticleTitle;
+    private String currentArticleSubTitle;
     private ActionsContentView actionsContentView;
 
     @Override
@@ -70,7 +72,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (item.getItemId() == android.R.id.home) {
 
             if (actionsContentView.isActionsShown()) {
@@ -78,16 +79,27 @@ public class BaseActivity extends RoboSherlockFragmentActivity
             } else {
                 actionsContentView.showActions();
             }
-
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
+    public void setActionBarSubTitle(String subTitle) {
+        getSupportActionBar().setSubtitle(subTitle);
     }
 
     private void createActionBar() {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         currentArticleTitle = this.getResources().getString(R.string.app_name);
+        setActionBarTitle(currentArticleTitle);
+
+        currentArticleSubTitle = this.getResources().getString(R.string.edit_article_subtitle);
+        setActionBarSubTitle(currentArticleSubTitle);
     }
 
     private void createTabPager() {
@@ -97,7 +109,37 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         pager.setAdapter(tabsAdapter);
 
         UnderlinePageIndicator pageIndicator = (UnderlinePageIndicator)findViewById(R.id.page_indicator);
+        pageIndicator.setOnPageChangeListener(getPageChangeListener());
         pageIndicator.setViewPager(pager);
+    }
+
+    private ViewPager.OnPageChangeListener getPageChangeListener(){
+        return new ViewPager.OnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case EDIT_ARTICLE_TAB_POSITION:
+                        currentArticleSubTitle = getResources().getString(R.string.edit_article_subtitle);
+                        setActionBarSubTitle(currentArticleSubTitle);
+                        break;
+                    case EDIT_MARKDOWN_TAB_POSITION:
+                        currentArticleSubTitle = getResources().getString(R.string.edit_markdown_subtitle);
+                        setActionBarSubTitle(currentArticleSubTitle);
+                        break;
+                    default:
+                        setActionBarSubTitle("");
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrolled(int i, float v, int i2) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+            }
+        };
     }
 
     private void createSidebar() {
@@ -120,9 +162,11 @@ public class BaseActivity extends RoboSherlockFragmentActivity
             @Override
             public void onContentStateInAction(ActionsContentView v, boolean isContentShowing) {
                 if (isContentShowing){
-                    getSupportActionBar().setTitle(currentArticleTitle);
+                    setActionBarTitle(currentArticleTitle);
+                    setActionBarSubTitle(currentArticleSubTitle);
                 } else {
-                    getSupportActionBar().setTitle(R.string.sidebar_open);
+                    setActionBarTitle(getResources().getString(R.string.sidebar_open_title));
+                    setActionBarSubTitle(getResources().getString(R.string.sidebar_open_subtitle));
                 }
             }
         };
@@ -201,76 +245,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity
             if (number == 0)
                 return soFar;
             return numNames[number] + " hundred" + soFar;
-        }
-
-        public String convert(long number) {
-            // 0 to 999 999 999 999
-            if (number == 0) {
-                return "zero";
-            }
-
-            String snumber = Long.toString(number);
-
-            // pad with "0"
-            String mask = "000000000000";
-            DecimalFormat df = new DecimalFormat(mask);
-            snumber = df.format(number);
-
-            // XXXnnnnnnnnn
-            int billions = Integer.parseInt(snumber.substring(0, 3));
-            // nnnXXXnnnnnn
-            int millions = Integer.parseInt(snumber.substring(3, 6));
-            // nnnnnnXXXnnn
-            int hundredThousands = Integer.parseInt(snumber.substring(6, 9));
-            // nnnnnnnnnXXX
-            int thousands = Integer.parseInt(snumber.substring(9, 12));
-
-            String tradBillions;
-            switch (billions) {
-                case 0:
-                    tradBillions = "";
-                    break;
-                case 1:
-                    tradBillions = convertLessThanOneThousand(billions) + " billion ";
-                    break;
-                default:
-                    tradBillions = convertLessThanOneThousand(billions) + " billion ";
-            }
-            String result = tradBillions;
-
-            String tradMillions;
-            switch (millions) {
-                case 0:
-                    tradMillions = "";
-                    break;
-                case 1:
-                    tradMillions = convertLessThanOneThousand(millions) + " million ";
-                    break;
-                default:
-                    tradMillions = convertLessThanOneThousand(millions) + " million ";
-            }
-            result = result + tradMillions;
-
-            String tradHundredThousands;
-            switch (hundredThousands) {
-                case 0:
-                    tradHundredThousands = "";
-                    break;
-                case 1:
-                    tradHundredThousands = "one thousand ";
-                    break;
-                default:
-                    tradHundredThousands = convertLessThanOneThousand(hundredThousands)
-                            + " thousand ";
-            }
-            result = result + tradHundredThousands;
-
-            String tradThousand;
-            tradThousand = convertLessThanOneThousand(thousands);
-            result = result + tradThousand;
-
-            // remove extra spaces!
-            return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
         }
     }
 }
