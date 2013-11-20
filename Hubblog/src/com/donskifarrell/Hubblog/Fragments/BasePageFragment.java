@@ -17,6 +17,8 @@ public abstract class BasePageFragment extends RoboSherlockFragment {
 
     public abstract void triggerPageUpdate();
 
+    public abstract void setArticleContent(String content);
+
     public void setArticle(Article anArticle) {
         article = anArticle;
         triggerPageUpdate();

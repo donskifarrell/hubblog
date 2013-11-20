@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ScrollView;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Interfaces.ArticleContentUpdateListener;
 import com.donskifarrell.Hubblog.R;
 
 /**
@@ -19,9 +17,7 @@ import com.donskifarrell.Hubblog.R;
  * Time: 19:37
  */
 public class EditMarkdownFragment extends BasePageFragment {
-    private ArticleContentUpdateListener callback;
     private EditText editMarkdown;
-    private Article article;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +32,11 @@ public class EditMarkdownFragment extends BasePageFragment {
 
     public void triggerPageUpdate() {
         editMarkdown.setText(article.getContent());
+    }
+
+    public void setArticleContent(String content) {
+        article.setContent(content);
+        callback.triggerArticlePageUpdate();
     }
 
     private TextWatcher getTextChangedListener() {

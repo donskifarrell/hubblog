@@ -23,4 +23,8 @@ public class ArticleWebViewJsInterface {
     public String getMarkdown() {
         return editArticleFragment.getArticleContent();
     }
+
+    public void setMarkdown(String markdown) {
+        editArticleFragment.setArticleContent(markdown);
+    }
 }
