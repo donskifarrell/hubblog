@@ -4,12 +4,18 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:padding="20dip">
+              android:padding="20dip"
+              android:background="@android:color/white">
 
     <EditText
             android:id="@+id/edit_markdown"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="JUNK MARKDOWN" />
+            android:layout_height="wrap_content"
+            android:text="@string/article_markdown"
+            android:gravity="left|top"
+            android:singleLine="false"
+            android:background="@drawable/blank_edit_text_hubblog"
+            android:scrollbars="vertical"
+            />
 
 </LinearLayout>

@@ -4,6 +4,71 @@
 
     <string name="sidebar_open">All Articles</string>
     <string name="sidebar_close">Close navigation drawer</string>
+    <string name="article_markdown">Waiting for device.
+        Target device: 0019d7513a133f
+        Uploading file
+        local path: /home/donski/devflow/devel/hubblog/Hubblog/target/classes/Hubblog.apk
+        remote path: /data/local/tmp/com.donskifarrell.Hubblog
+        Installing com.donskifarrell.Hubblog
+        DEVICE SHELL COMMAND: pm install -r "/data/local/tmp/com.donskifarrell.Hubblog"
+        pkg: /data/local/tmp/com.donskifarrell.Hubblog
+        Success
 
+
+        Launching application: com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity.
+        DEVICE SHELL COMMAND: am start -n "com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity"
+        Starting: Intent { cmp=com.donskifarrell.Hubblog/.Activities.BaseActivity }Waiting for device.
+        Target device: 0019d7513a133f
+        Uploading file
+        local path: /home/donski/devflow/devel/hubblog/Hubblog/target/classes/Hubblog.apk
+        remote path: /data/local/tmp/com.donskifarrell.Hubblog
+        Installing com.donskifarrell.Hubblog
+        DEVICE SHELL COMMAND: pm install -r "/data/local/tmp/com.donskifarrell.Hubblog"
+        pkg: /data/local/tmp/com.donskifarrell.Hubblog
+        Success
+
+
+        Launching application: com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity.
+        DEVICE SHELL COMMAND: am start -n "com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity"
+        Starting: Intent { cmp=com.donskifarrell.Hubblog/.Activities.BaseActivity }Waiting for device.
+        Target device: 0019d7513a133f
+        Uploading file
+        local path: /home/donski/devflow/devel/hubblog/Hubblog/target/classes/Hubblog.apk
+        remote path: /data/local/tmp/com.donskifarrell.Hubblog
+        Installing com.donskifarrell.Hubblog
+        DEVICE SHELL COMMAND: pm install -r "/data/local/tmp/com.donskifarrell.Hubblog"
+        pkg: /data/local/tmp/com.donskifarrell.Hubblog
+        Success
+
+
+        Launching application: com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity.
+        DEVICE SHELL COMMAND: am start -n "com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity"
+        Starting: Intent { cmp=com.donskifarrell.Hubblog/.Activities.BaseActivity }Waiting for device.
+        Target device: 0019d7513a133f
+        Uploading file
+        local path: /home/donski/devflow/devel/hubblog/Hubblog/target/classes/Hubblog.apk
+        remote path: /data/local/tmp/com.donskifarrell.Hubblog
+        Installing com.donskifarrell.Hubblog
+        DEVICE SHELL COMMAND: pm install -r "/data/local/tmp/com.donskifarrell.Hubblog"
+        pkg: /data/local/tmp/com.donskifarrell.Hubblog
+        Success
+
+
+        Launching application: com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity.
+        DEVICE SHELL COMMAND: am start -n "com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity"
+        Starting: Intent { cmp=com.donskifarrell.Hubblog/.Activities.BaseActivity }Waiting for device.
+        Target device: 0019d7513a133f
+        Uploading file
+        local path: /home/donski/devflow/devel/hubblog/Hubblog/target/classes/Hubblog.apk
+        remote path: /data/local/tmp/com.donskifarrell.Hubblog
+        Installing com.donskifarrell.Hubblog
+        DEVICE SHELL COMMAND: pm install -r "/data/local/tmp/com.donskifarrell.Hubblog"
+        pkg: /data/local/tmp/com.donskifarrell.Hubblog
+        Success
+
+
+        Launching application: com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity.
+        DEVICE SHELL COMMAND: am start -n "com.donskifarrell.Hubblog/com.donskifarrell.Hubblog.Activities.BaseActivity"
+        Starting: Intent { cmp=com.donskifarrell.Hubblog/.Activities.BaseActivity }</string>
 
 </resources>

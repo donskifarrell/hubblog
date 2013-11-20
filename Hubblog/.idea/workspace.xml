@@ -39,17 +39,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/article_webclient/hubblog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/content_layout.xml" afterPath="$PROJECT_DIR$/res/layout/content_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/edit_article_layout.xml" afterPath="$PROJECT_DIR$/res/layout/edit_article_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/article_webclient/preview.html" afterPath="$PROJECT_DIR$/assets/article_webclient/preview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blank_edit_text_hubblog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/edit_markdown_layout.xml" afterPath="$PROJECT_DIR$/res/layout/edit_markdown_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/theme.xml" afterPath="$PROJECT_DIR$/res/values/theme.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384900911619" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384904095982" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
     <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384801269127" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
@@ -64,16 +63,18 @@
     <file path="/ArticlesAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384892523461" ignored="false" />
     <file path="/SidebarAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384857943198" ignored="false" />
     <file path="/Post.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384864587266" ignored="false" />
-    <file path="/strings.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384890798659" ignored="false" />
-    <file path="/theme.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384890395437" ignored="false" />
+    <file path="/strings.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384907104464" ignored="false" />
+    <file path="/theme.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384906185366" ignored="false" />
     <file path="/OnSidebarListItemSelected.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384891882420" ignored="false" />
     <file path="/TabsAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384894364903" ignored="false" />
     <file path="/edit_article_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384897796456" ignored="false" />
-    <file path="/edit_markdown_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384895036514" ignored="false" />
+    <file path="/edit_markdown_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384907289657" ignored="false" />
     <file path="/EditArticleFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384895886415" ignored="false" />
     <file path="/ArticleWebViewJsInterface.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384895915204" ignored="false" />
     <file path="/preview.html" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384904048297" ignored="false" />
     <file path="/hubblog.css" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384903831427" ignored="false" />
+    <file path="/EditMarkdownFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384906646688" ignored="false" />
+    <file path="/edittextcustom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384907337985" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,10 +140,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
+      <file leaf-file-name="edit_markdown_layout.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/edit_markdown_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="21" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.0">
+            <state line="20" column="15" selection-start="780" selection-end="780" vertical-scroll-proportion="0.57915056">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="83" selection-start="4008" selection-end="4008" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditMarkdownFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,75 +172,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditArticleFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java">
+      <file leaf-file-name="blank_edit_text_hubblog.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/drawable/blank_edit_text_hubblog.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="72" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base_layout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="48" selection-start="456" selection-end="456" vertical-scroll-proportion="-6.0">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_layout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/content_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="46" selection-start="616" selection-end="628" vertical-scroll-proportion="-10.2">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_article_layout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/edit_article_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="48" selection-start="431" selection-end="431" vertical-scroll-proportion="-5.4">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="4" column="65" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preview.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/article_webclient/preview.html">
+      <file leaf-file-name="theme.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/theme.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="300" selection-end="300" vertical-scroll-proportion="0.2601156">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hubblog.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/article_webclient/hubblog.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="4" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+            <state line="53" column="81" selection-start="2696" selection-end="2696" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -242,14 +208,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/sidebar_list_item.xml" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/OnSidebarListItemSelected.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticlesAdapter.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/edit_markdown_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticleWebViewAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/ArticleWebViewJsInterface.java" />
-        <option value="$PROJECT_DIR$/res/values/theme.xml" />
         <option value="$PROJECT_DIR$/res/values/defaults.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/TabsAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java" />
@@ -258,6 +219,11 @@
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java" />
         <option value="$PROJECT_DIR$/assets/article_webclient/hubblog.css" />
         <option value="$PROJECT_DIR$/assets/article_webclient/preview.html" />
+        <option value="$PROJECT_DIR$/res/values/theme.xml" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/drawable/edittextcustom.xml" />
+        <option value="$PROJECT_DIR$/res/layout/edit_markdown_layout.xml" />
       </list>
     </option>
   </component>
@@ -505,6 +471,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -837,7 +821,11 @@
       <created>1384900917334</created>
       <updated>1384900917334</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed layout size issue with tab indicator. Fixed issue with html content not fitting to device width.">
+      <created>1384904100692</created>
+      <updated>1384904100692</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -845,14 +833,14 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.8633721" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.8633721" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.8633721" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44864342" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39922482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44864342" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -861,7 +849,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.72771317" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26414087" sideWeight="0.5513566" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26442307" sideWeight="0.5513566" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13662791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -912,7 +900,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added webview interfaces for edit article. Added lots of web assets from old hubblog code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed layout size issue with tab indicator. Fixed issue with html content not fitting to device width." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -948,6 +936,7 @@
     <MESSAGE value="Added actionbar icon for sidebar. Added code to change title when sidebar opened." />
     <MESSAGE value="Added sidebar listener so article can be selected and shown in main view" />
     <MESSAGE value="Added webview interfaces for edit article. Added lots of web assets from old hubblog code" />
+    <MESSAGE value="Fixed layout size issue with tab indicator. Fixed issue with html content not fitting to device width." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -961,63 +950,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/edit_markdown_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="48" selection-start="453" selection-end="453" vertical-scroll-proportion="0.2574103">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="231" selection-end="231" vertical-scroll-proportion="0.22522523">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/ArticleWebViewJsInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="327" selection-end="327" vertical-scroll-proportion="0.35353535">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="48" selection-start="456" selection-end="456" vertical-scroll-proportion="-6.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/theme.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="67" selection-start="3126" selection-end="3126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/defaults.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="337" selection-end="337" vertical-scroll-proportion="0.12440758">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Adapters/ArticleWebViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="34" selection-start="215" selection-end="236" vertical-scroll-proportion="0.19549763">
@@ -1036,15 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="21" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="51" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
@@ -1052,9 +975,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/content_layout.xml">
+    <entry file="file://$PROJECT_DIR$/assets/article_webclient/hubblog.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="46" selection-start="616" selection-end="628" vertical-scroll-proportion="-10.2">
+        <state line="2" column="4" selection-start="12" selection-end="12" vertical-scroll-proportion="0.029821074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/edit_article_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="48" selection-start="431" selection-end="431" vertical-scroll-proportion="0.13761468">
           <folding />
         </state>
       </provider>
@@ -1062,9 +992,26 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/edit_article_layout.xml">
+    <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="48" selection-start="431" selection-end="431" vertical-scroll-proportion="-5.4">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/content_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="46" selection-start="616" selection-end="628" vertical-scroll-proportion="0.25993884">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/base_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="48" selection-start="456" selection-end="456" vertical-scroll-proportion="0.1529052">
           <folding />
         </state>
       </provider>
@@ -1074,25 +1021,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditArticleFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="72" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
+        <state line="52" column="72" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.6272366">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/article_webclient/hubblog.css">
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="99" column="21" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.38767394">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/article_webclient/preview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="300" selection-end="300" vertical-scroll-proportion="0.2601156">
+        <state line="3" column="51" selection-start="81" selection-end="81" vertical-scroll-proportion="0.045824848">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Fragments/EditMarkdownFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/theme.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="81" selection-start="2696" selection-end="2696" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="83" selection-start="4008" selection-end="4008" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/blank_edit_text_hubblog.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="65" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/edit_markdown_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="15" selection-start="780" selection-end="780" vertical-scroll-proportion="0.57915056">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>
