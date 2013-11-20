@@ -7,7 +7,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Adapters.TabsAdapter;
 import com.donskifarrell.Hubblog.Data.Account;
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Data.Site;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
@@ -135,8 +135,8 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
             hubblog.addSite(site);
 
             for (int postCount = 0; postCount < 8; postCount++){
-                Post post = createPost(site, postCount);
-                hubblog.addPostToSite(site, post);
+                Article article = createPost(site, postCount);
+                hubblog.addPostToSite(site, article);
             }
         }
     }
@@ -149,18 +149,18 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         return site;
     }
 
-    private Post createPost(Site site, int idx){
-        Post post = new Post();
-        post.setSite(site.getSiteName());
-        post.setTitle("A post " + numberToWords.convertLessThanOneThousand(idx));
-        post.setCreatedDate(new Date());
-        post.setContent("## Heading2 for post " + numberToWords.convertLessThanOneThousand(idx));
+    private Article createPost(Site site, int idx){
+        Article article = new Article();
+        article.setSite(site.getSiteName());
+        article.setTitle("Article " + numberToWords.convertLessThanOneThousand(idx));
+        article.setCreatedDate(new Date());
+        article.setContent("## Heading2 for article " + numberToWords.convertLessThanOneThousand(idx));
 
         if (idx % 2 == 0) {
-            post.setIsDraft(false);
+            article.setIsDraft(false);
         }
 
-        return post;
+        return article;
     }
 
     private class EnglishNumberToWords {

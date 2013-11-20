@@ -2,7 +2,7 @@ package com.donskifarrell.Hubblog.Activities;
 
 import android.support.v4.view.ViewPager;
 import android.widget.Toast;
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.R;
 import shared.ui.actionscontentview.ActionsContentView;
 
@@ -17,17 +17,17 @@ public class HubblogActivity extends BaseActivity {
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
 
-    public void showArticle(Post post) {
-        currentArticleTitle = post.getTitle();
+    public void showArticle(Article article) {
+        currentArticleTitle = article.getTitle();
 
         pageIndicator.setCurrentItem(EDIT_ARTICLE_TAB_POSITION);
-        tabsAdapter.EditArticle().setArticle(post);
+        tabsAdapter.EditArticle().setArticle(article);
         actionsContentView.showContent();
 
         // load edit article fragment and generate html content
         Toast.makeText(
                 this,
-                post.getTitle() + " showing!",
+                article.getTitle() + " showing!",
                 Toast.LENGTH_LONG).show();
     }
 

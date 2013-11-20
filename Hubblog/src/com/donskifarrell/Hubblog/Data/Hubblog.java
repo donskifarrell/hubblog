@@ -144,8 +144,8 @@ public class Hubblog {
         refreshSiteTitles = true;
     }
 
-    public void addPostToSite(Site site, Post post) {
-        fileSystem.savePost(site, post);
+    public void addPostToSite(Site site, Article article) {
+        fileSystem.savePost(site, article);
 
         refreshSites = true;
     }

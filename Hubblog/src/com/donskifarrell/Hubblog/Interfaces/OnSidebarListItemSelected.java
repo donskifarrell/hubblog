@@ -1,6 +1,6 @@
 package com.donskifarrell.Hubblog.Interfaces;
 
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,5 +9,5 @@ import com.donskifarrell.Hubblog.Data.Post;
  * Time: 20:10
  */
 public interface OnSidebarListItemSelected {
-    public void showArticle(Post post);
+    public void showArticle(Article article);
 }

@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Data.Site;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
@@ -43,12 +42,12 @@ public class ArticlesAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return site.getPosts().size();
+        return site.getArticles().size();
     }
 
     @Override
     public Object getItem(int position) {
-        return site.getPosts().get(position);
+        return site.getArticles().get(position);
     }
 
     @Override
@@ -66,21 +65,21 @@ public class ArticlesAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.articleTitle = (TextView) convertView.findViewById(R.id.sidebar_item);
 
-            Post post = site.getPosts().get(position);
-            if (post.getIsDraft()) {
+            Article article = site.getArticles().get(position);
+            if (article.getIsDraft()) {
                 holder.articleTitle.setCompoundDrawables(getEditIcon(convertView.getContext()), null, null, null);
             }
             else {
                 holder.articleTitle.setCompoundDrawables(getTickIcon(convertView.getContext()), null, null, null);
             }
 
-            holder.post = post;
-            holder.articleTitle.setText(post.getTitle());
+            holder.article = article;
+            holder.articleTitle.setText(article.getTitle());
             holder.articleTitle.setOnClickListener(new AdapterView.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    callback.showArticle(holder.post);
+                    callback.showArticle(holder.article);
                 }
             });
 
@@ -109,7 +108,7 @@ public class ArticlesAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        Post post;
+        Article article;
         TextView articleTitle;
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public class Site {
     private String siteName;
     private String accountName;
-    private List<Post> posts;
+    private List<Article> articles;
 
     public String getSiteName() {
         return siteName;
@@ -29,19 +29,19 @@ public class Site {
         this.accountName = accountName;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public List<Article> getArticles() {
+        return articles;
     }
 
     public String[] getPostsTitleList() {
         List<String> titles = new LinkedList<String>();
-        for (Post post : this.getPosts()){
-            titles.add(post.getTitle());
+        for (Article article : this.getArticles()){
+            titles.add(article.getTitle());
         }
         return titles.toArray(new String[0]);
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 }

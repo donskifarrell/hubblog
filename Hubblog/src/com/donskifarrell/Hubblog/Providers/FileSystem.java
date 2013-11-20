@@ -2,7 +2,7 @@ package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Application;
 import android.os.Environment;
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Data.Site;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -46,7 +46,7 @@ public class FileSystem {
                 if (file.isDirectory()) {
                     site.setSiteName(file.getName());
                     site.setAccountName(accountName);
-                    site.setPosts(getPosts(file));
+                    site.setArticles(getPosts(file));
                     sites.add(site);
                 }
             }
@@ -76,8 +76,8 @@ public class FileSystem {
         }
     }
 
-    private List<Post> getPosts(File site) {
-        List<Post> posts = new LinkedList<Post>();
+    private List<Article> getPosts(File site) {
+        List<Article> articles = new LinkedList<Article>();
 
         if (site.exists()) {
             File[] files = site.listFiles();
@@ -91,7 +91,7 @@ public class FileSystem {
                         fileInputStream = new FileInputStream(file.getPath());
                         objectInputStream = new ObjectInputStream(fileInputStream);
 
-                        posts.add((Post) objectInputStream.readObject());
+                        articles.add((Article) objectInputStream.readObject());
                         objectInputStream.close();
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
@@ -104,30 +104,30 @@ public class FileSystem {
             }
         }
 
-        return posts;
+        return articles;
     }
 
-    public void savePost(Site site, Post post){
+    public void savePost(Site site, Article article){
         File storagePath = application.getExternalFilesDir(null);
         if (storagePath.exists()) { // todo: handle creation of storage area?
             FileOutputStream fileOutputStream = null;
             ObjectOutputStream objectOutputStream= null;
             try {
-                Ln.i(TAG, "Save Post: "
+                Ln.i(TAG, "Save Article: "
                         + storagePath.getAbsolutePath()
                         + "/" + site.getAccountName()
                         + "/" + site.getSiteName()
-                        + "/" + post.getTitle()
+                        + "/" + article.getTitle()
                         + ".md");
 
                 fileOutputStream = new FileOutputStream(storagePath.getAbsolutePath()
                         + "/" + site.getAccountName()
                         + "/" + site.getSiteName()
-                        + "/" + post.getTitle()
+                        + "/" + article.getTitle()
                         + ".md");
                 objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-                objectOutputStream.writeObject(post);
+                objectOutputStream.writeObject(article);
                 objectOutputStream.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

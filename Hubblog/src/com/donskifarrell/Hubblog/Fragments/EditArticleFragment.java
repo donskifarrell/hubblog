@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import com.donskifarrell.Hubblog.Adapters.ArticleWebViewAdapter;
-import com.donskifarrell.Hubblog.Data.Post;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Interfaces.ArticleWebViewJsInterface;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
@@ -21,7 +21,7 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
 public class EditArticleFragment extends RoboSherlockFragment {
     private ArticleWebViewAdapter articleWebViewAdapter;
     private WebView browser;
-    private Post post;
+    private Article article;
     private boolean isReady = false;
 
     @Override
@@ -35,13 +35,13 @@ public class EditArticleFragment extends RoboSherlockFragment {
         return preview;
     }
 
-    public void setArticle(Post aPost) {
-        post = aPost;
+    public void setArticle(Article anArticle) {
+        article = anArticle;
         articleWebViewAdapter.triggerArticleUpdate();
     }
 
     public String getArticleContent(){
-        return post.getContent();
+        return article.getContent();
     }
 
     @Override
