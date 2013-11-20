@@ -3,6 +3,7 @@ package com.donskifarrell.Hubblog.Activities;
 import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Interfaces.ArticleContentUpdateListener;
 import com.donskifarrell.Hubblog.R;
 import shared.ui.actionscontentview.ActionsContentView;
 
@@ -12,16 +13,17 @@ import shared.ui.actionscontentview.ActionsContentView;
  * Date: 20/11/13
  * Time: 12:04
  */
-public class HubblogActivity extends BaseActivity {
+public class HubblogActivity extends BaseActivity
+                             implements ArticleContentUpdateListener {
 
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
 
     public void showArticle(Article article) {
         currentArticleTitle = article.getTitle();
-
         pageIndicator.setCurrentItem(EDIT_ARTICLE_TAB_POSITION);
-        tabsAdapter.EditArticle().setArticle(article);
+
+        tabsAdapter.setArticle(article);
         actionsContentView.showContent();
 
         // load edit article fragment and generate html content
@@ -29,6 +31,16 @@ public class HubblogActivity extends BaseActivity {
                 this,
                 article.getTitle() + " showing!",
                 Toast.LENGTH_LONG).show();
+    }
+
+    public void triggerArticlePageUpdate(){
+        // markdown page calls this to get article page to update
+        tabsAdapter.EditArticle().triggerArticleUpdate();
+    }
+
+    public void triggerMarkdownPageUpdate(){
+        // article page calls this to get markdown page to update
+        tabsAdapter.EditMarkdown().triggerMarkdownUpdate();
     }
 
     protected ViewPager.OnPageChangeListener getPageChangeListener(){

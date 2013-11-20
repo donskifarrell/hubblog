@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import com.donskifarrell.Hubblog.Adapters.ArticleWebViewAdapter;
 import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Interfaces.ArticleContentUpdateListener;
 import com.donskifarrell.Hubblog.Interfaces.ArticleWebViewJsInterface;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
@@ -19,6 +20,7 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
  * Time: 19:37
  */
 public class EditArticleFragment extends RoboSherlockFragment {
+    private ArticleContentUpdateListener callback;
     private ArticleWebViewAdapter articleWebViewAdapter;
     private WebView browser;
     private Article article;
@@ -26,21 +28,25 @@ public class EditArticleFragment extends RoboSherlockFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View preview = inflater.inflate(R.layout.edit_article_layout, container, false);
-        browser = (WebView) preview.findViewById(R.id.article_web_view);
+        View articleLayout = inflater.inflate(R.layout.edit_article_layout, container, false);
+        browser = (WebView) articleLayout.findViewById(R.id.article_web_view);
 
         setupWebViewClient();
 
         isReady = true;
-        return preview;
+        return articleLayout;
+    }
+
+    public void triggerArticleUpdate() {
+        articleWebViewAdapter.triggerArticleUpdate();
     }
 
     public void setArticle(Article anArticle) {
         article = anArticle;
-        articleWebViewAdapter.triggerArticleUpdate();
+        triggerArticleUpdate();
     }
 
-    public String getArticleContent(){
+    public String getArticleContent() {
         return article.getContent();
     }
 
@@ -51,7 +57,7 @@ public class EditArticleFragment extends RoboSherlockFragment {
             if (articleWebViewAdapter == null){
                 setupWebViewClient();
             }
-            articleWebViewAdapter.triggerArticleUpdate();
+            triggerArticleUpdate();
         }
     }
 
@@ -60,10 +66,10 @@ public class EditArticleFragment extends RoboSherlockFragment {
         super.onAttach(activity);
 
         try {
-            //callback = (OnUpdatePreviewListener) activity;
+            callback = (ArticleContentUpdateListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement OnUpdatePreviewListener");
+                    + " must implement ArticleContentUpdateListener");
         }
     }
 

@@ -3,6 +3,7 @@ package com.donskifarrell.Hubblog.Adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import com.donskifarrell.Hubblog.Data.Article;
 import com.donskifarrell.Hubblog.Fragments.EditArticleFragment;
 import com.donskifarrell.Hubblog.Fragments.EditMarkdownFragment;
 
@@ -45,6 +46,11 @@ public class TabsAdapter extends FragmentPagerAdapter {
         }
 
         return null;
+    }
+
+    public void setArticle(Article article) {
+        editArticleFragment.setArticle(article);
+        editMarkdownFragment.setArticle(article);
     }
 
     public EditMarkdownFragment EditMarkdown() {
