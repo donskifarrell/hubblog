@@ -50,6 +50,9 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         createTabPager();
         createSidebar();
 
+        // todo: launch proper article
+        showArticle(hubblog.getSites().get(0).getArticles().get(0));
+
         final int selectedPosition;
         if (savedInstanceState != null) {
             selectedPosition = savedInstanceState.getInt(STATE_POSITION, 0);

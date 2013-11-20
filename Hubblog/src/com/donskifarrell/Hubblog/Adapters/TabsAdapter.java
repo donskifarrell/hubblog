@@ -32,33 +32,33 @@ public class TabsAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            if (editArticleFragment == null) {
-                editArticleFragment = new EditArticleFragment();
-            }
-            return editArticleFragment;
+            return EditArticle();
         }
 
         if (position == 1){
-            if (editMarkdownFragment == null) {
-                editMarkdownFragment = new EditMarkdownFragment();
-            }
-            return editMarkdownFragment;
+            return EditMarkdown();
         }
 
         return null;
     }
 
     public void setArticle(Article article) {
-        editArticleFragment.setArticle(article);
-        editMarkdownFragment.setArticle(article);
-    }
-
-    public EditMarkdownFragment EditMarkdown() {
-        return editMarkdownFragment;
+        EditArticle().setArticle(article);
+        EditMarkdown().setArticle(article);
     }
 
     public EditArticleFragment EditArticle() {
+        if (editArticleFragment == null) {
+            editArticleFragment = new EditArticleFragment();
+        }
         return editArticleFragment;
+    }
+
+    public EditMarkdownFragment EditMarkdown() {
+        if (editMarkdownFragment == null) {
+            editMarkdownFragment = new EditMarkdownFragment();
+        }
+        return editMarkdownFragment;
     }
 
     public String getPageTitle(int position) {

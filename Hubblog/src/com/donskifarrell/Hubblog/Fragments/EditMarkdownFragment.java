@@ -27,16 +27,13 @@ public class EditMarkdownFragment extends BasePageFragment {
         editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);
         editMarkdown.addTextChangedListener(getTextChangedListener());
 
+        isReady = true;
         return scrollView;
     }
 
     public void triggerPageUpdate() {
-        editMarkdown.setText(article.getContent());
-    }
-
-    public void setArticleContent(String content) {
-        article.setContent(content);
-        callback.triggerArticlePageUpdate();
+        if (isReady)
+            editMarkdown.setText(article.getContent());
     }
 
     private TextWatcher getTextChangedListener() {
@@ -53,6 +50,7 @@ public class EditMarkdownFragment extends BasePageFragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                setArticleContent(editable.toString());
             }
         };
     }

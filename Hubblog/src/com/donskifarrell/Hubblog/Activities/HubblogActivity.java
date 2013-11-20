@@ -3,7 +3,6 @@ package com.donskifarrell.Hubblog.Activities;
 import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Interfaces.ArticleContentUpdateListener;
 import com.donskifarrell.Hubblog.R;
 import shared.ui.actionscontentview.ActionsContentView;
 
@@ -13,17 +12,16 @@ import shared.ui.actionscontentview.ActionsContentView;
  * Date: 20/11/13
  * Time: 12:04
  */
-public class HubblogActivity extends BaseActivity
-                             implements ArticleContentUpdateListener {
+public class HubblogActivity extends BaseActivity {
 
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
 
     public void showArticle(Article article) {
         currentArticleTitle = article.getTitle();
-        pageIndicator.setCurrentItem(EDIT_ARTICLE_TAB_POSITION);
-
         tabsAdapter.setArticle(article);
+
+        pageIndicator.setCurrentItem(EDIT_ARTICLE_TAB_POSITION);
         actionsContentView.showContent();
 
         // load edit article fragment and generate html content
@@ -33,37 +31,33 @@ public class HubblogActivity extends BaseActivity
                 Toast.LENGTH_LONG).show();
     }
 
-    public void triggerArticlePageUpdate(){
-        // markdown page calls this to get article page to update
-        tabsAdapter.EditArticle().triggerPageUpdate();
-    }
-
-    public void triggerMarkdownPageUpdate(){
-        // article page calls this to get markdown page to update
-        tabsAdapter.EditMarkdown().triggerPageUpdate();
-    }
-
     protected ViewPager.OnPageChangeListener getPageChangeListener(){
         return new ViewPager.OnPageChangeListener(){
             @Override
             public void onPageSelected(int position) {
                 switch (position){
+
                     case EDIT_ARTICLE_TAB_POSITION:
                         currentArticleSubTitle = getResources().getString(R.string.edit_article_subtitle);
                         setActionBarSubTitle(currentArticleSubTitle);
+                        tabsAdapter.EditArticle().triggerPageUpdate();
                         break;
+
                     case EDIT_MARKDOWN_TAB_POSITION:
                         currentArticleSubTitle = getResources().getString(R.string.edit_markdown_subtitle);
                         setActionBarSubTitle(currentArticleSubTitle);
+                        tabsAdapter.EditMarkdown().triggerPageUpdate();
                         break;
+
                     default:
-                        setActionBarSubTitle("");
+                        setActionBarSubTitle("Unknown Page!");
                         break;
                 }
             }
 
             @Override
             public void onPageScrolled(int i, float v, int i2) {
+                // todo: put update code here? or below? might give better look and feel..
             }
 
             @Override
