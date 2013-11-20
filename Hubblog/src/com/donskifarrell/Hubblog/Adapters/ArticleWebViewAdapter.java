@@ -18,10 +18,10 @@ public class ArticleWebViewAdapter extends WebViewClient {
 
     @Override
     public void onPageFinished(WebView view, String url){
-        webView.loadUrl("javascript:window.Article.showToast('test');");
+        webView.loadUrl("javascript:updateArticle();");
     }
 
-    public void triggerUpdate(){
-        webView.loadUrl("javascript:showToast();");
+    public void triggerArticleUpdate(){
+        webView.loadUrl("javascript:updateArticle();");
     }
 }

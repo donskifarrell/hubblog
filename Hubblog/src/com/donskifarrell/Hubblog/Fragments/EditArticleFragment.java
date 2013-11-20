@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import com.donskifarrell.Hubblog.Adapters.ArticleWebViewAdapter;
+import com.donskifarrell.Hubblog.Data.Post;
 import com.donskifarrell.Hubblog.Interfaces.ArticleWebViewJsInterface;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
@@ -20,6 +21,7 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
 public class EditArticleFragment extends RoboSherlockFragment {
     private ArticleWebViewAdapter articleWebViewAdapter;
     private WebView browser;
+    private Post post;
     private boolean isReady = false;
 
     @Override
@@ -33,6 +35,15 @@ public class EditArticleFragment extends RoboSherlockFragment {
         return preview;
     }
 
+    public void setArticle(Post aPost) {
+        post = aPost;
+        articleWebViewAdapter.triggerArticleUpdate();
+    }
+
+    public String getArticleContent(){
+        return post.getContent();
+    }
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -40,18 +51,8 @@ public class EditArticleFragment extends RoboSherlockFragment {
             if (articleWebViewAdapter == null){
                 setupWebViewClient();
             }
-
-            articleWebViewAdapter.triggerUpdate();
+            articleWebViewAdapter.triggerArticleUpdate();
         }
-    }
-
-    private void setupWebViewClient() {
-        browser.getSettings().setJavaScriptEnabled(true);
-        browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "Article");
-        browser.loadUrl("file:///android_asset/article_webclient/preview.html");
-
-        articleWebViewAdapter = new ArticleWebViewAdapter(browser);
-        browser.setWebViewClient(articleWebViewAdapter);
     }
 
     @Override
@@ -64,5 +65,14 @@ public class EditArticleFragment extends RoboSherlockFragment {
             throw new ClassCastException(activity.toString()
                     + " must implement OnUpdatePreviewListener");
         }
+    }
+
+    private void setupWebViewClient() {
+        browser.getSettings().setJavaScriptEnabled(true);
+        browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "Article");
+        browser.loadUrl("file:///android_asset/article_webclient/preview.html");
+
+        articleWebViewAdapter = new ArticleWebViewAdapter(browser);
+        browser.setWebViewClient(articleWebViewAdapter);
     }
 }

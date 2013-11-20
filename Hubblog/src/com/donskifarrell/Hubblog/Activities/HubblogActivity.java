@@ -14,8 +14,14 @@ import shared.ui.actionscontentview.ActionsContentView;
  */
 public class HubblogActivity extends BaseActivity {
 
+    private static final int EDIT_ARTICLE_TAB_POSITION = 0;
+    private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
+
     public void showArticle(Post post) {
         currentArticleTitle = post.getTitle();
+
+        pageIndicator.setCurrentItem(EDIT_ARTICLE_TAB_POSITION);
+        tabsAdapter.EditArticle().setArticle(post);
         actionsContentView.showContent();
 
         // load edit article fragment and generate html content

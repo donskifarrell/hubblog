@@ -31,9 +31,8 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
 
     private static final String STATE_POSITION = "state:layout_id";
 
-    protected static final int EDIT_ARTICLE_TAB_POSITION = 0;
-    protected static final int EDIT_MARKDOWN_TAB_POSITION = 1;
-
+    protected TabsAdapter tabsAdapter;
+    protected UnderlinePageIndicator pageIndicator;
     protected ActionsContentView actionsContentView;
     protected String currentArticleTitle;
     protected String currentArticleSubTitle;
@@ -59,7 +58,6 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
             selectedPosition = 0;
         }
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -94,12 +92,12 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
     }
 
     private void createTabPager() {
-        TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager());
+        tabsAdapter = new TabsAdapter(getSupportFragmentManager());
 
-        ViewPager pager = (ViewPager)findViewById(R.id.view_pager);
+        ViewPager pager = (ViewPager) findViewById(R.id.view_pager);
         pager.setAdapter(tabsAdapter);
 
-        UnderlinePageIndicator pageIndicator = (UnderlinePageIndicator)findViewById(R.id.page_indicator);
+        pageIndicator = (UnderlinePageIndicator) findViewById(R.id.page_indicator);
         pageIndicator.setOnPageChangeListener(getPageChangeListener());
         pageIndicator.setViewPager(pager);
     }

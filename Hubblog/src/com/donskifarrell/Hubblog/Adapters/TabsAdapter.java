@@ -47,11 +47,11 @@ public class TabsAdapter extends FragmentPagerAdapter {
         return null;
     }
 
-    public EditMarkdownFragment getEditMarkdownFragment() {
+    public EditMarkdownFragment EditMarkdown() {
         return editMarkdownFragment;
     }
 
-    public EditArticleFragment getCreatePostFragment() {
+    public EditArticleFragment EditArticle() {
         return editArticleFragment;
     }
 

@@ -21,7 +21,6 @@ public class ArticleWebViewJsInterface {
     }
 
     public String getMarkdown() {
-        return "##markdown junk";
-        //return editArticleFragment.callback.getLatestMarkdown();
+        return editArticleFragment.getArticleContent();
     }
 }

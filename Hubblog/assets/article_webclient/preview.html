@@ -28,7 +28,7 @@
             langPrefix: 'lang-'
         });
 
-        function updatePreview(){
+        function updateArticle(){
             var markdown = Article.getMarkdown();
             var htmlMarkdown = marked(markdown);
             document.body.innerHTML = htmlMarkdown;
