@@ -21,7 +21,6 @@ public class EditMarkdownFragment extends RoboSherlockFragment {
         ScrollView scrollView = (ScrollView) inflater.inflate(R.layout.edit_markdown_layout, container, false);
         scrollView.setSmoothScrollingEnabled(true);
 
-
         return scrollView;
     }
 

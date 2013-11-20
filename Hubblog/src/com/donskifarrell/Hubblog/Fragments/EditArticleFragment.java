@@ -46,11 +46,8 @@ public class EditArticleFragment extends RoboSherlockFragment {
     }
 
     private void setupWebViewClient() {
-        //browser.getSettings().setLoadWithOverviewMode(true);
-/*        browser.getSettings().setUseWideViewPort(true);
-        browser.getSettings().setBuiltInZoomControls(true);*/
         browser.getSettings().setJavaScriptEnabled(true);
-        browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "previewInterface");
+        browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "Article");
         browser.loadUrl("file:///android_asset/article_webclient/preview.html");
 
         articleWebViewAdapter = new ArticleWebViewAdapter(browser);

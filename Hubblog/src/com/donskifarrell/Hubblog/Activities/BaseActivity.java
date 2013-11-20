@@ -24,18 +24,19 @@ import java.util.Date;
  * Date: 18/11/13
  * Time: 17:48
  */
-public class BaseActivity extends RoboSherlockFragmentActivity
-                          implements OnSidebarListItemSelected {
+public abstract class BaseActivity extends RoboSherlockFragmentActivity
+                                   implements OnSidebarListItemSelected {
     @Inject
     public com.donskifarrell.Hubblog.Data.Hubblog hubblog;
 
     private static final String STATE_POSITION = "state:layout_id";
-    private static final int EDIT_ARTICLE_TAB_POSITION = 0;
-    private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
 
-    private String currentArticleTitle;
-    private String currentArticleSubTitle;
-    private ActionsContentView actionsContentView;
+    protected static final int EDIT_ARTICLE_TAB_POSITION = 0;
+    protected static final int EDIT_MARKDOWN_TAB_POSITION = 1;
+
+    protected ActionsContentView actionsContentView;
+    protected String currentArticleTitle;
+    protected String currentArticleSubTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +60,6 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         }
     }
 
-    public void showArticle(Post post) {
-        currentArticleTitle = post.getTitle();
-        actionsContentView.showContent();
-
-        // load edit article fragment and generate html content
-        Toast.makeText(
-                this,
-                post.getTitle() + " showing!",
-                Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -113,34 +104,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         pageIndicator.setViewPager(pager);
     }
 
-    private ViewPager.OnPageChangeListener getPageChangeListener(){
-        return new ViewPager.OnPageChangeListener(){
-            @Override
-            public void onPageSelected(int position) {
-                switch (position){
-                    case EDIT_ARTICLE_TAB_POSITION:
-                        currentArticleSubTitle = getResources().getString(R.string.edit_article_subtitle);
-                        setActionBarSubTitle(currentArticleSubTitle);
-                        break;
-                    case EDIT_MARKDOWN_TAB_POSITION:
-                        currentArticleSubTitle = getResources().getString(R.string.edit_markdown_subtitle);
-                        setActionBarSubTitle(currentArticleSubTitle);
-                        break;
-                    default:
-                        setActionBarSubTitle("");
-                        break;
-                }
-            }
-
-            @Override
-            public void onPageScrolled(int i, float v, int i2) {
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-            }
-        };
-    }
+    protected abstract ViewPager.OnPageChangeListener getPageChangeListener();
 
     private void createSidebar() {
         actionsContentView = (ActionsContentView) findViewById(R.id.base_layout);
@@ -153,24 +117,7 @@ public class BaseActivity extends RoboSherlockFragmentActivity
         sidebarList.setAdapter(sidebarAdapter);
     }
 
-    private ActionsContentView.OnActionsContentListener getSidebarListener() {
-        return new ActionsContentView.OnActionsContentListener() {
-            @Override
-            public void onContentStateChanged(ActionsContentView v, boolean isContentShown) {
-            }
-
-            @Override
-            public void onContentStateInAction(ActionsContentView v, boolean isContentShowing) {
-                if (isContentShowing){
-                    setActionBarTitle(currentArticleTitle);
-                    setActionBarSubTitle(currentArticleSubTitle);
-                } else {
-                    setActionBarTitle(getResources().getString(R.string.sidebar_open_title));
-                    setActionBarSubTitle(getResources().getString(R.string.sidebar_open_subtitle));
-                }
-            }
-        };
-    }
+    protected abstract  ActionsContentView.OnActionsContentListener getSidebarListener();
 
     /* Bootstrap code below here */
 

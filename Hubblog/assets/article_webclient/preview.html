@@ -12,7 +12,7 @@
     </p>
     </body>
 
-    <!--<script type="text/javascript" src="marked.js"></script>
+    <script type="text/javascript" src="marked.js"></script>
     <script type="text/javascript">
         // Set default options except highlight which has no default
         marked.setOptions({
@@ -29,10 +29,14 @@
         });
 
         function updatePreview(){
-            var markdown = previewInterface.getMarkdown();
+            var markdown = Article.getMarkdown();
             var htmlMarkdown = marked(markdown);
             document.body.innerHTML = htmlMarkdown;
         }
-    </script>-->
+
+        function showToast(){
+            var markdown = Article.showToast("Test JS Toast");
+        }
+    </script>
 
 </html>
