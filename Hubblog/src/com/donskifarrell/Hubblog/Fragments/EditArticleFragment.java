@@ -52,7 +52,7 @@ public class EditArticleFragment extends BasePageFragment {
     private void setupWebViewClient() {
         browser.getSettings().setJavaScriptEnabled(true);
         browser.addJavascriptInterface(new ArticleWebViewJsInterface(this), "Article");
-        browser.loadUrl("file:///android_asset/article_webclient/preview.html");
+        browser.loadUrl("file:///android_asset/article_webclient/hubblog.html");
 
         articleWebViewAdapter = new ArticleWebViewAdapter(browser);
         browser.setWebViewClient(articleWebViewAdapter);
