@@ -75,6 +75,7 @@ public class MetadataAdapter extends BaseAdapter {
             holder.metadataText = (EditText) metadataTagView.findViewById(R.id.metadata_tag);
             holder.metadataText.setText(holder.tag.getTag());
             holder.metadataText.addTextChangedListener(new MetaDataTagTextChangedListener(holder.tag));
+            holder.metadataText.requestFocus();
 
             holder.removeTag = (ImageButton) metadataTagView.findViewById(R.id.metadata_remove);
             holder.removeTag.setOnClickListener(new RemoveMetadataTagOnClickListener(holder.tag));
