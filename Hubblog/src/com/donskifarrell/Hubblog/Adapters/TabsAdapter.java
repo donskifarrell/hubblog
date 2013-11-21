@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Fragments.CommitArticleFragment;
 import com.donskifarrell.Hubblog.Fragments.EditArticleFragment;
 import com.donskifarrell.Hubblog.Fragments.EditMarkdownFragment;
 
@@ -15,10 +16,11 @@ import com.donskifarrell.Hubblog.Fragments.EditMarkdownFragment;
  */
 public class TabsAdapter extends FragmentPagerAdapter {
 
-    private static final String[] TAB_TITLES = new String[] { "Edit Article", "Edit Markdown" };
+    private static final String[] TAB_TITLES = new String[] { "Edit Article", "Edit Markdown", "Post Article" };
     private int tabCount = TAB_TITLES.length;
     private EditArticleFragment editArticleFragment;
     private EditMarkdownFragment editMarkdownFragment;
+    private CommitArticleFragment commitArticleFragment;
 
     public TabsAdapter(FragmentManager fm) {
         super(fm);
@@ -39,12 +41,18 @@ public class TabsAdapter extends FragmentPagerAdapter {
             return EditMarkdown();
         }
 
-        return null;
+        if (position == 2){
+            return CommitArticle();
+        }
+
+        // default page not found - better than crashing!
+        return EditArticle();
     }
 
     public void setArticle(Article article) {
         EditArticle().setArticle(article);
         EditMarkdown().setArticle(article);
+        CommitArticle().setArticle(article);
     }
 
     public EditArticleFragment EditArticle() {
@@ -59,6 +67,13 @@ public class TabsAdapter extends FragmentPagerAdapter {
             editMarkdownFragment = new EditMarkdownFragment();
         }
         return editMarkdownFragment;
+    }
+
+    public CommitArticleFragment CommitArticle() {
+        if (commitArticleFragment == null) {
+            commitArticleFragment = new CommitArticleFragment();
+        }
+        return commitArticleFragment;
     }
 
     public String getPageTitle(int position) {

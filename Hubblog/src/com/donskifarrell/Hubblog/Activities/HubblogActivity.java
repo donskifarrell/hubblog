@@ -16,6 +16,7 @@ public class HubblogActivity extends BaseActivity {
 
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
+    private static final int COMMIT_ARTICLE_TAB_POSITION = 2;
 
     public void showArticle(Article article) {
         currentArticleTitle = article.getTitle();
@@ -47,6 +48,12 @@ public class HubblogActivity extends BaseActivity {
                         currentArticleSubTitle = getResources().getString(R.string.edit_markdown_subtitle);
                         setActionBarSubTitle(currentArticleSubTitle);
                         tabsAdapter.EditMarkdown().triggerPageUpdate();
+                        break;
+
+                    case COMMIT_ARTICLE_TAB_POSITION:
+                        currentArticleSubTitle = getResources().getString(R.string.commit_article_subtitle);
+                        setActionBarSubTitle(currentArticleSubTitle);
+                        tabsAdapter.CommitArticle().triggerPageUpdate();
                         break;
 
                     default:

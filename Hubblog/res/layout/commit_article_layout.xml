@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:background="@android:color/white" android:padding="5dp">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Article Metadata"
+                android:id="@+id/metadata_title" android:layout_gravity="left|center_vertical" android:textSize="25dp"
+                android:singleLine="true" android:textStyle="bold"/>
+        <include android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 layout="@layout/article_metadata_layout" android:id="@+id/include" android:layout_gravity="center"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_metadata_tag" android:layout_gravity="center" android:layout_weight="3"
+                android:src="@drawable/add"/>
+        <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_large_size"
+                android:background="@color/divider" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Article"
+                android:id="@+id/save_article_title" android:singleLine="true" android:textSize="25dp"
+                android:textStyle="bold"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You can choose to save the article as draft or as live. Saving as draft will commit the post to your GH-Pages repository, but in the _drafts folder. Save to live will make the article available on your main GH-Pages site."
+                android:id="@+id/save_options_desc"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Save as Draft"
+                    android:id="@+id/save_as_draft" android:layout_gravity="center" android:layout_weight="5"/>
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Save as Live"
+                    android:id="@+id/save_as_live" android:layout_gravity="center" android:layout_weight="5"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

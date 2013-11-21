@@ -11,6 +11,7 @@
 
     <string name="edit_article_subtitle">Edit Article</string>
     <string name="edit_markdown_subtitle">Edit Markdown</string>
+    <string name="commit_article_subtitle">Post Article</string>
 
 
 </resources>

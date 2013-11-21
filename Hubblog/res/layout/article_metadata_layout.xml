@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add your metadata tag here"
+            android:id="@+id/metadata_tag" android:layout_gravity="center_horizontal|top" android:layout_weight="9"/>
+    <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/metadata_remove" android:layout_gravity="center|bottom|top"
+            android:baselineAlignBottom="true" android:layout_weight="1" android:adjustViewBounds="true"
+            android:clickable="true" android:src="@drawable/delete"/>
+</LinearLayout>
