@@ -99,6 +99,7 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
 
         ViewPager pager = (ViewPager) findViewById(R.id.view_pager);
         pager.setAdapter(tabsAdapter);
+        pager.setOffscreenPageLimit(3);
 
         pageIndicator = (UnderlinePageIndicator) findViewById(R.id.page_indicator);
         pageIndicator.setOnPageChangeListener(getPageChangeListener());

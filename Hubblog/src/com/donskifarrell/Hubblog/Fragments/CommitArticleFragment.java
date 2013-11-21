@@ -1,18 +1,15 @@
 package com.donskifarrell.Hubblog.Fragments;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import com.donskifarrell.Hubblog.Adapters.MetadataAdapter;
 import com.donskifarrell.Hubblog.Data.MetadataTag;
+import com.donskifarrell.Hubblog.Interfaces.RemoveMetadataTagListener;
 import com.donskifarrell.Hubblog.R;
-
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +17,10 @@ import java.util.Map;
  * Date: 21/11/13
  * Time: 11:07
  */
-public class CommitArticleFragment extends BasePageFragment {
+public class CommitArticleFragment extends BasePageFragment
+                                   implements RemoveMetadataTagListener {
+    private MetadataAdapter metadataAdapter;
+
     private LayoutInflater layoutInflater;
     private ViewGroup viewGroup;
     private View commitArticle;
@@ -32,23 +32,25 @@ public class CommitArticleFragment extends BasePageFragment {
         layoutInflater = inflater;
         viewGroup = container;
 
-        //if (commitArticle == null)
-            commitArticle = inflater.inflate(R.layout.commit_article_layout, container, false);
+        commitArticle = inflater.inflate(R.layout.commit_article_layout, container, false);
 
-        //if (metadataTagList == null)
-            metadataTagList = (LinearLayout) commitArticle.findViewById(R.id.metadata_tag_list);
+        metadataTagList = (LinearLayout) commitArticle.findViewById(R.id.metadata_tag_list);
 
-        //if (addMetadataButton == null) {
-            addMetadataButton = (ImageButton) commitArticle.findViewById(R.id.add_metadata_tag);
-            addMetadataButton.setOnClickListener(getAddMetadataTagOnClickListener());
-        //}
+        if (metadataAdapter == null)
+            metadataAdapter = new MetadataAdapter(this, article);
 
-        // Awful logic..
-        if (!isReady)
-            triggerPageUpdate();
+        addAllMetadataTagsToView();
+
+        addMetadataButton = (ImageButton) commitArticle.findViewById(R.id.add_metadata_tag);
+        addMetadataButton.setOnClickListener(getAddMetadataTagOnClickListener());
 
         isReady = true;
         return commitArticle;
+    }
+
+    @Override
+    public void removeMetadataTagFromView(View view) {
+        metadataTagList.removeView(view);
     }
 
     @Override
@@ -56,69 +58,36 @@ public class CommitArticleFragment extends BasePageFragment {
         if (!isReady)
             return;
 
-        if (article.getMetadataTags().size() == 0 && metadataTagList.getChildCount() == 0) {
-            addNewMetadataTag(article.createMetadataTag(""));
+        metadataTagList.removeAllViews();
+        metadataAdapter.setArticle(article);
+        addAllMetadataTagsToView();
+    }
+
+    private void addAllMetadataTagsToView(){
+        if (article.getLastTagIdInMap() == 0) {
+            addNewMetadataTag();
         } else {
-            for (Map.Entry<Integer, MetadataTag> tagEntry : article.getMetadataTags().entrySet()) {
-                addNewMetadataTag(tagEntry.getValue());
+            for (int idx = 0; idx < article.getLastTagIdInMap(); idx++) {
+                if (article.getMetadataTags().containsKey(idx)) {
+                    View item = metadataAdapter.getView(idx, null, this.viewGroup);
+                    metadataTagList.addView(item);
+                }
             }
         }
     }
 
-    private void addNewMetadataTag(MetadataTag tag){
-        LinearLayout newMetadataTag = (LinearLayout) layoutInflater.inflate(R.layout.article_metadata_layout, viewGroup, false);
-
-        EditText tagText = (EditText) newMetadataTag.findViewById(R.id.metadata_tag);
-        tagText.setText(tag.getTag());
-        tagText.addTextChangedListener(new MetaDataTagTextChangedListener(tag));
-
-        ImageButton removeTag = (ImageButton) newMetadataTag.findViewById(R.id.metadata_remove);
-        removeTag.setOnClickListener(new RemoveMetadataTagOnClickListener(tag));
-
-        metadataTagList.addView(newMetadataTag, metadataTagList.getChildCount());
+    private void addNewMetadataTag(){
+        MetadataTag newTag = article.createMetadataTag("");
+        View view = metadataAdapter.getView(newTag.getId(), null, this.viewGroup);
+        metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 
     private View.OnClickListener getAddMetadataTagOnClickListener(){
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addNewMetadataTag(article.createMetadataTag(""));
+                addNewMetadataTag();
             }
         };
-    }
-
-    private class MetaDataTagTextChangedListener implements TextWatcher {
-        private MetadataTag tag;
-
-        public MetaDataTagTextChangedListener(MetadataTag aTag) {
-            tag = aTag;
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-            tag.setTag(editable.toString());
-            article.updateMetadataTag(tag);
-        }
-
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        }
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        }
-    }
-
-    private class RemoveMetadataTagOnClickListener implements View.OnClickListener {
-        private MetadataTag tag;
-
-        public RemoveMetadataTagOnClickListener(MetadataTag aTag){
-                tag = aTag;
-        }
-
-        @Override
-        public void onClick(View view) {
-            article.removeMetadataTag(tag);
-            metadataTagList.removeView((View) view.getParent());
-        }
     }
 }

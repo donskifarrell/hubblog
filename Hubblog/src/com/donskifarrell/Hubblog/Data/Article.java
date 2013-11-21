@@ -11,19 +11,23 @@ import java.util.*;
 public class Article implements Serializable {
     private String title;
     private String site;
-    private Map<Integer, MetadataTag> metadata = new HashMap<Integer, MetadataTag>();
-    private int lastTagId = 0;
+    private Map<Integer, MetadataTag> metadata;
+    private int lastTagId;
     private String content;
     private boolean isDraft = true;
     private Date createdDate;
+
+    public Article() {
+        metadata = new HashMap<Integer, MetadataTag>();
+        lastTagId = 0;
+    }
 
     public Map<Integer, MetadataTag> getMetadataTags() {
         return metadata;
     }
 
-    public void setMetadataTags(Map<Integer, MetadataTag> tags) {
-        metadata = tags;
-        lastTagId = tags.size();
+    public int getLastTagIdInMap() {
+        return lastTagId;
     }
 
     public MetadataTag createMetadataTag(String tag) {
