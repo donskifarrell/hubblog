@@ -21,9 +21,11 @@
                 android:layout_height="wrap_content"
                 android:text="Add metadata tags to each article. These can be used as attributes within GH-Pages."
                 android:id="@+id/article_metadata_desc"/>
-        <include android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 layout="@layout/article_metadata_layout" android:id="@+id/include" android:layout_gravity="center"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/metadata_tag_list">
+        </LinearLayout>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

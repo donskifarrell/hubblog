@@ -24,8 +24,10 @@ public class EditMarkdownFragment extends BasePageFragment {
         ScrollView scrollView = (ScrollView) inflater.inflate(R.layout.edit_markdown_layout, container, false);
         scrollView.setSmoothScrollingEnabled(true);
 
-        editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);
-        editMarkdown.addTextChangedListener(getTextChangedListener());
+        //if (editMarkdown == null) {
+            editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);
+            editMarkdown.addTextChangedListener(getTextChangedListener());
+        //}
 
         isReady = true;
         return scrollView;

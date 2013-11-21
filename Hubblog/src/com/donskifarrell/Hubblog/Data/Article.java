@@ -1,7 +1,7 @@
 package com.donskifarrell.Hubblog.Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
 
 /**
  * User: donski
@@ -11,9 +11,57 @@ import java.util.Date;
 public class Article implements Serializable {
     private String title;
     private String site;
+    private Map<Integer, MetadataTag> metadata = new HashMap<Integer, MetadataTag>();
+    private int lastTagId = 0;
     private String content;
     private boolean isDraft = true;
     private Date createdDate;
+
+    public Map<Integer, MetadataTag> getMetadataTags() {
+        return metadata;
+    }
+
+    public void setMetadataTags(Map<Integer, MetadataTag> tags) {
+        metadata = tags;
+        lastTagId = tags.size();
+    }
+
+    public MetadataTag createMetadataTag(String tag) {
+        MetadataTag metadataTag = new MetadataTag();
+        metadataTag.setId(lastTagId);
+        metadataTag.setTag(tag);
+
+        metadata.put(lastTagId, metadataTag);
+
+        lastTagId++;
+        return metadataTag;
+    }
+
+    public boolean updateMetadataTag(MetadataTag tag) {
+        if (metadata.containsKey(tag.getId())) {
+            metadata.get(tag.getId()).setTag(tag.getTag());
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean removeMetadataTag(MetadataTag tag) {
+        if (metadata.containsKey(tag.getId())) {
+            metadata.remove(tag.getId());
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean isDraft() {
+        return isDraft;
+    }
+
+    public void setDraft(boolean draft) {
+        isDraft = draft;
+    }
 
     public String getTitle() {
         return title;
