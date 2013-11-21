@@ -8,4 +8,6 @@
     <color name="actions_divider">#ff888888</color>
 
     <color name="pressed_hubblog">#CC33B5E5</color>
+
+    <color name="transparent">#00000000</color>
 </resources>

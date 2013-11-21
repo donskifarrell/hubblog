@@ -55,6 +55,10 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Theme.Hubblog.MetadataEditText" parent="@android:style/Widget.EditText">
+        <item name="android:colorBackground">@android:color/transparent</item>
+    </style>
+
     <style name="ActionBar.Solid.Hubblog" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@drawable/ab_solid_hubblog</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_hubblog</item>
