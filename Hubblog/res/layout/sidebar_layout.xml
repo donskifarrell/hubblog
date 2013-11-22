@@ -8,25 +8,31 @@
                 android:orientation="vertical" android:weightSum="1">
 
     <Button
-            android:layout_width="110dp"
+            android:layout_width="140dp"
             android:layout_height="0dp"
             android:background="@android:color/holo_green_light"
             android:textColor="#FFFFFF"
             android:id="@+id/sidebar_add_new"
             android:text="@string/sidebar_add_new"
-            android:layout_weight="0.08"
-            android:drawableRight="@drawable/add"
+            android:layout_weight="0.06"
             android:enabled="true"
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:layout_gravity="center"
-            android:layout_margin="5dp" android:paddingRight="10dp" android:gravity="center_horizontal|top"
-            />
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal|top"
+            android:singleLine="true"/>
+
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_large_size"
+            android:background="@color/divider" />
 
     <ListView
         android:id="@+id/sidebar_list"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.92"/>
+        android:layout_weight="0.91"/>
 
 </LinearLayout>

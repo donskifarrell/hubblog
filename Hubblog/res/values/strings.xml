@@ -4,7 +4,7 @@
 
     <string name="sidebar_open_title">All Articles</string>
     <string name="sidebar_open_subtitle">Select an article to view</string>
-    <string name="sidebar_add_new">Add</string>
+    <string name="sidebar_add_new">New Article</string>
 
     <string name="select_site_positive_btn">Ok</string>
     <string name="select_site_negative_btn">Cancel</string>

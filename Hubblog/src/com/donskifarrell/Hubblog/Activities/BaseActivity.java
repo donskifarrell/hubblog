@@ -52,7 +52,7 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         createTabPager();
         createSidebar();
 
-        // todo: launch proper article
+        // todo: launch proper article or a help one?
         //showArticle(hubblog.getSites().get(0).getArticles().get(0));
 
         final int selectedPosition;
