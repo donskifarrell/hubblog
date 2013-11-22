@@ -24,17 +24,15 @@ public class EditMarkdownFragment extends BasePageFragment {
         ScrollView scrollView = (ScrollView) inflater.inflate(R.layout.edit_markdown_layout, container, false);
         scrollView.setSmoothScrollingEnabled(true);
 
-        //if (editMarkdown == null) {
-            editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);
-            editMarkdown.addTextChangedListener(getTextChangedListener());
-        //}
+        editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);
+        editMarkdown.addTextChangedListener(getTextChangedListener());
 
         isReady = true;
         return scrollView;
     }
 
     public void triggerPageUpdate() {
-        if (isReady)
+        if (isReady && article != null)
             editMarkdown.setText(article.getContent());
     }
 

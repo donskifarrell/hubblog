@@ -18,16 +18,10 @@ import java.util.List;
  */
 @Singleton
 public class HubblogDataProvider implements DataProvider {
-    @Inject private Application application;
-    @Inject private FileSystemProvider fileSystemProvider;
-    @Inject private GitHubProvider gitHubProvider;
-    @Inject private SharedPreferencesProvider preferencesProvider;
-/*
-    public HubblogDataProvider() {
-        fileSystemProvider = new FileSystemProvider(application);
-        gitHubProvider = new GitHubProvider(application);
-        preferencesProvider = new SharedPreferencesProvider(application);
-    }*/
+    @Inject protected Application application;
+    @Inject protected FileSystemProvider fileSystemProvider;
+    @Inject protected GitHubProvider gitHubProvider;
+    @Inject protected SharedPreferencesProvider preferencesProvider;
 
     public Account loadAccount() {
         return preferencesProvider.getAccount();

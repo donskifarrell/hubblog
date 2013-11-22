@@ -70,7 +70,7 @@ public class Article implements Serializable {
     }
 
     public String getTitle() {
-        return title;
+        return title.trim();
     }
 
     public void setTitle(String title) {
@@ -78,7 +78,7 @@ public class Article implements Serializable {
     }
 
     public String getFileTitle() {
-        // To be used by jekyll the file format is:
+        // To be used by Jekyll the file format is:
         // YEAR-MONTH-DAY-title.md
         // All whitespace is converted to '-'
 
@@ -92,7 +92,7 @@ public class Article implements Serializable {
     }
 
     public String getSiteName() {
-        return site;
+        return site.trim();
     }
 
     public void setSiteName(String site) {

@@ -44,7 +44,7 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         super.onCreate(savedInstanceState);
 
         // todo: remove
-        bootstrap();
+        //bootstrap();
 
         setContentView(R.layout.base_layout);
 
@@ -53,7 +53,7 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         createSidebar();
 
         // todo: launch proper article
-        showArticle(hubblog.getSites().get(0).getArticles().get(0));
+        //showArticle(hubblog.getSites().get(0).getArticles().get(0));
 
         final int selectedPosition;
         if (savedInstanceState != null) {

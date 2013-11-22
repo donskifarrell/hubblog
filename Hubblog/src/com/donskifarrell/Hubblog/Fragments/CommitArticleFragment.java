@@ -35,8 +35,6 @@ public class CommitArticleFragment extends BasePageFragment
         if (metadataAdapter == null)
             metadataAdapter = new MetadataAdapter(this, article);
 
-        addAllMetadataTagsToView();
-
         ImageButton addMetadataButton = (ImageButton) commitArticle.findViewById(R.id.add_metadata_tag);
         addMetadataButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +70,7 @@ public class CommitArticleFragment extends BasePageFragment
 
     @Override
     public void triggerPageUpdate() {
-        if (!isReady)
+        if (!isReady || article == null)
             return;
 
         metadataTagList.removeAllViews();
@@ -94,16 +92,21 @@ public class CommitArticleFragment extends BasePageFragment
     }
 
     private void addNewMetadataTag() {
+        if (article == null) return;
+
         MetadataTag newTag = article.createMetadataTag("");
         View view = metadataAdapter.getView(newTag.getId(), null, this.viewGroup);
         metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 
     private void saveArticleAsDraft() {
+        if (article == null) return;
 
     }
 
     private void saveArticleAsLive() {
+        if (article == null) return;
+
         article.setIsDraft(false);
     }
 }

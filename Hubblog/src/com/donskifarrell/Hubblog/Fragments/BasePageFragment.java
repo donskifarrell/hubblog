@@ -21,6 +21,8 @@ public abstract class BasePageFragment extends RoboSherlockFragment {
     }
 
     public void setArticleContent(String content) {
+        if (article == null) return;
+
         article.setContent(content);
     }
 }

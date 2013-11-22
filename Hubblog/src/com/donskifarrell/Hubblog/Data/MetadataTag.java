@@ -19,7 +19,7 @@ public class MetadataTag {
     }
 
     public String getTag() {
-        return tag;
+        return tag.trim();
     }
 
     public void setTag(String tag) {

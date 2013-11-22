@@ -15,7 +15,7 @@ public class Site {
     private List<Article> articles;
 
     public String getSiteName() {
-        return siteName;
+        return siteName.trim();
     }
 
     public void setSiteName(String siteName) {

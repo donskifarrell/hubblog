@@ -12,7 +12,7 @@
 
     <string name="edit_article_subtitle">Edit Article</string>
     <string name="edit_markdown_subtitle">Edit Markdown</string>
-    <string name="commit_article_subtitle">Post Article</string>
+    <string name="commit_article_subtitle">Post Article to GitHub Pages</string>
 
     <string name="add_metadata_desc">Add metadata tags to each article. These can be used as attributes within GH-Pages.</string>
     <string name="add_metadata_edit">Add your tag as a key:value</string>

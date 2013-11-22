@@ -31,7 +31,7 @@ public class EditArticleFragment extends BasePageFragment {
     }
 
     public void triggerPageUpdate() {
-        if (isReady)
+        if (isReady && article != null)
             articleWebViewAdapter.triggerArticleUpdate();
     }
 
