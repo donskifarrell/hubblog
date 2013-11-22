@@ -19,7 +19,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add metadata tags to each article. These can be used as attributes within GH-Pages."
+                android:text="@string/add_metadata_desc"
                 android:id="@+id/article_metadata_desc"/>
         <LinearLayout
                 android:orientation="vertical"
@@ -46,7 +46,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You can choose to save the article as draft or as live. Saving as draft will commit the post to your GH-Pages repository, but in the _drafts folder. Save to live will make the article available on your main GH-Pages site."
+                android:text="@string/save_options_desc"
                 android:id="@+id/save_options_desc"/>
         <LinearLayout
                 android:orientation="horizontal"

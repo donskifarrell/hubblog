@@ -4,17 +4,22 @@
 
     <string name="sidebar_open_title">All Articles</string>
     <string name="sidebar_open_subtitle">Select an article to view</string>
+    <string name="sidebar_add_new">Add</string>
 
-    <string name="sidebar_close">Close navigation drawer</string>
-    <string name="article_markdown">## Hubblog How-to</string>
-
+    <string name="select_site_positive_btn">Ok</string>
+    <string name="select_site_negative_btn">Cancel</string>
+    <string name="select_site_title">Add Article to Site</string>
 
     <string name="edit_article_subtitle">Edit Article</string>
     <string name="edit_markdown_subtitle">Edit Markdown</string>
     <string name="commit_article_subtitle">Post Article</string>
 
+    <string name="add_metadata_desc">Add metadata tags to each article. These can be used as attributes within GH-Pages.</string>
+    <string name="add_metadata_edit">Add your tag as a key:value</string>
 
-    <string name="add_metadata_edit">Add your metadata tag here</string>
+    <string name="save_options_desc">You can choose how to save the article. Saving as draft will commit the post to your GH-Pages repository, but in the _drafts folder. Save to live will make the article available on your main GH-Pages site.</string>
 
+    <string name="article_markdown">## Hubblog How-to</string>
+    <string name="default_article_title">Untitled Article</string>
 
 </resources>

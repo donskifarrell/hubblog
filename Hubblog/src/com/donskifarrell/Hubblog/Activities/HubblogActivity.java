@@ -1,10 +1,17 @@
 package com.donskifarrell.Hubblog.Activities;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.Toast;
 import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Fragments.SelectSiteDialogFragment;
+import com.donskifarrell.Hubblog.Interfaces.SelectSiteDialogListener;
 import com.donskifarrell.Hubblog.R;
 import shared.ui.actionscontentview.ActionsContentView;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +19,8 @@ import shared.ui.actionscontentview.ActionsContentView;
  * Date: 20/11/13
  * Time: 12:04
  */
-public class HubblogActivity extends BaseActivity {
+public class HubblogActivity extends BaseActivity
+                             implements SelectSiteDialogListener {
 
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
@@ -90,5 +98,43 @@ public class HubblogActivity extends BaseActivity {
                 }
             }
         };
+    }
+
+    @Override
+    protected View.OnClickListener getSidebarAddNewListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (hubblog.getSites().size()) {
+                    case 0:
+                        // show add site dialog
+                        break;
+                    case 1:
+                        addNewArticleToSite(hubblog.getSites().get(0));
+                        break;
+                    default:
+                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSitesTitleList());
+                        dialog.show(getSupportFragmentManager(), "SelectSiteDialogFragment");
+                        break;
+                }
+            }
+        };
+    }
+
+    @Override
+    public void onDialogPositiveClick(int selectedSite) {
+        addNewArticleToSite(hubblog.getSites().get(selectedSite));
+    }
+
+    public void addNewArticleToSite(Site site){
+        Article newArticle = new Article();
+        newArticle.setCreatedDate(new Date());
+        newArticle.setSite(site.getSiteName());
+        newArticle.setIsDraft(true);
+        newArticle.setTitle(getResources().getString(R.string.default_article_title));
+
+        site.addNewArticle(newArticle);
+
+        showArticle(newArticle);
     }
 }

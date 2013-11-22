@@ -5,11 +5,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/actions_bg"
-                android:orientation="vertical">
+                android:orientation="vertical" android:weightSum="1">
+
+    <Button
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_green_light"
+            android:textColor="#FFFFFF"
+            android:id="@+id/sidebar_add_new"
+            android:text="@string/sidebar_add_new"
+            android:layout_weight="0.08"
+            android:drawableRight="@drawable/add"
+            android:enabled="true"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp" android:paddingRight="10dp" android:gravity="center_horizontal|top"
+            />
 
     <ListView
         android:id="@+id/sidebar_list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="0.92"/>
 
 </LinearLayout>

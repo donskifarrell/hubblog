@@ -44,4 +44,8 @@ public class Site {
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
+
+    public void addNewArticle(Article article) {
+        this.articles.add(article);
+    }
 }

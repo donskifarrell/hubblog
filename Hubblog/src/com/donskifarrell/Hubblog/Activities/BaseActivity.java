@@ -2,6 +2,7 @@ package com.donskifarrell.Hubblog.Activities;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.*;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Adapters.SidebarAdapter;
@@ -113,13 +114,16 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         actionsContentView.setOnActionsContentListener(getSidebarListener());
 
         LinearLayout sidebar_layout = (LinearLayout) findViewById(R.id.sidebar_layout);
-        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+        Button addNew = (Button) sidebar_layout.findViewById(R.id.sidebar_add_new);
+        addNew.setOnClickListener(getSidebarAddNewListener());
 
+        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
         SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
         sidebarList.setAdapter(sidebarAdapter);
     }
 
-    protected abstract  ActionsContentView.OnActionsContentListener getSidebarListener();
+    protected abstract ActionsContentView.OnActionsContentListener getSidebarListener();
+    protected abstract View.OnClickListener getSidebarAddNewListener();
 
     /* Bootstrap code below here */
 

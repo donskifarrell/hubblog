@@ -63,7 +63,7 @@ public class Article implements Serializable {
         return isDraft;
     }
 
-    public void setDraft(boolean draft) {
+    public void setIsDraft(boolean draft) {
         isDraft = draft;
     }
 
@@ -89,14 +89,6 @@ public class Article implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public boolean getIsDraft() {
-        return isDraft;
-    }
-
-    public void setIsDraft(boolean draft) {
-        isDraft = draft;
     }
 
     public Date getCreatedDate() {

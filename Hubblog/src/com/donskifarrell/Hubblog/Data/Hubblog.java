@@ -128,7 +128,6 @@ public class Hubblog {
         refreshSiteTitles = false;
 
         List<String> titles = new LinkedList<String>();
-        titles.add("All");
 
         for (Site site : this.getSites()){
             titles.add(site.getSiteName());

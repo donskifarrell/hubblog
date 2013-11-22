@@ -12,7 +12,8 @@
             android:id="@+id/metadata_tag"
             android:layout_gravity="center_horizontal|left|top"
             android:layout_weight="0.85"
-            android:singleLine="false"/>
+            android:singleLine="true"
+            android:hint="@string/add_metadata_edit"/>
 
     <ImageButton
             android:layout_width="0dp"
