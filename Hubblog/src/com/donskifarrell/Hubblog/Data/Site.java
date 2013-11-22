@@ -1,5 +1,7 @@
 package com.donskifarrell.Hubblog.Data;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,19 +35,27 @@ public class Site {
         return articles;
     }
 
-    public String[] getPostsTitleList() {
-        List<String> titles = new LinkedList<String>();
-        for (Article article : this.getArticles()){
-            titles.add(article.getTitle());
-        }
-        return titles.toArray(new String[0]);
-    }
-
     public void setArticles(List<Article> articles) {
         this.articles = articles;
+        sortArticleByDraft();
     }
 
     public void addNewArticle(Article article) {
         this.articles.add(article);
+        sortArticleByDraft();
+    }
+
+    private void sortArticleByDraft(){
+        Collections.sort(articles, new Comparator<Article>() {
+            public int compare(Article a1, Article a2) {
+                if (!a1.isDraft() && a2.isDraft())
+                    return 1;
+                if ((a1.isDraft() && a2.isDraft()) || (!a1.isDraft() && !a2.isDraft()))
+                    return 0;
+                if (a1.isDraft() && !a2.isDraft())
+                    return -1;
+                return 0;
+            }
+        });
     }
 }

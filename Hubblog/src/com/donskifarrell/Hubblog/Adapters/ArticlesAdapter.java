@@ -65,7 +65,7 @@ public class ArticlesAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.articleTitle = (TextView) convertView.findViewById(R.id.sidebar_item);
 
-            Article article = site.getArticles().get(position);
+            Article article = (Article) getItem(position);
             if (article.isDraft()) {
                 holder.articleTitle.setCompoundDrawables(getEditIcon(convertView.getContext()), null, null, null);
             }
