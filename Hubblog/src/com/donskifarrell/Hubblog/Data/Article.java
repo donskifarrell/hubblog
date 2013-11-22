@@ -84,10 +84,11 @@ public class Article implements Serializable {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String fileTitle = getTitle();
-        fileTitle = fileTitle.replaceAll("\\s", "-");
-        fileTitle = fileTitle.replaceAll("\\W", "");
+        fileTitle = fileTitle.replaceAll("[^a-zA-Z ]", "-");
+        fileTitle = fileTitle.trim().replaceAll(" +", " ");
+        fileTitle = fileTitle.replace(" ", "-");
 
-        return dateFormat.format(getCreatedDate()) + "-" + fileTitle + ".md";
+        return dateFormat.format(getCreatedDate()) + "-" + fileTitle + ".22md";
     }
 
     public String getSiteName() {
