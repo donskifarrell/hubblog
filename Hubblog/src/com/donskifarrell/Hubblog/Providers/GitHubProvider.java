@@ -13,7 +13,7 @@ import org.eclipse.egit.github.core.service.RepositoryService;
  * Date: 01/10/13
  * Time: 19:49
  */
-public class GitHub extends AsyncTask<String, Void, String> {
+public class GitHubProvider extends AsyncTask<String, Void, String> {
 
     private Activity activity;
     private ProgressDialog progressDialog;

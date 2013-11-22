@@ -1,6 +1,8 @@
 package com.donskifarrell.Hubblog.Data;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -75,11 +77,24 @@ public class Article implements Serializable {
         this.title = title;
     }
 
-    public String getSite() {
+    public String getFileTitle() {
+        // To be used by jekyll the file format is:
+        // YEAR-MONTH-DAY-title.md
+        // All whitespace is converted to '-'
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String fileTitle = getTitle();
+        fileTitle = fileTitle.replaceAll("\\s", "-");
+        fileTitle = fileTitle.replaceAll("\\W", "");
+
+        return dateFormat.format(getCreatedDate()) + "-" + fileTitle + ".md";
+    }
+
+    public String getSiteName() {
         return site;
     }
 
-    public void setSite(String site) {
+    public void setSiteName(String site) {
         this.site = site;
     }
 

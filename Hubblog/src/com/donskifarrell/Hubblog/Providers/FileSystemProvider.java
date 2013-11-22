@@ -18,35 +18,28 @@ import java.util.List;
  * Time: 12:46
  */
 @Singleton
-public class FileSystem {
+public class FileSystemProvider {
     @Inject
     private Application application;
 
     private boolean mExternalStorageAvailable = false;
     private boolean mExternalStorageWritable = false;
     private String state = Environment.getExternalStorageState();
-    private final static String TAG = "Hubblog :: " + FileSystem.class.getSimpleName();
+    private final static String TAG = "Hubblog :: " + FileSystemProvider.class.getSimpleName();
 
-    public List<Site> getSites(String accountName){
-        // get site names and all posts in each site
-        File accountPath = null;
+    public List<Site> buildSitesFromStorage(){
         File storagePath = application.getExternalFilesDir(null);
         List<Site> sites = new LinkedList<Site>();
 
         if (storagePath.exists()) {
-            accountPath = new File(storagePath + "/" + accountName);
-        }
+            File[] fsItems = storagePath.listFiles();
+            for (int idx = 0; idx < fsItems.length; ++idx) {
+                File fsItem = fsItems[idx];
 
-        if (accountPath.exists()) {
-            File[] files = accountPath.listFiles();
-            for (int idx = 0; idx < files.length; ++idx) {
-                File file = files[idx];
-                Site site = new Site();
-
-                if (file.isDirectory()) {
-                    site.setSiteName(file.getName());
-                    site.setAccountName(accountName);
-                    site.setArticles(getPosts(file));
+                if (fsItem.isDirectory()) {
+                    Site site = new Site();
+                    site.setSiteName(fsItem.getName());
+                    site.setArticles(buildArticlesForSite(fsItem));
                     sites.add(site);
                 }
             }
@@ -55,17 +48,15 @@ public class FileSystem {
         return sites;
     }
 
-    public void saveSite(Site site){
+    public void serialiseSiteToStorage(Site site){
         File storagePath = application.getExternalFilesDir(null);
         if (storagePath.exists()) {
             Ln.i(TAG, "Save Site: "
                     + storagePath.getAbsolutePath()
-                    + "/" + site.getAccountName()
                     + "/" + site.getSiteName());
 
             File sitePath = new File(
                     storagePath.getAbsolutePath()
-                    + "/" + site.getAccountName()
                     + "/" + site.getSiteName());
 
             if (!sitePath.exists()) {
@@ -76,19 +67,19 @@ public class FileSystem {
         }
     }
 
-    private List<Article> getPosts(File site) {
+    private List<Article> buildArticlesForSite(File site) {
         List<Article> articles = new LinkedList<Article>();
 
         if (site.exists()) {
-            File[] files = site.listFiles();
-            for (int idx = 0; idx < files.length; ++idx) {
-                File file = files[idx];
+            File[] fsItems = site.listFiles();
+            for (int idx = 0; idx < fsItems.length; ++idx) {
+                File fsItem = fsItems[idx];
 
-                if (file.isFile()) {
+                if (fsItem.isFile()) {
                     FileInputStream fileInputStream = null;
                     ObjectInputStream objectInputStream = null;
                     try {
-                        fileInputStream = new FileInputStream(file.getPath());
+                        fileInputStream = new FileInputStream(fsItem.getPath());
                         objectInputStream = new ObjectInputStream(fileInputStream);
 
                         articles.add((Article) objectInputStream.readObject());
@@ -107,7 +98,7 @@ public class FileSystem {
         return articles;
     }
 
-    public void savePost(Site site, Article article){
+    public void serialiseArticleToStorage(Article article){
         File storagePath = application.getExternalFilesDir(null);
         if (storagePath.exists()) { // todo: handle creation of storage area?
             FileOutputStream fileOutputStream = null;
@@ -115,18 +106,14 @@ public class FileSystem {
             try {
                 Ln.i(TAG, "Save Article: "
                         + storagePath.getAbsolutePath()
-                        + "/" + site.getAccountName()
-                        + "/" + site.getSiteName()
-                        + "/" + article.getTitle()
-                        + ".md");
+                        + "/" + article.getSiteName()
+                        + "/" + article.getFileTitle());
 
                 fileOutputStream = new FileOutputStream(storagePath.getAbsolutePath()
-                        + "/" + site.getAccountName()
-                        + "/" + site.getSiteName()
-                        + "/" + article.getTitle()
-                        + ".md");
-                objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                        + "/" + article.getSiteName()
+                        + "/" + article.getFileTitle());
 
+                objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(article);
                 objectOutputStream.close();
             } catch (FileNotFoundException e) {

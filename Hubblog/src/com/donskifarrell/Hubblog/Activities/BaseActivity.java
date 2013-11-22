@@ -15,6 +15,7 @@ import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.google.inject.Inject;
 import com.viewpagerindicator.UnderlinePageIndicator;
+import roboguice.RoboGuice;
 import shared.ui.actionscontentview.ActionsContentView;
 
 import java.util.Date;
@@ -136,33 +137,33 @@ public abstract class BaseActivity extends RoboSherlockFragmentActivity
         acc.setAccountName("TestAccount1");
         acc.setUsername("TestUsername");
         acc.setPassword("TestPassword");
-        hubblog.addAccount(acc);
+        hubblog.setAccount(acc);
 
         for (int siteCount = 0; siteCount < 4; siteCount++){
-            Site site = createSite(acc, siteCount);
+            Site site = createSite(siteCount);
             hubblog.addSite(site);
 
             for (int postCount = 0; postCount < 8; postCount++){
                 Article article = createPost(site, postCount);
-                hubblog.addPostToSite(site, article);
+                hubblog.addArticle(article);
             }
         }
     }
 
-    private Site createSite(Account account, int idx){
+    private Site createSite(int idx){
         Site site = new Site();
-        site.setAccountName(account.getAccountName());
-        site.setSiteName("THE SITE " + numberToWords.convertLessThanOneThousand(idx));
+        site.setSiteName("THE SITE " + numberToWords.convertLessThanOneThousand(idx).toUpperCase());
 
         return site;
     }
 
     private Article createPost(Site site, int idx){
         Article article = new Article();
-        article.setSite(site.getSiteName());
+        article.setSiteName(site.getSiteName());
         article.setTitle("Article " + numberToWords.convertLessThanOneThousand(idx));
         article.setCreatedDate(new Date());
-        article.setContent("## Heading2 for article " + numberToWords.convertLessThanOneThousand(idx));
+        article.setContent("## Heading2 for article " + numberToWords.convertLessThanOneThousand(idx) +
+                           "\\n\\n **" + article.getFileTitle() + "**");
 
         if (idx % 2 == 0) {
             article.setIsDraft(false);

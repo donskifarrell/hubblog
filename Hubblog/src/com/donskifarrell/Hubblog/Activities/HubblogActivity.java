@@ -113,7 +113,7 @@ public class HubblogActivity extends BaseActivity
                         addNewArticleToSite(hubblog.getSites().get(0));
                         break;
                     default:
-                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSitesTitleList());
+                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSiteNameList());
                         dialog.show(getSupportFragmentManager(), "SelectSiteDialogFragment");
                         break;
                 }
@@ -129,7 +129,7 @@ public class HubblogActivity extends BaseActivity
     public void addNewArticleToSite(Site site){
         Article newArticle = new Article();
         newArticle.setCreatedDate(new Date());
-        newArticle.setSite(site.getSiteName());
+        newArticle.setSiteName(site.getSiteName());
         newArticle.setIsDraft(true);
         newArticle.setTitle(getResources().getString(R.string.default_article_title));
 

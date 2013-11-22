@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import com.donskifarrell.Hubblog.Adapters.MetadataAdapter;
@@ -20,19 +21,14 @@ import com.donskifarrell.Hubblog.R;
 public class CommitArticleFragment extends BasePageFragment
                                    implements RemoveMetadataTagListener {
     private MetadataAdapter metadataAdapter;
-
-    private LayoutInflater layoutInflater;
     private ViewGroup viewGroup;
-    private View commitArticle;
     private LinearLayout metadataTagList;
-    private ImageButton addMetadataButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        layoutInflater = inflater;
         viewGroup = container;
 
-        commitArticle = inflater.inflate(R.layout.commit_article_layout, container, false);
+        View commitArticle = inflater.inflate(R.layout.commit_article_layout, container, false);
 
         metadataTagList = (LinearLayout) commitArticle.findViewById(R.id.metadata_tag_list);
 
@@ -41,8 +37,29 @@ public class CommitArticleFragment extends BasePageFragment
 
         addAllMetadataTagsToView();
 
-        addMetadataButton = (ImageButton) commitArticle.findViewById(R.id.add_metadata_tag);
-        addMetadataButton.setOnClickListener(getAddMetadataTagOnClickListener());
+        ImageButton addMetadataButton = (ImageButton) commitArticle.findViewById(R.id.add_metadata_tag);
+        addMetadataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addNewMetadataTag();
+            }
+        });
+
+        Button saveAsDraftButton = (Button) commitArticle.findViewById(R.id.save_as_draft);
+        saveAsDraftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveArticleAsDraft();
+            }
+        });
+
+        Button saveAsLiveButton = (Button) commitArticle.findViewById(R.id.save_as_live);
+        saveAsLiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveArticleAsLive();
+            }
+        });
 
         isReady = true;
         return commitArticle;
@@ -63,7 +80,7 @@ public class CommitArticleFragment extends BasePageFragment
         addAllMetadataTagsToView();
     }
 
-    private void addAllMetadataTagsToView(){
+    private void addAllMetadataTagsToView() {
         if (article.getLastTagIdInMap() == 0) {
             addNewMetadataTag();
         } else {
@@ -76,18 +93,17 @@ public class CommitArticleFragment extends BasePageFragment
         }
     }
 
-    private void addNewMetadataTag(){
+    private void addNewMetadataTag() {
         MetadataTag newTag = article.createMetadataTag("");
         View view = metadataAdapter.getView(newTag.getId(), null, this.viewGroup);
         metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 
-    private View.OnClickListener getAddMetadataTagOnClickListener(){
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addNewMetadataTag();
-            }
-        };
+    private void saveArticleAsDraft() {
+
+    }
+
+    private void saveArticleAsLive() {
+        article.setIsDraft(false);
     }
 }

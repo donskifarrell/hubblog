@@ -1,15 +1,12 @@
 package com.donskifarrell.Hubblog.Data;
 
-import android.app.Application;
-import android.content.SharedPreferences;
-import com.donskifarrell.Hubblog.Providers.FileSystem;
+import com.donskifarrell.Hubblog.Interfaces.DataProvider;
+import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * User: donski
@@ -19,113 +16,62 @@ import java.util.Set;
 @Singleton
 public class Hubblog {
     @Inject
-    private Application application;
+    private DataProvider dataProvider;
 
-    @Inject
-    private FileSystem fileSystem;
-
-    private final static String PREFS_ACCOUNTS = "Accounts";
-    private final static String PREF_ACCOUNT_NAME = "AccountName";
-    private final static String PREF_ACCOUNT_USER = "Username";
-    private final static String PREF_ACCOUNT_PASS = "Password";
-
-    private List<Account> accounts;
+    private Account account;
     private List<Site> sites;
-    private String[] accountsTitles;
-    private String[] siteTitles;
+    private String[] siteNames;
 
-    private boolean refreshAccounts;
-    private boolean refreshAccountTitles;
+    private boolean refreshAccount;
     private boolean refreshSites;
-    private boolean refreshSiteTitles;
+    private boolean refreshSiteNames;
 
-    public List<Account> getAccounts() {
-        if (accounts != null && !refreshAccounts){
-            return accounts;
-        }
-        refreshAccounts = false;
-
-        Set<String> accountList = null;
-        accounts = new LinkedList<Account>();
-
-        // Restore preferences
-        SharedPreferences prefAccounts = application.getSharedPreferences(PREFS_ACCOUNTS, 0);
-        accountList = prefAccounts.getStringSet(PREFS_ACCOUNTS, accountList);
-
-        if (accountList != null) {
-            for (String accName : accountList) {
-                Account account = new Account();
-                SharedPreferences prefAccount = application.getSharedPreferences(accName, 0);
-                account.setAccountName(prefAccount.getString(PREF_ACCOUNT_NAME, ""));
-                account.setUsername(prefAccount.getString(PREF_ACCOUNT_USER, ""));
-                account.setPassword(prefAccount.getString(PREF_ACCOUNT_PASS, ""));
-
-                accounts.add(account);
-            }
-        }
-
-        return accounts;
+    public Hubblog() {
+        dataProvider = new HubblogDataProvider();
     }
 
-    public String[] getAccountsTitleList() {
-        if (accountsTitles != null && !refreshAccountTitles){
-            return accountsTitles;
+    public Account getAccount() {
+        if (account != null && !refreshAccount){
+            return account;
         }
-        refreshAccountTitles = false;
+        refreshAccount = false;
 
-        List<String> titles = new LinkedList<String>();
-        for (Account account : this.getAccounts()){
-            titles.add(account.getAccountName());
-        }
-
-        return accountsTitles = titles.toArray(new String[0]);
+        account = dataProvider.loadAccount();
+        return account;
     }
 
-    public void addAccount(Account account) {
-        Set<String> accountList = null;
-        SharedPreferences prefAccounts = application.getSharedPreferences(PREFS_ACCOUNTS, 0);
-        accountList = prefAccounts.getStringSet(PREFS_ACCOUNTS, accountList);
-
-        if (accountList == null) {
-            accountList = new LinkedHashSet<String>();
+    public void setAccount(Account account) {
+        if (dataProvider.saveAccount(account)) {
+            refreshAccount = true;
+        } else {
+            // todo: feedback to user?
         }
-        accountList.add(account.getAccountName());
-
-        SharedPreferences.Editor accountsEditor = prefAccounts.edit();
-        accountsEditor.putStringSet(PREFS_ACCOUNTS, accountList);
-        accountsEditor.commit();
-
-        SharedPreferences settings = application.getSharedPreferences(account.getAccountName(), 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString(PREF_ACCOUNT_NAME, account.getAccountName());
-        editor.putString(PREF_ACCOUNT_USER, account.getUsername());
-        editor.putString(PREF_ACCOUNT_PASS, account.getPassword());
-        editor.commit();
-
-        refreshAccounts = true;
-        refreshAccountTitles = true;
     }
 
-    // todo: trigger github call to get latest updates to sites
     public List<Site> getSites() {
         if (sites != null && !refreshSites){
             return sites;
         }
         refreshSites = false;
 
-        sites = new LinkedList<Site>();
-        for (Account account : this.getAccounts()){
-            sites.addAll(fileSystem.getSites(account.getAccountName()));
-        }
-
+        sites = dataProvider.loadSites(account);
         return sites;
     }
 
-    public String[] getSitesTitleList() {
-        if (siteTitles != null && !refreshSiteTitles){
-            return siteTitles;
+    public void addSite(Site site) {
+        if (dataProvider.saveSite(account, site)) {
+            refreshSites = true;
+            refreshSiteNames = true;
+        } else {
+            // todo: feedback to user?
         }
-        refreshSiteTitles = false;
+    }
+
+    public String[] getSiteNameList() {
+        if (siteNames != null && !refreshSiteNames){
+            return siteNames;
+        }
+        refreshSiteNames = false;
 
         List<String> titles = new LinkedList<String>();
 
@@ -133,19 +79,14 @@ public class Hubblog {
             titles.add(site.getSiteName());
         }
 
-        return siteTitles = titles.toArray(new String[0]);
+        return siteNames = titles.toArray(new String[0]);
     }
 
-    public void addSite(Site site) {
-        fileSystem.saveSite(site);
-
-        refreshSites = true;
-        refreshSiteTitles = true;
-    }
-
-    public void addPostToSite(Site site, Article article) {
-        fileSystem.savePost(site, article);
-
-        refreshSites = true;
+    public void addArticle(Article article) {
+        if (dataProvider.saveArticle(article)) {
+            refreshSites = true;
+        } else {
+            // todo: feedback to user?
+        }
     }
 }

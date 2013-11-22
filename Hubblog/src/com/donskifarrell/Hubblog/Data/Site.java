@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Site {
     private String siteName;
-    private String accountName;
     private List<Article> articles;
 
     public String getSiteName() {
@@ -21,14 +20,6 @@ public class Site {
 
     public void setSiteName(String siteName) {
         this.siteName = siteName;
-    }
-
-    public String getAccountName() {
-        return accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
     }
 
     public List<Article> getArticles() {
