@@ -32,6 +32,7 @@
     <orderEntry type="library" name="android-support-v13" level="project" />
     <orderEntry type="module" module-name="ActionsContentView" />
     <orderEntry type="module" module-name="ViewPagerIndicator" />
+    <orderEntry type="library" name="CWAC-LoaderEx" level="project" />
   </component>
 </module>
 

@@ -11,13 +11,37 @@ import java.util.*;
  * Time: 11:16
  */
 public class Article implements Serializable {
+    private long id;
     private String title;
+    private String fileTitle;
     private String site;
     private Map<Integer, MetadataTag> metadata;
     private int lastTagId;
     private String content;
     private boolean isDraft = true;
     private Date createdDate;
+
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public void setFileTitle(String fileTitle) {
+        this.fileTitle = fileTitle;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    private Date lastModifiedDate;
 
     public Article() {
         metadata = new HashMap<Integer, MetadataTag>();

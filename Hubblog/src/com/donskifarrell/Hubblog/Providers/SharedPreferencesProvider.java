@@ -12,8 +12,7 @@ import com.google.inject.Inject;
  * Time: 11:15
  */
 public class SharedPreferencesProvider {
-    @Inject
-    private Application application;
+    @Inject protected Application application;
 
     private final static String PREF_ACCOUNT = "Account";
     private final static String PREF_ACCOUNT_NAME = "AccountName";

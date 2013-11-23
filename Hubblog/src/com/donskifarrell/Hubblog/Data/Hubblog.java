@@ -15,8 +15,7 @@ import java.util.List;
  */
 @Singleton
 public class Hubblog {
-    @Inject
-    private DataProvider dataProvider;
+    @Inject protected DataProvider dataProvider;
 
     private Account account;
     private List<Site> sites;
@@ -25,10 +24,6 @@ public class Hubblog {
     private boolean refreshAccount;
     private boolean refreshSites;
     private boolean refreshSiteNames;
-
-    public Hubblog() {
-        dataProvider = new HubblogDataProvider();
-    }
 
     public Account getAccount() {
         if (account != null && !refreshAccount){
