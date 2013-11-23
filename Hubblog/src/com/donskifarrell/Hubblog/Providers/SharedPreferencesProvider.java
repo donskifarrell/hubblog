@@ -2,7 +2,7 @@ package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import com.donskifarrell.Hubblog.Data.Account;
+import com.donskifarrell.Hubblog.Providers.Data.Account;
 import com.google.inject.Inject;
 
 /**

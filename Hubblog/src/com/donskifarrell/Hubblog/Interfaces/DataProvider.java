@@ -1,8 +1,8 @@
 package com.donskifarrell.Hubblog.Interfaces;
 
-import com.donskifarrell.Hubblog.Data.Account;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Providers.Data.Account;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.Site;
 
 import java.util.List;
 

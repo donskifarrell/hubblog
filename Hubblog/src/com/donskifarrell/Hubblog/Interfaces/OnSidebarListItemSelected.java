@@ -1,6 +1,6 @@
 package com.donskifarrell.Hubblog.Interfaces;
 
-import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
 
 /**
  * Created with IntelliJ IDEA.

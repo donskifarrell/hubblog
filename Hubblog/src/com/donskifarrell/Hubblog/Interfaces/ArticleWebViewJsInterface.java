@@ -1,7 +1,7 @@
 package com.donskifarrell.Hubblog.Interfaces;
 
 import android.widget.Toast;
-import com.donskifarrell.Hubblog.Fragments.EditArticleFragment;
+import com.donskifarrell.Hubblog.Activities.Fragments.EditArticleFragment;
 
 /**
  * Created with IntelliJ IDEA.

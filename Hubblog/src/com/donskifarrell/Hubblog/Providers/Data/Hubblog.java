@@ -1,7 +1,6 @@
-package com.donskifarrell.Hubblog.Data;
+package com.donskifarrell.Hubblog.Providers.Data;
 
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
-import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 

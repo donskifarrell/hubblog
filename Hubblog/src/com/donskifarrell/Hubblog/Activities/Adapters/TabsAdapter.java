@@ -1,12 +1,12 @@
-package com.donskifarrell.Hubblog.Adapters;
+package com.donskifarrell.Hubblog.Activities.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Fragments.CommitArticleFragment;
-import com.donskifarrell.Hubblog.Fragments.EditArticleFragment;
-import com.donskifarrell.Hubblog.Fragments.EditMarkdownFragment;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Activities.Fragments.CommitArticleFragment;
+import com.donskifarrell.Hubblog.Activities.Fragments.EditArticleFragment;
+import com.donskifarrell.Hubblog.Activities.Fragments.EditMarkdownFragment;
 
 /**
  * Created with IntelliJ IDEA.

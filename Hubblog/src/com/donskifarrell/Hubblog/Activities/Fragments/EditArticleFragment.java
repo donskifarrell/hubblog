@@ -1,11 +1,11 @@
-package com.donskifarrell.Hubblog.Fragments;
+package com.donskifarrell.Hubblog.Activities.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import com.donskifarrell.Hubblog.Adapters.ArticleWebViewAdapter;
+import com.donskifarrell.Hubblog.Activities.Adapters.ArticleWebViewAdapter;
 import com.donskifarrell.Hubblog.Interfaces.ArticleWebViewJsInterface;
 import com.donskifarrell.Hubblog.R;
 

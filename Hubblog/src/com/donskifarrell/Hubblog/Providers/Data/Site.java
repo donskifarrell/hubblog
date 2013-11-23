@@ -1,8 +1,7 @@
-package com.donskifarrell.Hubblog.Data;
+package com.donskifarrell.Hubblog.Providers.Data;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**

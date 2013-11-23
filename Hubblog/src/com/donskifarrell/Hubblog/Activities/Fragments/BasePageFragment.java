@@ -1,6 +1,6 @@
-package com.donskifarrell.Hubblog.Fragments;
+package com.donskifarrell.Hubblog.Activities.Fragments;
 
-import com.donskifarrell.Hubblog.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
 
 /**

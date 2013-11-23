@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Fragments;
+package com.donskifarrell.Hubblog.Activities.Fragments;
 
 import android.os.Bundle;
 import android.text.Editable;

@@ -1,11 +1,11 @@
-package com.donskifarrell.Hubblog.Adapters;
+package com.donskifarrell.Hubblog.Activities.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.R;
 
 import java.util.List;

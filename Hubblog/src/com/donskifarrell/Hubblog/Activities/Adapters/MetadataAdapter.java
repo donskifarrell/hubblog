@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Adapters;
+package com.donskifarrell.Hubblog.Activities.Adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Data.MetadataTag;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
 import com.donskifarrell.Hubblog.Interfaces.RemoveMetadataTagListener;
 import com.donskifarrell.Hubblog.R;
 

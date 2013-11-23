@@ -2,8 +2,8 @@ package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Application;
 import android.os.Environment;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import roboguice.util.Ln;

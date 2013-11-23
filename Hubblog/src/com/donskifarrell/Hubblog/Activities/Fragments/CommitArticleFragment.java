@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Fragments;
+package com.donskifarrell.Hubblog.Activities.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import com.donskifarrell.Hubblog.Adapters.MetadataAdapter;
-import com.donskifarrell.Hubblog.Data.MetadataTag;
+import com.donskifarrell.Hubblog.Activities.Adapters.MetadataAdapter;
+import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
 import com.donskifarrell.Hubblog.Interfaces.RemoveMetadataTagListener;
 import com.donskifarrell.Hubblog.R;
 

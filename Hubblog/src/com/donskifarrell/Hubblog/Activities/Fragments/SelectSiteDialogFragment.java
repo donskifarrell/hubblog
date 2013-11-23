@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Fragments;
+package com.donskifarrell.Hubblog.Activities.Fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;

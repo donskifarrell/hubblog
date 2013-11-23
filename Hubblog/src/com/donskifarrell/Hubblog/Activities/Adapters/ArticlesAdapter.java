@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Adapters;
+package com.donskifarrell.Hubblog.Activities.Adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.donskifarrell.Hubblog.Data.Article;
-import com.donskifarrell.Hubblog.Data.Site;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.R;
 

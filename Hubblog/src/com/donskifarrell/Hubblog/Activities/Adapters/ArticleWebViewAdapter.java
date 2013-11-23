@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Adapters;
+package com.donskifarrell.Hubblog.Activities.Adapters;
 
 import android.webkit.WebView;
 import android.webkit.WebViewClient;

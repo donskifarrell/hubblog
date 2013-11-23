@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.Data;
+package com.donskifarrell.Hubblog.Providers.Data;
 
 /**
  * Created with IntelliJ IDEA.
