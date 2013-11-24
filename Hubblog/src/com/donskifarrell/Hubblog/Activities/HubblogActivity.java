@@ -11,7 +11,7 @@ import com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Activities.Adapters.TabsAdapter;
 import com.donskifarrell.Hubblog.Activities.Fragments.AddSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
-import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
+import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
 import com.donskifarrell.Hubblog.Interfaces.SiteDialogListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
@@ -31,8 +31,8 @@ import shared.ui.actionscontentview.ActionsContentView;
  */
 public class HubblogActivity extends RoboSherlockFragmentActivity
                              implements OnSidebarListItemSelected,
-        SiteDialogListener,
-                                        RefreshActivityDataListener<Site> {
+                                        SiteDialogListener,
+                                        ActivityDataListener {
 
     private static final String STATE_POSITION = "state:layout_id";
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
@@ -226,13 +226,23 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     }
 
     @Override
-    public void Refresh(Site site) {
+    public void Refresh() {
         // todo: load last article?
 
         SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
         sidebarList.setAdapter(sidebarAdapter);
     }
-    
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public DataProvider getDataProvider() {
+        return hubblog;
+    }
+
     public void onSelectSitePositiveClick(int selectedSite) {
         Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
         showArticle(article);
@@ -248,10 +258,5 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     public void addAndShowArticle(int selectedSite) {
         Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
         showArticle(article);
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
     }
 }

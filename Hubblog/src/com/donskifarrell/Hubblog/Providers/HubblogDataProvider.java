@@ -1,8 +1,9 @@
 package com.donskifarrell.Hubblog.Providers;
 
-import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
+import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
 import com.donskifarrell.Hubblog.Providers.Data.Account;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.google.inject.Singleton;
@@ -18,7 +19,7 @@ import java.util.*;
 @Singleton
 public class HubblogDataProvider implements DataProvider {
 
-    protected RefreshActivityDataListener listener;
+    protected ActivityDataListener listener;
     protected DatabaseProvider databaseProvider;
     protected FileSystemProvider fileSystemProvider;
     protected GitHubProvider gitHubProvider;
@@ -34,8 +35,8 @@ public class HubblogDataProvider implements DataProvider {
     private final String DEFAULT_NEW_ARTICLE_TITLE = "Untitled Article";
     private final String DEFAULT_NEW_SITE_NAME = "UnassignedSite";
 
-    public HubblogDataProvider(RefreshActivityDataListener refreshActivityDataListener) {
-        listener = refreshActivityDataListener;
+    public HubblogDataProvider(ActivityDataListener activityDataListener) {
+        listener = activityDataListener;
 
         sites = new LinkedList<Site>();
 
@@ -90,6 +91,7 @@ public class HubblogDataProvider implements DataProvider {
     public void setSites(List<Site> siteList) {
         sites = siteList;
         refreshSiteNames = true;
+        listener.Refresh();
     }
 
     /* Article Data */
@@ -107,12 +109,54 @@ public class HubblogDataProvider implements DataProvider {
         newArticle.setSiteName(site.getSiteName());
         newArticle.isDraft(true);
         newArticle.setTitle(DEFAULT_NEW_ARTICLE_TITLE);
-        newArticle.createMetadataTag("");
 
-        databaseProvider.insertArticle(newArticle);
-        databaseProvider.insertTags(newArticle);
+        long articleId = databaseProvider.insertArticle(newArticle);
+        if (articleId == -1) {
+            // todo: error report?
+        } else {
+            newArticle.setId(articleId);
+        }
+
+        List<MetadataTag> tags = new LinkedList<MetadataTag>();
+        MetadataTag newTag = new MetadataTag();
+        newTag.setArticleId(articleId);
+        newTag.setTag("");
+
+        long tagId = databaseProvider.insertTag(newTag);
+        if (tagId == -1) {
+            // todo: error - report to user?
+        } else {
+            newTag.setTagId(tagId);
+        }
+
+        tags.add(newTag);
+        newArticle.setMetadataTags(tags);
         site.addNewArticle(newArticle);
 
         return newArticle;
+    }
+
+    @Override
+    public void removeArticle(Article article) {
+    }
+
+    @Override
+    public MetadataTag addNewMetadataTag(Article article) {
+        MetadataTag newTag = new MetadataTag();
+        newTag.setArticleId(article.getId());
+        newTag.setTag("");
+
+        long tagId = databaseProvider.insertTag(newTag);
+        if (tagId == -1) {
+            // todo: error - report to user?
+        } else {
+            newTag.setTagId(tagId);
+        }
+
+        return newTag;
+    }
+
+    @Override
+    public void removeMetadataTag(MetadataTag tag) {
     }
 }

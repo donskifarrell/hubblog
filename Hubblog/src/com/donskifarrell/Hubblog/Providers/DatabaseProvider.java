@@ -9,8 +9,8 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.util.Log;
 import com.commonsware.cwac.loaderex.acl.SQLiteCursorLoader;
+import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
-import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
@@ -27,7 +27,7 @@ import java.util.*;
  * Time: 15:12
  */
 public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
-    private RefreshActivityDataListener listener;
+    private ActivityDataListener listener;
     private DataProvider centralDataProvider;
     private DatabaseHelper databaseHelper;
 
@@ -45,19 +45,19 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
                     DatabaseHelper.MetadataTagDataModel.TABLE_NAME + "." + DatabaseHelper.MetadataTagDataModel.COLUMN_ID;
 
     @Inject
-    public DatabaseProvider(RefreshActivityDataListener refreshActivityDataListener, DataProvider dataProvider) {
-        databaseHelper = new DatabaseHelper(refreshActivityDataListener.getContext(), this);
+    public DatabaseProvider(ActivityDataListener activityDataListener, DataProvider dataProvider) {
+        databaseHelper = new DatabaseHelper(activityDataListener.getContext(), this);
         bootstrapDB();
 
         sites = new LinkedList<Site>();
         centralDataProvider = dataProvider;
 
-        listener = refreshActivityDataListener;
+        listener = activityDataListener;
         listener.getSupportLoaderManager().initLoader(HUBBLOG_ARTICLE_LOADER, null, this);
         listener.getSupportLoaderManager().initLoader(HUBBLOG_META_TAG_LOADER, null, this);
     }
 
-    public void insertArticle(Article article) {
+    public long insertArticle(Article article) {
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat(DatabaseHelper.ArticleDataModel.DATE_FORMAT);
@@ -69,30 +69,18 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
         cv.put(DatabaseHelper.ArticleDataModel.COLUMN_SITE_NAME, article.getSiteName());
         cv.put(DatabaseHelper.ArticleDataModel.COLUMN_CREATED_DATE, dateFormat.format(article.getCreatedDate()));
         cv.put(DatabaseHelper.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE, dateFormat.format(article.getLastModifiedDate()));
-        long result = db.insertOrThrow(DatabaseHelper.ArticleDataModel.TABLE_NAME, DatabaseHelper.ArticleDataModel.COLUMN_TITLE, cv);
 
-        if (result == -1) {
-            // todo: error - report to user?
-        } else {
-            article.setId(result);
-        }
+        return db.insertOrThrow(DatabaseHelper.ArticleDataModel.TABLE_NAME, DatabaseHelper.ArticleDataModel.COLUMN_TITLE, cv);
     }
 
-    public void insertTags(Article article) {
+    public long insertTag(MetadataTag tag) {
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
-        for (MetadataTag tag : article.getMetadataTags().values()) {
-            ContentValues tagCv = new ContentValues();
-            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID, article.getId());
-            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tag.getTag());
-            long result = db.insertOrThrow(DatabaseHelper.MetadataTagDataModel.TABLE_NAME, DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tagCv);
+        ContentValues cv = new ContentValues();
+        cv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID, tag.getArticleId());
+        cv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tag.getTag());
 
-            if (result == -1) {
-                // todo: error - report to user?
-            } else {
-                tag.setTagId(result);
-            }
-        }
+        return db.insertOrThrow(DatabaseHelper.MetadataTagDataModel.TABLE_NAME, DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, cv);
     }
 
     public void update(Article article) {
@@ -110,7 +98,7 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
         db.update(DatabaseHelper.ArticleDataModel.TABLE_NAME, cv, whereIdEquals + article.getId(), null);
 
-        for (MetadataTag tag : article.getMetadataTags().values()) {
+        for (MetadataTag tag : article.getMetadataTags()) {
             ContentValues tagCv = new ContentValues();
             tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID, article.getId());
             tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tag.getTag());
@@ -149,47 +137,32 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
         switch (loader.getId()) {
             case HUBBLOG_ARTICLE_LOADER:
-                HashMap<String, List<Article>> sitesMap = new HashMap<String, List<Article>>();
                 for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                     Article article = buildArticle(cursor);
+                    Site temp = new Site(article.getSiteName());
 
-                    if (sitesMap.containsKey(article.getSiteName())) {
-                        sitesMap.get(article.getSiteName()).add(article);
+                    if (sites.contains(temp)) {
+                        int idx = sites.indexOf(temp);
+                        List<Article> articles = sites.get(idx).getArticles();
+                        if (!articles.contains(article)) {
+                            articles.add(article);
+                        }
                     } else {
-                        LinkedList<Article> siteArticles = new LinkedList<Article>();
-                        siteArticles.add(article);
-                        sitesMap.put(article.getSiteName(), siteArticles);
-                    }
-                }
-
-                for (String key : sitesMap.keySet()) {
-                    for (Article article : sitesMap.get(key)) {
-                        Site newSite = new Site(article.getSiteName());
-                        newSite.addNewArticle(article);
-                        sites.add(newSite);
+                        temp.setArticles(new LinkedList<Article>());
+                        temp.getArticles().add(article);
+                        sites.add(temp);
                     }
                 }
 
                 break;
             case HUBBLOG_META_TAG_LOADER:
-                HashMap<Long, Map<Long, MetadataTag>> metaMap = new HashMap<Long, Map<Long, MetadataTag>>();
                 for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-                    MetadataTag metadataTag = buildMetadataTag(cursor);
+                    MetadataTag tag = buildMetadataTag(cursor);
 
-                    if (metaMap.containsKey(metadataTag.getArticleId())) {
-                        metaMap.get(metadataTag.getArticleId()).put(metadataTag.getTagId(), metadataTag);
-                    } else {
-                        Map<Long, MetadataTag> articleTags = new HashMap<Long, MetadataTag>();
-                        articleTags.put(metadataTag.getTagId(), metadataTag);
-                        metaMap.put(metadataTag.getArticleId(), articleTags);
-                    }
-                }
-
-                for (Site site : sites) {
-                    for (Article article : site.getArticles()) {
-                        for (long articleId : metaMap.keySet()) {
-                            if (article.getId() == articleId) {
-                                article.setMetadataTags(metaMap.get(articleId));
+                    for (Site site : sites) {
+                        for (Article article : site.getArticles()) {
+                            if (!article.getMetadataTags().contains(tag)) {
+                                article.getMetadataTags().add(tag);
                             }
                         }
                     }
@@ -245,10 +218,6 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
         return metadataTag;
     }
 
-
-
-
-
     /* Bootstrap code below here */
     EnglishNumberToWords numberToWords;
 
@@ -259,13 +228,17 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
             for (int postCount = 0; postCount < 8; postCount++){
                 String siteName = "THE SITE " + numberToWords.convertLessThanOneThousand(siteCount).toUpperCase();
                 Article article = createArticle(siteName, postCount);
+                List<MetadataTag> tags = new LinkedList<MetadataTag>();
+                article.setMetadataTags(tags);
+                insertArticle(article);
 
                 for (int tagCount = 0; tagCount < 4; tagCount++) {
-                    article.createMetadataTag("TAG: " + numberToWords.convertLessThanOneThousand(tagCount).toUpperCase());
+                    MetadataTag tag = new MetadataTag();
+                    tag.setArticleId(article.getId());
+                    tag.setTag("TAG: " + numberToWords.convertLessThanOneThousand(tagCount).toUpperCase());
+                    insertTag(tag);
+                    tags.add(tag);
                 }
-
-                insertArticle(article);
-                insertTags(article);
             }
         }
     }

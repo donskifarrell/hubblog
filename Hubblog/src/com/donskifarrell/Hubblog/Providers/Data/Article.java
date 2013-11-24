@@ -15,15 +15,13 @@ public class Article implements Serializable {
     private String title;
     private String fileTitle;
     private boolean isDraft = true;
-    private Map<Long, MetadataTag> metadataTags;
+    private List<MetadataTag> metadataTags;
     private String content;
     private Date createdDate;
     private Date lastModifiedDate;
-    private int lastTagId;
 
     public Article() {
-        metadataTags = new HashMap<Long, MetadataTag>();
-        lastTagId = 0;
+        metadataTags = new LinkedList<MetadataTag>();
     }
 
     public long getId() {
@@ -77,11 +75,11 @@ public class Article implements Serializable {
         isDraft = draft;
     }
 
-    public Map<Long, MetadataTag> getMetadataTags() {
+    public List<MetadataTag> getMetadataTags() {
         return metadataTags;
     }
 
-    public void setMetadataTags(Map<Long, MetadataTag> metadataTags) {
+    public void setMetadataTags(List<MetadataTag> metadataTags) {
         this.metadataTags = metadataTags;
     }
 
@@ -109,10 +107,17 @@ public class Article implements Serializable {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    public int getLastTagIdInMap() {
-        return lastTagId;
+    @Override
+    public boolean equals(Object that) {
+        if (that == null) {
+            return false;
+        }
+
+        Article anArticle = (Article) that;
+        return this.getId() == anArticle.getId();
     }
 
+/*
     public MetadataTag createMetadataTag(String tag) {
         MetadataTag metadataTag = new MetadataTag();
         metadataTag.setArticleId(getId());
@@ -140,5 +145,5 @@ public class Article implements Serializable {
         }
 
         return false;
-    }
+    }*/
 }

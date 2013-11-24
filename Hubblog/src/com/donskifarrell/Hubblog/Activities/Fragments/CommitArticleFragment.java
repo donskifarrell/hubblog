@@ -39,7 +39,7 @@ public class CommitArticleFragment extends BasePageFragment
         addMetadataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addNewMetadataTag();
+                addMetadataTag();
             }
         });
 
@@ -63,9 +63,16 @@ public class CommitArticleFragment extends BasePageFragment
         return commitArticle;
     }
 
-    @Override
-    public void removeMetadataTagFromView(View view) {
+    public void removeMetadataTag(MetadataTag tag, View view) {
+        listener.getDataProvider().removeMetadataTag(tag);
         metadataTagList.removeView(view);
+    }
+
+    public void addMetadataTag() {
+        MetadataTag tag = listener.getDataProvider().addNewMetadataTag(article);
+
+        View view = metadataAdapter.getView((int) tag.getTagId(), null, this.viewGroup);
+        metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 
     @Override
@@ -79,24 +86,10 @@ public class CommitArticleFragment extends BasePageFragment
     }
 
     private void addAllMetadataTagsToView() {
-        if (article.getLastTagIdInMap() == 0) {
-            addNewMetadataTag();
-        } else {
-            for (int idx = 0; idx < article.getLastTagIdInMap(); idx++) {
-                if (article.getMetadataTags().containsKey(idx)) {
-                    View item = metadataAdapter.getView(idx, null, this.viewGroup);
-                    metadataTagList.addView(item);
-                }
-            }
+        for (MetadataTag tag : article.getMetadataTags()) {
+            View item = metadataAdapter.getView((int) tag.getTagId(), null, this.viewGroup);
+            metadataTagList.addView(item);
         }
-    }
-
-    private void addNewMetadataTag() {
-        if (article == null) return;
-
-        MetadataTag newTag = article.createMetadataTag("");
-        View view = metadataAdapter.getView((int)newTag.getTagId(), null, this.viewGroup);
-        metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 
     private void saveArticleAsDraft() {

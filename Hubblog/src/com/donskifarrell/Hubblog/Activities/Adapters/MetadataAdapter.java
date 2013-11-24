@@ -49,7 +49,7 @@ public class MetadataAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int tagId) {
-        if (article.getMetadataTags().containsKey(tagId)) {
+        if (article.getMetadataTags().contains(tagId)) {
             return article.getMetadataTags().get(tagId);
         }
         return null;
@@ -65,6 +65,10 @@ public class MetadataAdapter extends BaseAdapter {
         final ViewHolder holder;
 
         MetadataTag metadataTag = (MetadataTag) getItem(position);
+        if (metadataTag == null) {
+            return null;
+        }
+
         if (metadataTagView == null) {
             metadataTagView = (LinearLayout) inflater.inflate(R.layout.article_metadata_layout, viewGroup, false);
 
@@ -105,7 +109,6 @@ public class MetadataAdapter extends BaseAdapter {
         @Override
         public void afterTextChanged(Editable editable) {
             tag.setTag(editable.toString());
-            article.updateMetadataTag(tag);
         }
 
         @Override
@@ -125,8 +128,7 @@ public class MetadataAdapter extends BaseAdapter {
 
         @Override
         public void onClick(View view) {
-            article.removeMetadataTag(tag);
-            callback.removeMetadataTagFromView((View) view.getParent());
+            callback.removeMetadataTag(tag, (View) view.getParent());
         }
     }
 }

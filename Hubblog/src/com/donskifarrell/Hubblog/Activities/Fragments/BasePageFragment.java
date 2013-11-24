@@ -1,5 +1,8 @@
 package com.donskifarrell.Hubblog.Activities.Fragments;
 
+import android.app.Activity;
+import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
+import com.donskifarrell.Hubblog.Interfaces.MetadataTagListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
 
@@ -12,6 +15,19 @@ import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragmen
 public abstract class BasePageFragment extends RoboSherlockFragment {
     protected Article article;
     protected boolean isReady = false;
+    protected ActivityDataListener listener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            listener = (ActivityDataListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement ActivityDataListener");
+        }
+    }
 
     public abstract void triggerPageUpdate();
 

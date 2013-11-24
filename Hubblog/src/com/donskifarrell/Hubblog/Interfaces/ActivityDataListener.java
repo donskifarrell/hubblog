@@ -9,8 +9,9 @@ import android.support.v4.app.LoaderManager;
  * Date: 23/11/13
  * Time: 23:12
  */
-public interface RefreshActivityDataListener<T> {
+public interface ActivityDataListener {
     public Context getContext();
+    public DataProvider getDataProvider();
     public LoaderManager getSupportLoaderManager();
-    public void Refresh(T data);
+    public void Refresh();
 }

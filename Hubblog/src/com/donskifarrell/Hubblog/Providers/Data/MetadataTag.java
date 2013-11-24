@@ -34,4 +34,14 @@ public class MetadataTag {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    @Override
+    public boolean equals(Object that) {
+        if (that == null) {
+            return false;
+        }
+
+        MetadataTag aTag = (MetadataTag) that;
+        return this.getTagId() == aTag.getTagId();
+    }
 }
