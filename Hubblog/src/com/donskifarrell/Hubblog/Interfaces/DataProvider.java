@@ -18,7 +18,7 @@ public interface DataProvider {
 
     public List<String> getSiteNames();
     public List<Site> getSites();
-    public boolean addSite(Site site);
+    public void setSites(List<Site> sites);
 
     public boolean addArticle(Article article);
 }

@@ -95,7 +95,7 @@ public class CommitArticleFragment extends BasePageFragment
         if (article == null) return;
 
         MetadataTag newTag = article.createMetadataTag("");
-        View view = metadataAdapter.getView(newTag.getTagId(), null, this.viewGroup);
+        View view = metadataAdapter.getView((int)newTag.getTagId(), null, this.viewGroup);
         metadataTagList.addView(view, metadataTagList.getChildCount());
     }
 

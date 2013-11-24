@@ -3,16 +3,24 @@ package com.donskifarrell.Hubblog.Providers;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.util.Log;
+import com.commonsware.cwac.loaderex.acl.SQLiteCursorLoader;
+import com.donskifarrell.Hubblog.Interfaces.DataProvider;
+import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
+import com.donskifarrell.Hubblog.Providers.Data.Article;
+import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
+import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.google.inject.Inject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,9 +28,18 @@ import java.util.Date;
  * Date: 23/11/13
  * Time: 15:12
  */
-public class DatabaseProvider extends SQLiteOpenHelper implements LoaderManager.LoaderCallbacks<Cursor> {
+public class DatabaseProvider extends SQLiteOpenHelper
+                              implements LoaderManager.LoaderCallbacks<Cursor> {
+    private RefreshActivityDataListener listener;
+    private DataProvider centralDataProvider;
+
     private static final String DATABASE_NAME = "hubblog.db";
     private static final int DATABASE_VERSION = 1;
+
+    private static final int HUBBLOG_ARTICLE_LOADER = 0;
+    private static final int HUBBLOG_META_TAG_LOADER = 1;
+
+    private List<Site> sites;
 
     public static final String JOIN_ARTICLES_WITH_METADATA_TAGS =
             "SELECT * FROM " + ArticleDataModel.TABLE_NAME +
@@ -32,10 +49,22 @@ public class DatabaseProvider extends SQLiteOpenHelper implements LoaderManager.
                     MetadataTagDataModel.TABLE_NAME + "." + MetadataTagDataModel.COLUMN_ID;
 
     @Inject
-    public DatabaseProvider(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    public DatabaseProvider(RefreshActivityDataListener refreshActivityDataListener, DataProvider dataProvider) {
+        super(refreshActivityDataListener.getContext(), DATABASE_NAME, null, DATABASE_VERSION);
+
+        sites = new LinkedList<Site>();
+        centralDataProvider = dataProvider;
+
+        listener = refreshActivityDataListener;
+        listener.getSupportLoaderManager().initLoader(HUBBLOG_ARTICLE_LOADER, null, this);
+        listener.getSupportLoaderManager().initLoader(HUBBLOG_META_TAG_LOADER, null, this);
     }
 
+    public void insert(Article article) {
+        // insert into DB
+    }
+
+    /* Database Maintenance */
     @Override
     public void onCreate(SQLiteDatabase db) {
         //db.execSQL(SiteDataModel.CREATE_TABLE);
@@ -79,19 +108,134 @@ public class DatabaseProvider extends SQLiteOpenHelper implements LoaderManager.
         // todo: handle database upgrade?
     }
 
+    /* Data Loading */
     @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return null;
+    public Loader<Cursor> onCreateLoader(int loaderID, Bundle bundle) {
+        SQLiteCursorLoader cursorLoader;
+        String query = "";
+
+        switch (loaderID) {
+            case HUBBLOG_ARTICLE_LOADER:
+                query = DatabaseProvider.ArticleDataModel.SELECT_ALL;
+                break;
+            case HUBBLOG_META_TAG_LOADER:
+                query = DatabaseProvider.MetadataTagDataModel.SELECT_ALL;
+                break;
+        }
+
+        cursorLoader = new SQLiteCursorLoader(
+                listener.getContext(),
+                this,
+                query,
+                null
+        );
+
+        return cursorLoader;
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        Log.w("HUBBLOG", "CURSOR ID: " + loader.getId() + " > " + DatabaseUtils.dumpCursorToString(cursor));
+
+        switch (loader.getId()) {
+            case HUBBLOG_ARTICLE_LOADER:
+                HashMap<String, List<Article>> sitesMap = new HashMap<String, List<Article>>();
+                for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+                    Article article = buildArticle(cursor);
+
+                    if (sitesMap.containsKey(article.getSiteName())) {
+                        sitesMap.get(article.getSiteName()).add(article);
+                    } else {
+                        LinkedList<Article> siteArticles = new LinkedList<Article>();
+                        siteArticles.add(article);
+                        sitesMap.put(article.getSiteName(), siteArticles);
+                    }
+                }
+
+                for (String key : sitesMap.keySet()) {
+                    for (Article article : sitesMap.get(key)) {
+                        Site newSite = new Site(article.getSiteName());
+                        newSite.addNewArticle(article);
+                        sites.add(newSite);
+                    }
+                }
+
+                break;
+            case HUBBLOG_META_TAG_LOADER:
+                HashMap<Long, Map<Long, MetadataTag>> metaMap = new HashMap<Long, Map<Long, MetadataTag>>();
+                for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+                    MetadataTag metadataTag = buildMetadataTag(cursor);
+
+                    if (metaMap.containsKey(metadataTag.getArticleId())) {
+                        metaMap.get(metadataTag.getArticleId()).put(metadataTag.getTagId(), metadataTag);
+                    } else {
+                        Map<Long, MetadataTag> articleTags = new HashMap<Long, MetadataTag>();
+                        articleTags.put(metadataTag.getTagId(), metadataTag);
+                        metaMap.put(metadataTag.getArticleId(), articleTags);
+                    }
+                }
+
+                for (Site site : sites) {
+                    for (Article article : site.getArticles()) {
+                        for (long articleId : metaMap.keySet()) {
+                            if (article.getId() == articleId) {
+                                article.setMetadataTags(metaMap.get(articleId));
+                            }
+                        }
+                    }
+                }
+
+                break;
+        }
+
+        centralDataProvider.setSites(sites);
     }
 
     @Override
-    public void onLoaderReset(Loader<Cursor> cursorLoader) {
+    public void onLoaderReset(Loader<Cursor> loader) {
+        Log.w("HUBBLOG", "RESET");
     }
 
+    /* Data Object Buidling */
+    private Article buildArticle(Cursor cursor) {
+        String siteName = cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_SITE_NAME));
+
+        Article article = new Article();
+        article.setId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_ID)));
+        article.setSiteName(siteName);
+        article.setTitle(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_TITLE)));
+        article.setFileTitle(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_FILE_TITLE)));
+
+        int bool = cursor.getInt(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_IS_DRAFT));
+        article.isDraft((bool == 1)? true : false);
+
+        article.setContent(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_CONTENT)));
+
+        try{
+            SimpleDateFormat format = new SimpleDateFormat(DatabaseProvider.ArticleDataModel.DATE_FORMAT);
+
+            Date createdDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_CREATED_DATE)));
+            article.setCreatedDate(createdDate);
+
+            Date modifiedDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE)));
+            article.setLastModifiedDate(modifiedDate);
+        }
+        catch (ParseException parseExp) {
+            Log.e("HUBBLOG", "Parsing Date Exception");
+        }
+
+        return article;
+    }
+
+    private MetadataTag buildMetadataTag(Cursor cursor) {
+        MetadataTag metadataTag = new MetadataTag();
+        metadataTag.setArticleId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
+        metadataTag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_ID)));
+        metadataTag.setTag(cursor.getString(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_TAG)));
+        return metadataTag;
+    }
+
+    /* Data Models */
     public static class SiteDataModel {
         public static final String TABLE_NAME = "sites";
         public static final String COLUMN_ID = "_id";
