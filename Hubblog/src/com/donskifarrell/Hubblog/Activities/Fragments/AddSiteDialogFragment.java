@@ -3,14 +3,12 @@ package com.donskifarrell.Hubblog.Activities.Fragments;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import com.donskifarrell.Hubblog.Interfaces.SiteDialogListener;
 import com.donskifarrell.Hubblog.R;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,34 +16,24 @@ import java.util.List;
  * Date: 22/11/13
  * Time: 00:07
  */
-public class SelectSiteDialogFragment extends DialogFragment {
-    private List<String> sites;
+public class AddSiteDialogFragment extends DialogFragment {
     private SiteDialogListener callback;
-    private int selectedSite;
-
-    public SelectSiteDialogFragment(List<String> siteList) {
-        sites = siteList;
-    }
+    private String siteName;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
+        // todo:
         builder.setView(inflater.inflate(R.layout.select_site_dialog_layout, null));
         builder.setTitle(R.string.select_site_title);
         builder.setPositiveButton(R.string.select_site_positive_btn, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                callback.onSelectSitePositiveClick(selectedSite);
+                callback.onAddNewSitePositiveClick(siteName);
             }
         });
         builder.setNegativeButton(R.string.select_site_negative_btn, null);
-        builder.setSingleChoiceItems(sites.toArray(new String[0]), -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int site) {
-                selectedSite = site;
-            }
-        });
 
         return builder.create();
     }

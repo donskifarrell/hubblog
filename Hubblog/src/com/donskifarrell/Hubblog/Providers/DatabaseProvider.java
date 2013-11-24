@@ -1,11 +1,9 @@
 package com.donskifarrell.Hubblog.Providers;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
@@ -28,29 +26,28 @@ import java.util.*;
  * Date: 23/11/13
  * Time: 15:12
  */
-public class DatabaseProvider extends SQLiteOpenHelper
-                              implements LoaderManager.LoaderCallbacks<Cursor> {
+public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
     private RefreshActivityDataListener listener;
     private DataProvider centralDataProvider;
-
-    private static final String DATABASE_NAME = "hubblog.db";
-    private static final int DATABASE_VERSION = 1;
+    private DatabaseHelper databaseHelper;
 
     private static final int HUBBLOG_ARTICLE_LOADER = 0;
     private static final int HUBBLOG_META_TAG_LOADER = 1;
 
     private List<Site> sites;
 
+    private static final String whereIdEquals = "_id=";
     public static final String JOIN_ARTICLES_WITH_METADATA_TAGS =
-            "SELECT * FROM " + ArticleDataModel.TABLE_NAME +
-            " LEFT OUTER JOIN " + MetadataTagDataModel.TABLE_NAME +
+            "SELECT * FROM " + DatabaseHelper.ArticleDataModel.TABLE_NAME +
+            " LEFT OUTER JOIN " + DatabaseHelper.MetadataTagDataModel.TABLE_NAME +
             " ON " +
-                    ArticleDataModel.TABLE_NAME + "." + ArticleDataModel.COLUMN_ID + "=" +
-                    MetadataTagDataModel.TABLE_NAME + "." + MetadataTagDataModel.COLUMN_ID;
+                    DatabaseHelper.ArticleDataModel.TABLE_NAME + "." + DatabaseHelper.ArticleDataModel.COLUMN_ID + "=" +
+                    DatabaseHelper.MetadataTagDataModel.TABLE_NAME + "." + DatabaseHelper.MetadataTagDataModel.COLUMN_ID;
 
     @Inject
     public DatabaseProvider(RefreshActivityDataListener refreshActivityDataListener, DataProvider dataProvider) {
-        super(refreshActivityDataListener.getContext(), DATABASE_NAME, null, DATABASE_VERSION);
+        databaseHelper = new DatabaseHelper(refreshActivityDataListener.getContext(), this);
+        bootstrapDB();
 
         sites = new LinkedList<Site>();
         centralDataProvider = dataProvider;
@@ -60,52 +57,65 @@ public class DatabaseProvider extends SQLiteOpenHelper
         listener.getSupportLoaderManager().initLoader(HUBBLOG_META_TAG_LOADER, null, this);
     }
 
-    public void insert(Article article) {
-        // insert into DB
-    }
+    public void insertArticle(Article article) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
-    /* Database Maintenance */
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        //db.execSQL(SiteDataModel.CREATE_TABLE);
-        db.execSQL(ArticleDataModel.CREATE_TABLE);
-        db.execSQL(MetadataTagDataModel.CREATE_TABLE);
-
-        /* Todo: remove*/
-        SimpleDateFormat dateFormat = new SimpleDateFormat(ArticleDataModel.DATE_FORMAT);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DatabaseHelper.ArticleDataModel.DATE_FORMAT);
         ContentValues cv = new ContentValues();
-        cv.put(ArticleDataModel.COLUMN_TITLE, "TestTile");
-        cv.put(ArticleDataModel.COLUMN_FILE_TITLE, "fileTitleTest");
-        cv.put(ArticleDataModel.COLUMN_CONTENT, "TestContent");
-        cv.put(ArticleDataModel.COLUMN_IS_DRAFT, 1);
-        cv.put(ArticleDataModel.COLUMN_SITE_NAME, "TestSiteName");
-        cv.put(ArticleDataModel.COLUMN_CREATED_DATE, dateFormat.format(new Date()));
-        cv.put(ArticleDataModel.COLUMN_LAST_MODIFIED_DATE, dateFormat.format(new Date()));
-        db.insertOrThrow(ArticleDataModel.TABLE_NAME, ArticleDataModel.COLUMN_TITLE, cv);
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_TITLE, article.getTitle());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_FILE_TITLE, article.getFileTitle());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_CONTENT, article.getContent());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_IS_DRAFT, article.isDraft());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_SITE_NAME, article.getSiteName());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_CREATED_DATE, dateFormat.format(article.getCreatedDate()));
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE, dateFormat.format(article.getLastModifiedDate()));
+        long result = db.insertOrThrow(DatabaseHelper.ArticleDataModel.TABLE_NAME, DatabaseHelper.ArticleDataModel.COLUMN_TITLE, cv);
 
-        ContentValues meta = new ContentValues();
-        meta.put(MetadataTagDataModel.COLUMN_ARTICLE_ID, 1);
-        meta.put(MetadataTagDataModel.COLUMN_TAG, "TEST META TAG 1");
-        db.insertOrThrow(MetadataTagDataModel.TABLE_NAME, MetadataTagDataModel.COLUMN_TAG, meta);
-
-        ContentValues meta2 = new ContentValues();
-        meta2.put(MetadataTagDataModel.COLUMN_ARTICLE_ID, 1);
-        meta2.put(MetadataTagDataModel.COLUMN_TAG, "TEST META TAG 2");
-        db.insertOrThrow(MetadataTagDataModel.TABLE_NAME, MetadataTagDataModel.COLUMN_TAG, meta2);
-
-        ContentValues meta3 = new ContentValues();
-        meta3.put(MetadataTagDataModel.COLUMN_ARTICLE_ID, 1);
-        meta3.put(MetadataTagDataModel.COLUMN_TAG, "TEST META TAG 3");
-        db.insertOrThrow(MetadataTagDataModel.TABLE_NAME, MetadataTagDataModel.COLUMN_TAG, meta3);
+        if (result == -1) {
+            // todo: error - report to user?
+        } else {
+            article.setId(result);
+        }
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.w(DatabaseProvider.class.getName(),
-              "Upgrading database from version " + oldVersion +
-              " to " + newVersion + ", which will destroy all old data");
+    public void insertTags(Article article) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
-        // todo: handle database upgrade?
+        for (MetadataTag tag : article.getMetadataTags().values()) {
+            ContentValues tagCv = new ContentValues();
+            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID, article.getId());
+            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tag.getTag());
+            long result = db.insertOrThrow(DatabaseHelper.MetadataTagDataModel.TABLE_NAME, DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tagCv);
+
+            if (result == -1) {
+                // todo: error - report to user?
+            } else {
+                tag.setTagId(result);
+            }
+        }
+    }
+
+    public void update(Article article) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DatabaseHelper.ArticleDataModel.DATE_FORMAT);
+        ContentValues cv = new ContentValues();
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_TITLE, article.getTitle());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_FILE_TITLE, article.getFileTitle());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_CONTENT, article.getContent());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_IS_DRAFT, article.isDraft());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_SITE_NAME, article.getSiteName());
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_CREATED_DATE, dateFormat.format(article.getCreatedDate()));
+        cv.put(DatabaseHelper.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE, dateFormat.format(article.getLastModifiedDate()));
+
+        db.update(DatabaseHelper.ArticleDataModel.TABLE_NAME, cv, whereIdEquals + article.getId(), null);
+
+        for (MetadataTag tag : article.getMetadataTags().values()) {
+            ContentValues tagCv = new ContentValues();
+            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID, article.getId());
+            tagCv.put(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG, tag.getTag());
+            db.update(DatabaseHelper.MetadataTagDataModel.TABLE_NAME, tagCv, whereIdEquals + tag.getTagId(), null);
+        }
     }
 
     /* Data Loading */
@@ -116,16 +126,16 @@ public class DatabaseProvider extends SQLiteOpenHelper
 
         switch (loaderID) {
             case HUBBLOG_ARTICLE_LOADER:
-                query = DatabaseProvider.ArticleDataModel.SELECT_ALL;
+                query = DatabaseHelper.ArticleDataModel.SELECT_ALL;
                 break;
             case HUBBLOG_META_TAG_LOADER:
-                query = DatabaseProvider.MetadataTagDataModel.SELECT_ALL;
+                query = DatabaseHelper.MetadataTagDataModel.SELECT_ALL;
                 break;
         }
 
         cursorLoader = new SQLiteCursorLoader(
                 listener.getContext(),
-                this,
+                databaseHelper,
                 query,
                 null
         );
@@ -198,26 +208,26 @@ public class DatabaseProvider extends SQLiteOpenHelper
 
     /* Data Object Buidling */
     private Article buildArticle(Cursor cursor) {
-        String siteName = cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_SITE_NAME));
+        String siteName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_SITE_NAME));
 
         Article article = new Article();
-        article.setId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_ID)));
+        article.setId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_ID)));
         article.setSiteName(siteName);
-        article.setTitle(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_TITLE)));
-        article.setFileTitle(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_FILE_TITLE)));
+        article.setTitle(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_TITLE)));
+        article.setFileTitle(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_FILE_TITLE)));
 
-        int bool = cursor.getInt(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_IS_DRAFT));
+        int bool = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_IS_DRAFT));
         article.isDraft((bool == 1)? true : false);
 
-        article.setContent(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_CONTENT)));
+        article.setContent(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_CONTENT)));
 
         try{
-            SimpleDateFormat format = new SimpleDateFormat(DatabaseProvider.ArticleDataModel.DATE_FORMAT);
+            SimpleDateFormat format = new SimpleDateFormat(DatabaseHelper.ArticleDataModel.DATE_FORMAT);
 
-            Date createdDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_CREATED_DATE)));
+            Date createdDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_CREATED_DATE)));
             article.setCreatedDate(createdDate);
 
-            Date modifiedDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseProvider.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE)));
+            Date modifiedDate = format.parse(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_LAST_MODIFIED_DATE)));
             article.setLastModifiedDate(modifiedDate);
         }
         catch (ParseException parseExp) {
@@ -229,67 +239,80 @@ public class DatabaseProvider extends SQLiteOpenHelper
 
     private MetadataTag buildMetadataTag(Cursor cursor) {
         MetadataTag metadataTag = new MetadataTag();
-        metadataTag.setArticleId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
-        metadataTag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_ID)));
-        metadataTag.setTag(cursor.getString(cursor.getColumnIndex(DatabaseProvider.MetadataTagDataModel.COLUMN_TAG)));
+        metadataTag.setArticleId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
+        metadataTag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ID)));
+        metadataTag.setTag(cursor.getString(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG)));
         return metadataTag;
     }
 
-    /* Data Models */
-    public static class SiteDataModel {
-        public static final String TABLE_NAME = "sites";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_SITE_NAME = "site_name";
 
-        public static final String CREATE_TABLE =
-                "CREATE TABLE " +
-                        TABLE_NAME + "(" +
-                        COLUMN_ID + " INTEGER primary key autoincrement, " +
-                        COLUMN_SITE_NAME + " TEXT not null);";
+
+
+
+    /* Bootstrap code below here */
+    EnglishNumberToWords numberToWords;
+
+    private void bootstrapDB() {
+        numberToWords = new EnglishNumberToWords();
+
+        for (int siteCount = 0; siteCount < 4; siteCount++){
+            for (int postCount = 0; postCount < 8; postCount++){
+                String siteName = "THE SITE " + numberToWords.convertLessThanOneThousand(siteCount).toUpperCase();
+                Article article = createArticle(siteName, postCount);
+
+                for (int tagCount = 0; tagCount < 4; tagCount++) {
+                    article.createMetadataTag("TAG: " + numberToWords.convertLessThanOneThousand(tagCount).toUpperCase());
+                }
+
+                insertArticle(article);
+                insertTags(article);
+            }
+        }
     }
 
-    public static class ArticleDataModel {
-        public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-        public static final String TABLE_NAME = "articles";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_SITE_NAME = "site_name";
-        public static final String COLUMN_TITLE = "title";
-        public static final String COLUMN_FILE_TITLE = "file_title";
-        public static final String COLUMN_CONTENT = "content";
-        public static final String COLUMN_IS_DRAFT = "is_draft";
-        public static final String COLUMN_CREATED_DATE = "created_date";
-        public static final String COLUMN_LAST_MODIFIED_DATE = "last_modified_date";
+    private Article createArticle(String siteName, int idx){
+        Article article = new Article();
+        article.setSiteName(siteName);
+        article.setTitle("Article " + numberToWords.convertLessThanOneThousand(idx));
+        article.setCreatedDate(new Date());
+        article.setLastModifiedDate(new Date());
+        article.setContent("## Heading2 for article " + numberToWords.convertLessThanOneThousand(idx) +
+                "\\n\\n **" + article.getFileTitle() + "**");
 
-        public static final String CREATE_TABLE =
-                "CREATE TABLE " +
-                TABLE_NAME + "(" +
-                COLUMN_ID + " INTEGER primary key autoincrement, " +
-                COLUMN_SITE_NAME + " TEXT, " +
-                COLUMN_TITLE + " TEXT not null, " +
-                COLUMN_FILE_TITLE + " TEXT not null, " +
-                COLUMN_CONTENT + " TEXT not null, " +
-                COLUMN_IS_DRAFT + " INTEGER not null, " +
-                COLUMN_CREATED_DATE + " DATETIME not null, " +
-                COLUMN_LAST_MODIFIED_DATE + " DATETIME not null);";
+        if (idx % 2 == 0) {
+            article.isDraft(false);
+        }
 
-        public static final String SELECT_ALL =
-                "SELECT * FROM " + TABLE_NAME;
+        return article;
     }
 
-    public static class MetadataTagDataModel {
-        public static final String TABLE_NAME = "metadata";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_ARTICLE_ID = "article_id";
-        public static final String COLUMN_TAG = "tag";
+    private class EnglishNumberToWords {
 
-        public static final String CREATE_TABLE =
-                "CREATE TABLE " +
-                TABLE_NAME + "(" +
-                COLUMN_ID + " INTEGER primary key autoincrement, " +
-                COLUMN_ARTICLE_ID + " INTEGER not null, " +
-                COLUMN_TAG + " TEXT not null);";
+        private final String[] tensNames = { "", " ten", " twenty",
+                " thirty", " forty", " fifty", " sixty", " seventy", " eighty",
+                " ninety" };
 
-        public static final String SELECT_ALL =
-                "SELECT * FROM " + TABLE_NAME;
+        private final String[] numNames = { "", " one", " two", " three",
+                " four", " five", " six", " seven", " eight", " nine", " ten",
+                " eleven", " twelve", " thirteen", " fourteen", " fifteen",
+                " sixteen", " seventeen", " eighteen", " nineteen" };
+
+        private String convertLessThanOneThousand(int number) {
+            String soFar;
+
+            if (number % 100 < 20) {
+                soFar = numNames[number % 100];
+                number /= 100;
+            } else {
+                soFar = numNames[number % 10];
+                number /= 10;
+
+                soFar = tensNames[number % 10] + soFar;
+                number /= 10;
+            }
+            if (number == 0)
+                return soFar;
+            return numNames[number] + " hundred" + soFar;
+        }
     }
 }

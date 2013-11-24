@@ -20,5 +20,5 @@ public interface DataProvider {
     public List<Site> getSites();
     public void setSites(List<Site> sites);
 
-    public boolean addArticle(Article article);
+    public Article addNewArticle(Site site);
 }

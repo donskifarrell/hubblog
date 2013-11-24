@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.donskifarrell.Hubblog.Interfaces.MetadataTagListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
-import com.donskifarrell.Hubblog.Interfaces.RemoveMetadataTagListener;
 import com.donskifarrell.Hubblog.R;
 
 /**
@@ -21,16 +21,16 @@ import com.donskifarrell.Hubblog.R;
  */
 public class MetadataAdapter extends BaseAdapter {
     private Article article;
-    private RemoveMetadataTagListener callback;
+    private MetadataTagListener callback;
     private final LayoutInflater inflater;
     private final Context context;
 
     public MetadataAdapter(Fragment articleFragment, Article anArticle) {
         try {
-            callback = (RemoveMetadataTagListener) articleFragment;
+            callback = (MetadataTagListener) articleFragment;
         } catch (ClassCastException e) {
             throw new ClassCastException(articleFragment.toString()
-                    + " must implement RemoveMetadataTagListener");
+                    + " must implement MetadataTagListener");
         }
 
         context = articleFragment.getActivity();

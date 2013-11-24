@@ -39,17 +39,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/AddSiteDialogFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/SiteDialogListener.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/SelectSiteDialogListener.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/RemoveMetadataTagListener.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/SelectSiteDialogFragment.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/SelectSiteDialogFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385296559030" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385303425923" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
-    <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385238320959" ignored="false" />
+    <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385310729698" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385220676188" ignored="false" />
     <file path="/base_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384809354556" ignored="false" />
@@ -75,30 +85,30 @@
     <file path="/EditMarkdownFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385157290160" ignored="false" />
     <file path="/edittextcustom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384907337985" ignored="false" />
     <file path="/UiControlProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384909358924" ignored="false" />
-    <file path="/HubblogActivity.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385251526061" ignored="false" />
+    <file path="/HubblogActivity.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385311383351" ignored="false" />
     <file path="/ArticleContentUpdateListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384954243019" ignored="false" />
     <file path="/BasePageFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384955757510" ignored="false" />
     <file path="/CommitArticleFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385299720756" ignored="false" />
     <file path="/commit_article_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385075400265" ignored="false" />
     <file path="/image_button_selector.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385043106598" ignored="false" />
     <file path="/colors.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385041136235" ignored="false" />
-    <file path="/Article.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385262138734" ignored="false" />
+    <file path="/Article.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385311813644" ignored="false" />
     <file path="/MetadataTag.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385261490017" ignored="false" />
     <file path="/MetadataAdapter.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385075464268" ignored="false" />
     <file path="/RemoveMetadataTagListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385061163026" ignored="false" />
     <file path="/article_metadata_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385075497854" ignored="false" />
     <file path="/SelectSiteDialogFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385241383969" ignored="false" />
-    <file path="/SelectSiteDialogListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385081250226" ignored="false" />
-    <file path="/Site.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385259749004" ignored="false" />
-    <file path="/DataProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385298083320" ignored="false" />
+    <file path="/SelectSiteDialogListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385310086972" ignored="false" />
+    <file path="/Site.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385314297949" ignored="false" />
+    <file path="/DataProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385303943097" ignored="false" />
     <file path="/Hubblog.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385227362127" ignored="false" />
     <file path="/FileSystem.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385118745557" ignored="false" />
-    <file path="/HubblogDataProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385299600157" ignored="false" />
+    <file path="/HubblogDataProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385315100594" ignored="false" />
     <file path="/SharedPreferencesProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385237351037" ignored="false" />
     <file path="/FileSystemProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385156536565" ignored="false" />
     <file path="/roboguice.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385139701985" ignored="false" />
     <file path="/BindingModule.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385139754534" ignored="false" />
-    <file path="/DatabaseProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385301849052" ignored="false" />
+    <file path="/DatabaseProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385315201914" ignored="false" />
     <file path="/HubblogApplication.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226743242" ignored="false" />
     <file path="$PROJECT_DIR$/../ActionsContentView/project.properties" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226141342" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/donskifarrell/Hubblog/BuildConfig.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226141342" ignored="false" />
@@ -107,6 +117,10 @@
     <file path="/CreateActionBar.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385237172624" ignored="false" />
     <file path="/RefreshedDataListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385248973225" ignored="false" />
     <file path="/a.dummy" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385253430882" ignored="false" />
+    <file path="/AddSiteDialogFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385311319423" ignored="false" />
+    <file path="/SiteDialogListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385311247538" ignored="false" />
+    <file path="/DatabaseHelper.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385313652220" ignored="false" />
+    <file path="/MetadataTagListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385315831244" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +178,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" line="234" class="com.donskifarrell.Hubblog.Activities.HubblogActivity$3" package="com.donskifarrell.Hubblog.Activities">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" line="151" class="com.donskifarrell.Hubblog.Providers.DatabaseProvider" package="com.donskifarrell.Hubblog.Providers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -179,7 +193,37 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" line="77" class="com.donskifarrell.Hubblog.Activities.HubblogActivity" package="com.donskifarrell.Hubblog.Activities">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" line="231" class="com.donskifarrell.Hubblog.Activities.HubblogActivity" package="com.donskifarrell.Hubblog.Activities">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" line="160" class="com.donskifarrell.Hubblog.Providers.DatabaseProvider" package="com.donskifarrell.Hubblog.Providers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" line="168" class="com.donskifarrell.Hubblog.Providers.DatabaseProvider" package="com.donskifarrell.Hubblog.Providers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -207,64 +251,39 @@
       <file leaf-file-name="HubblogActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0">
+            <state line="223" column="13" selection-start="8829" selection-end="8829" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8604#9294#0" expanded="true" />
-                <element signature="e#9283#9284#0" expanded="true" />
+                <element signature="e#8027#8839#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TabsAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/TabsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasePageFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/BasePageFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="43" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="0" selection-start="7900" selection-end="7900" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5714#5737#0" expanded="true" />
-                <element signature="e#6137#6146#0" expanded="true" />
-                <element signature="e#6789#6819#0" expanded="true" />
-                <element signature="e#7266#7285#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MetadataAdapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MetadataAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.45315486">
+            <state line="118" column="46" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommitArticleFragment.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="42" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.08455882">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetadataTagListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="30" selection-start="217" selection-end="242" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -273,16 +292,7 @@
       <file leaf-file-name="Article.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MetadataTag.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/MetadataTag.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+            <state line="115" column="26" selection-start="2687" selection-end="2704" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -291,20 +301,34 @@
       <file leaf-file-name="HubblogDataProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="0" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
+            <state line="99" column="17" selection-start="2841" selection-end="2841" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2230#2238#0" expanded="true" />
-                <element signature="e#2910#2919#0" expanded="true" />
+                <element signature="e#2336#2344#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommitArticleFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
+      <file leaf-file-name="DatabaseProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0">
+            <state line="196" column="0" selection-start="9047" selection-end="9047" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6861#6884#0" expanded="true" />
+                <element signature="e#7284#7293#0" expanded="true" />
+                <element signature="e#7936#7966#0" expanded="true" />
+                <element signature="e#8413#8432#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="24" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -330,22 +354,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Data/Hubblog.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Hubblog.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/SelectSiteDialogFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/BindingModule.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/RefreshedDataListener.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/RefreshActivityDataListener.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/MetadataTag.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/BindingModule.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/SelectSiteDialogListener.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/SiteDialogListener.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/AddSiteDialogFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/RemoveMetadataTagListener.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java" />
       </list>
     </option>
   </component>
@@ -564,6 +588,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -614,6 +664,9 @@
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.donskifarrell.Hubblog.Activities.Fragments" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/drawable/test" />
     </key>
@@ -1006,7 +1059,11 @@
       <created>1385296565591</created>
       <updated>1385296565591</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Ahh">
+      <created>1385303428990</created>
+      <updated>1385303428990</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1020,9 +1077,9 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.7257752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2635659" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4718992" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44864342" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1082,7 +1139,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods to build data from SQL DB." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ahh" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1096,7 +1153,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Changed edit markdown to use scrollview to provide better scrolling experience" />
     <MESSAGE value="Added subtitle to action bar for each view" />
     <MESSAGE value="Abstracted base activity class to clean up code a little. Added basic javascript methods for webview." />
     <MESSAGE value="ArticleWebView is now updated with article content" />
@@ -1121,6 +1177,7 @@
     <MESSAGE value="Refactoring Data Models. Added DatabaseProvider as moving data into SQLLite DB. Added background loader" />
     <MESSAGE value="Moved all packages around" />
     <MESSAGE value="Added methods to build data from SQL DB." />
+    <MESSAGE value="Ahh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,137 +1191,137 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/SelectSiteDialogFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="25" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="66" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.3323263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/graphics/RectF.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="-0.36036035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ContentLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="20" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.3153153">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0">
+        <state line="19" column="33" selection-start="529" selection-end="573" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/SiteDialogListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="276" selection-end="276" vertical-scroll-proportion="0.1640159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/AddSiteDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="3" selection-start="481" selection-end="481" vertical-scroll-proportion="0.13419484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/SelectSiteDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="519" selection-end="519" vertical-scroll-proportion="0.29821074">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/BasePageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.26838967">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/android-studio/sdk/platforms/android-16/android.jar!/android/database/sqlite/SQLiteDatabase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="29" selection-start="7850" selection-end="7863" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="24" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="25" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.333002">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="17" selection-start="2841" selection-end="2841" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2336#2344#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="0" selection-start="7900" selection-end="7900" vertical-scroll-proportion="0.0">
+        <state line="196" column="0" selection-start="9047" selection-end="9047" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5714#5737#0" expanded="true" />
-            <element signature="e#6137#6146#0" expanded="true" />
-            <element signature="e#6789#6819#0" expanded="true" />
-            <element signature="e#7266#7285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2230#2238#0" expanded="true" />
-            <element signature="e#2910#2919#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8604#9294#0" expanded="true" />
-            <element signature="e#9283#9284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/TabsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/BasePageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/MetadataTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6861#6884#0" expanded="true" />
+            <element signature="e#7284#7293#0" expanded="true" />
+            <element signature="e#7936#7966#0" expanded="true" />
+            <element signature="e#8413#8432#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0">
+        <state line="115" column="26" selection-start="2687" selection-end="2704" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="223" column="13" selection-start="8829" selection-end="8829" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8027#8839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="24" selection-start="891" selection-end="891" vertical-scroll-proportion="0.6243655">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="217" selection-end="242" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.45315486">
+        <state line="118" column="46" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="42" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.08455882">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

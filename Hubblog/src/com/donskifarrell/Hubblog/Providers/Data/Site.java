@@ -13,21 +13,27 @@ import java.util.List;
 public class Site {
     private String siteName;
     private List<Article> articles;
-    private List<Long> articleIds;
+/*    private List<Long> articleIds;
+    private Long lastArticleId;*/
 
     public Site(String name) {
         siteName = name;
         articles = new LinkedList<Article>();
-        articleIds = new LinkedList<Long>();
+/*        articleIds = new LinkedList<Long>();
+        lastArticleId = (long) 0;*/
     }
 
     public String getSiteName() {
         return siteName.trim();
     }
 
-    public List<Long> getArticleIds() {
+/*    public List<Long> getArticleIds() {
         return articleIds;
     }
+
+    public Long getLastArticleId() {
+        return lastArticleId;
+    }*/
 
     public List<Article> getArticles() {
         return articles;
@@ -60,11 +66,14 @@ public class Site {
     }
 
     private void createListOfArticleIds() {
-        articleIds.clear();
+/*        articleIds.clear();
 
         for (Article article : articles) {
             articleIds.add(article.getId());
-        }
+            if (article.getId() > lastArticleId){
+                lastArticleId = article.getId();
+            }
+        }*/
     }
 
     @Override

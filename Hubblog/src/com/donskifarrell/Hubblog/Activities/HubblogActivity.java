@@ -9,20 +9,19 @@ import android.widget.*;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Activities.Adapters.TabsAdapter;
+import com.donskifarrell.Hubblog.Activities.Fragments.AddSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
+import com.donskifarrell.Hubblog.Interfaces.SiteDialogListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.Activities.Fragments.SelectSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
-import com.donskifarrell.Hubblog.Interfaces.SelectSiteDialogListener;
 import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.viewpagerindicator.UnderlinePageIndicator;
 import shared.ui.actionscontentview.ActionsContentView;
-
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +31,7 @@ import java.util.Date;
  */
 public class HubblogActivity extends RoboSherlockFragmentActivity
                              implements OnSidebarListItemSelected,
-                                        SelectSiteDialogListener,
+        SiteDialogListener,
                                         RefreshActivityDataListener<Site> {
 
     private static final String STATE_POSITION = "state:layout_id";
@@ -85,18 +84,6 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
                 this,
                 article.getTitle() + " showing!",
                 Toast.LENGTH_LONG).show();
-    }
-
-    public void addNewArticleToSite(Site site){
-        Article newArticle = new Article();
-        newArticle.setCreatedDate(new Date());
-        newArticle.setSiteName(site.getSiteName());
-        newArticle.isDraft(true);
-        newArticle.setTitle(getResources().getString(R.string.default_article_title));
-
-        site.addNewArticle(newArticle);
-
-        showArticle(newArticle);
     }
 
     /* Action Bar Methods */
@@ -198,12 +185,6 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
     }
 
-    @Override
-    public void Refresh(Site site) {
-        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
-        sidebarList.setAdapter(sidebarAdapter);
-    }
-
     private ActionsContentView.OnActionsContentListener getSidebarListener() {
         return new ActionsContentView.OnActionsContentListener() {
             @Override
@@ -229,22 +210,44 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
             public void onClick(View view) {
                 switch (hubblog.getSites().size()) {
                     case 0:
-                        // todo: show add site dialog
+                        DialogFragment addSiteDialog = new AddSiteDialogFragment();
+                        addSiteDialog.show(getSupportFragmentManager(), "AddSiteDialogFragment");
                         break;
                     case 1:
-                        addNewArticleToSite(hubblog.getSites().get(0));
+                        addAndShowArticle(0);
                         break;
                     default:
-                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSiteNames());
-                        dialog.show(getSupportFragmentManager(), "SelectSiteDialogFragment");
+                        DialogFragment selectSiteDialog = new SelectSiteDialogFragment(hubblog.getSiteNames());
+                        selectSiteDialog.show(getSupportFragmentManager(), "SelectSiteDialogFragment");
                         break;
                 }
             }
         };
     }
 
-    public void onDialogPositiveClick(int selectedSite) {
-        addNewArticleToSite(hubblog.getSites().get(selectedSite));
+    @Override
+    public void Refresh(Site site) {
+        // todo: load last article?
+
+        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
+        sidebarList.setAdapter(sidebarAdapter);
+    }
+    
+    public void onSelectSitePositiveClick(int selectedSite) {
+        Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
+        showArticle(article);
+    }
+
+    public void onAddNewSitePositiveClick(String siteName) {
+        Site site = new Site(siteName);
+        hubblog.getSites().add(site);
+
+        addAndShowArticle(hubblog.getSites().indexOf(site));
+    }
+
+    public void addAndShowArticle(int selectedSite) {
+        Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
+        showArticle(article);
     }
 
     @Override

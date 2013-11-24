@@ -8,6 +8,7 @@ import android.view.View;
  * Date: 21/11/13
  * Time: 19:05
  */
-public interface RemoveMetadataTagListener {
+public interface MetadataTagListener {
     public void removeMetadataTagFromView(View view);
+    public void addMetadataTagFromView(View view);
 }

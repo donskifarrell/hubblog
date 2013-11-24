@@ -115,7 +115,7 @@ public class Article implements Serializable {
 
     public MetadataTag createMetadataTag(String tag) {
         MetadataTag metadataTag = new MetadataTag();
-        metadataTag.setTagId(lastTagId);
+        metadataTag.setArticleId(getId());
         metadataTag.setTag(tag);
 
         metadataTags.put((long)lastTagId, metadataTag);

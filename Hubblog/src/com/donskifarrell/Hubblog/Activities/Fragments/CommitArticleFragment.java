@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import com.donskifarrell.Hubblog.Activities.Adapters.MetadataAdapter;
 import com.donskifarrell.Hubblog.Providers.Data.MetadataTag;
-import com.donskifarrell.Hubblog.Interfaces.RemoveMetadataTagListener;
+import com.donskifarrell.Hubblog.Interfaces.MetadataTagListener;
 import com.donskifarrell.Hubblog.R;
 
 /**
@@ -19,7 +19,7 @@ import com.donskifarrell.Hubblog.R;
  * Time: 11:07
  */
 public class CommitArticleFragment extends BasePageFragment
-                                   implements RemoveMetadataTagListener {
+                                   implements MetadataTagListener {
     private MetadataAdapter metadataAdapter;
     private ViewGroup viewGroup;
     private LinearLayout metadataTagList;
