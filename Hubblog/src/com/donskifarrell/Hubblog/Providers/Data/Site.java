@@ -2,6 +2,7 @@ package com.donskifarrell.Hubblog.Providers.Data;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,13 +13,20 @@ import java.util.List;
 public class Site {
     private String siteName;
     private List<Article> articles;
+    private List<Long> articleIds;
+
+    public Site(String name) {
+        siteName = name;
+        articles = new LinkedList<Article>();
+        articleIds = new LinkedList<Long>();
+    }
 
     public String getSiteName() {
         return siteName.trim();
     }
 
-    public void setSiteName(String siteName) {
-        this.siteName = siteName;
+    public List<Long> getArticleIds() {
+        return articleIds;
     }
 
     public List<Article> getArticles() {
@@ -27,15 +35,17 @@ public class Site {
 
     public void setArticles(List<Article> articles) {
         this.articles = articles;
-        sortArticleByDraft();
+        createListOfArticleIds();
+        sortArticlesByDraft();
     }
 
     public void addNewArticle(Article article) {
         this.articles.add(article);
-        sortArticleByDraft();
+        createListOfArticleIds();
+        sortArticlesByDraft();
     }
 
-    private void sortArticleByDraft(){
+    private void sortArticlesByDraft() {
         Collections.sort(articles, new Comparator<Article>() {
             public int compare(Article a1, Article a2) {
                 if (!a1.isDraft() && a2.isDraft())
@@ -47,5 +57,24 @@ public class Site {
                 return 0;
             }
         });
+    }
+
+    private void createListOfArticleIds() {
+        articleIds.clear();
+
+        for (Article article : articles) {
+            articleIds.add(article.getId());
+        }
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (that == null) {
+            return false;
+        }
+        if (this.getSiteName() == null) {
+            return that == null;
+        }
+        return this.getSiteName().equals(that);
     }
 }

@@ -13,11 +13,12 @@ import java.util.List;
  * Time: 11:04
  */
 public interface DataProvider {
-    public Account loadAccount();
-    public boolean saveAccount(Account account);
+    public Account getAccountDetails();
+    public boolean setAccountDetails(Account account);
 
-    public List<Site> loadSites(Account account);
-    public boolean saveSite(Account account, Site site);
+    public List<String> getSiteNames();
+    public List<Site> getSites();
+    public boolean addSite(Site site);
 
-    public boolean saveArticle(Article article);
+    public boolean addArticle(Article article);
 }

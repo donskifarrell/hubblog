@@ -1,5 +1,6 @@
 package com.donskifarrell.Hubblog.Activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
@@ -8,15 +9,16 @@ import android.widget.*;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Activities.Adapters.TabsAdapter;
+import com.donskifarrell.Hubblog.Interfaces.DataProvider;
+import com.donskifarrell.Hubblog.Interfaces.RefreshActivityDataListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
-import com.donskifarrell.Hubblog.Providers.Data.Hubblog;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.Activities.Fragments.SelectSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.Interfaces.SelectSiteDialogListener;
+import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
-import com.google.inject.Inject;
 import com.viewpagerindicator.UnderlinePageIndicator;
 import shared.ui.actionscontentview.ActionsContentView;
 
@@ -29,19 +31,23 @@ import java.util.Date;
  * Time: 17:48
  */
 public class HubblogActivity extends RoboSherlockFragmentActivity
-                             implements OnSidebarListItemSelected, SelectSiteDialogListener {
-    @Inject protected Hubblog hubblog;
+                             implements OnSidebarListItemSelected,
+                                        SelectSiteDialogListener,
+                                        RefreshActivityDataListener<Site> {
 
     private static final String STATE_POSITION = "state:layout_id";
     private static final int EDIT_ARTICLE_TAB_POSITION = 0;
     private static final int EDIT_MARKDOWN_TAB_POSITION = 1;
     private static final int COMMIT_ARTICLE_TAB_POSITION = 2;
 
+    protected DataProvider hubblog;
     protected TabsAdapter tabsAdapter;
     protected UnderlinePageIndicator pageIndicator;
     protected ActionsContentView actionsContentView;
     protected String currentArticleTitle;
     protected String currentArticleSubTitle;
+
+    private ListView sidebarList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
 
         setContentView(R.layout.base_layout);
 
+        hubblog = new HubblogDataProvider(this);
         createActionBar();
         createTabPager();
         createSidebar();
@@ -84,7 +91,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         Article newArticle = new Article();
         newArticle.setCreatedDate(new Date());
         newArticle.setSiteName(site.getSiteName());
-        newArticle.setIsDraft(true);
+        newArticle.isDraft(true);
         newArticle.setTitle(getResources().getString(R.string.default_article_title));
 
         site.addNewArticle(newArticle);
@@ -188,7 +195,11 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         Button addNew = (Button) sidebar_layout.findViewById(R.id.sidebar_add_new);
         addNew.setOnClickListener(getSidebarAddNewListener());
 
-        ListView sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+        sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+    }
+
+    @Override
+    public void Refresh(Site site) {
         SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
         sidebarList.setAdapter(sidebarAdapter);
     }
@@ -224,7 +235,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
                         addNewArticleToSite(hubblog.getSites().get(0));
                         break;
                     default:
-                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSiteNameList());
+                        DialogFragment dialog = new SelectSiteDialogFragment(hubblog.getSiteNames());
                         dialog.show(getSupportFragmentManager(), "SelectSiteDialogFragment");
                         break;
                 }
@@ -234,5 +245,10 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
 
     public void onDialogPositiveClick(int selectedSite) {
         addNewArticleToSite(hubblog.getSites().get(selectedSite));
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 }

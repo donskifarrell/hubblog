@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import com.donskifarrell.Hubblog.Interfaces.SelectSiteDialogListener;
 import com.donskifarrell.Hubblog.R;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: donski
@@ -17,11 +19,11 @@ import com.donskifarrell.Hubblog.R;
  * Time: 00:07
  */
 public class SelectSiteDialogFragment extends DialogFragment {
-    private String[] sites;
+    private List<String> sites;
     private SelectSiteDialogListener callback;
     private int selectedSite;
 
-    public SelectSiteDialogFragment(String[] siteList) {
+    public SelectSiteDialogFragment(List<String> siteList) {
         sites = siteList;
     }
 
@@ -38,7 +40,7 @@ public class SelectSiteDialogFragment extends DialogFragment {
             }
         });
         builder.setNegativeButton(R.string.select_site_negative_btn, null);
-        builder.setSingleChoiceItems(sites, -1, new DialogInterface.OnClickListener() {
+        builder.setSingleChoiceItems(sites.toArray(new String[0]), -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int site) {
                 selectedSite = site;

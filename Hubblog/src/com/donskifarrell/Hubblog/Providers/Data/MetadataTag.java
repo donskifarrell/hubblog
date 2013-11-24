@@ -7,15 +7,24 @@ package com.donskifarrell.Hubblog.Providers.Data;
  * Time: 16:51
  */
 public class MetadataTag {
-    private int tagId;
+    private long tagId;
+    private long articleId;
     private String tag;
 
-    public int getId() {
+    public long getTagId() {
         return tagId;
     }
 
-    public void setId(int tagId) {
+    public void setTagId(long tagId) {
         this.tagId = tagId;
+    }
+
+    public long getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(long articleId) {
+        this.articleId = articleId;
     }
 
     public String getTag() {
