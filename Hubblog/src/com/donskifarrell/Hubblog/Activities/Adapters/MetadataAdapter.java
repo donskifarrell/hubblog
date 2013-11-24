@@ -49,8 +49,12 @@ public class MetadataAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int tagId) {
-        if (article.getMetadataTags().contains(tagId)) {
-            return article.getMetadataTags().get(tagId);
+        MetadataTag tag = new MetadataTag();
+        tag.setTagId(tagId);
+        int idx = article.getMetadataTags().indexOf(tag);
+
+        if (idx > -1) {
+            return article.getMetadataTags().get(idx);
         }
         return null;
     }

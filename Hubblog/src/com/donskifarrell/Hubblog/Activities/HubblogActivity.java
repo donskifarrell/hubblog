@@ -47,6 +47,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     protected String currentArticleSubTitle;
 
     private ListView sidebarList;
+    private SidebarAdapter sidebarAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,6 +184,8 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         addNew.setOnClickListener(getSidebarAddNewListener());
 
         sidebarList = (ListView) sidebar_layout.findViewById(R.id.sidebar_list);
+        sidebarAdapter = new SidebarAdapter(this, hubblog);
+        sidebarList.setAdapter(sidebarAdapter);
     }
 
     private ActionsContentView.OnActionsContentListener getSidebarListener() {
@@ -229,8 +232,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     public void Refresh() {
         // todo: load last article?
 
-        SidebarAdapter sidebarAdapter = new SidebarAdapter(this, hubblog.getSites());
-        sidebarList.setAdapter(sidebarAdapter);
+        sidebarAdapter.notifyDataSetChanged();
     }
 
     @Override

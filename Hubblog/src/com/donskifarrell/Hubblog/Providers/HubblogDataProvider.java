@@ -153,6 +153,7 @@ public class HubblogDataProvider implements DataProvider {
             newTag.setTagId(tagId);
         }
 
+        article.getMetadataTags().add(newTag);
         return newTag;
     }
 

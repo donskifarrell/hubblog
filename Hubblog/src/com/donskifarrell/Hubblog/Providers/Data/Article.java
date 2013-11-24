@@ -59,7 +59,7 @@ public class Article implements Serializable {
         fileName = fileName.trim().replaceAll(" +", " ");
         fileName = fileName.replace(" ", "-");
 
-        fileTitle =  dateFormat.format(getCreatedDate()) + "-" + fileName + ".22md";
+        fileTitle =  dateFormat.format(getCreatedDate()) + "-" + fileName + ".md";
         return fileTitle;
     }
 
@@ -116,34 +116,4 @@ public class Article implements Serializable {
         Article anArticle = (Article) that;
         return this.getId() == anArticle.getId();
     }
-
-/*
-    public MetadataTag createMetadataTag(String tag) {
-        MetadataTag metadataTag = new MetadataTag();
-        metadataTag.setArticleId(getId());
-        metadataTag.setTag(tag);
-
-        metadataTags.put((long)lastTagId, metadataTag);
-
-        lastTagId++;
-        return metadataTag;
-    }
-
-    public boolean updateMetadataTag(MetadataTag tag) {
-        if (metadataTags.containsKey(tag.getTagId())) {
-            metadataTags.get(tag.getTagId()).setTag(tag.getTag());
-            return true;
-        }
-
-        return false;
-    }
-
-    public boolean removeMetadataTag(MetadataTag tag) {
-        if (metadataTags.containsKey(tag.getTagId())) {
-            metadataTags.remove(tag.getTagId());
-            return true;
-        }
-
-        return false;
-    }*/
 }

@@ -5,10 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.R;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,24 +16,24 @@ import java.util.List;
  * Time: 22:30
  */
 public class SidebarAdapter extends BaseAdapter {
-    private List<Site> sites;
+    private DataProvider hubblog;
     private final LayoutInflater inflater;
     private final Context context;
 
-    public SidebarAdapter(Context theContext, List<Site> siteList){
+    public SidebarAdapter(Context theContext, DataProvider dataProvider){
         context = theContext;
         inflater = LayoutInflater.from(context);
-        sites = siteList;
+        hubblog = dataProvider;
     }
 
     @Override
     public int getCount() {
-        return sites.size();
+        return hubblog.getSites().size();
     }
 
     @Override
     public Object getItem(int position) {
-        return sites.get(position);
+        return hubblog.getSites().get(position);
     }
 
     @Override
@@ -44,23 +43,26 @@ public class SidebarAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView != null) {
-            ViewHolder holder = (ViewHolder) convertView.getTag();
+        final ViewHolder holder;
+        Site site = (Site) getItem(position);
 
-            if (holder.position == position)
-                return convertView;
+        if (convertView == null) {
+            convertView = createView(site, position, convertView, parent);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+
+            if (holder.position != position) {
+                convertView = createView(site, position, convertView, parent);
+            }
         }
 
-        return createView(position, parent);
+        return convertView;
     }
 
-    private View createView(int position, ViewGroup parent){
-        final ViewHolder holder;
-        LinearLayout convertView = (LinearLayout) inflater.inflate(R.layout.sidebar_list_layout, parent, false);
+    private View createView(Site site, int position, View convertView, ViewGroup parent){
+        convertView = inflater.inflate(R.layout.sidebar_list_layout, parent, false);
 
-        Site site = sites.get(position);
-
-        holder = new ViewHolder();
+        ViewHolder holder = new ViewHolder();
         holder.position = position;
 
         holder.headerLayout = (LinearLayout) convertView.findViewById(R.id.header_title);
@@ -73,7 +75,7 @@ public class SidebarAdapter extends BaseAdapter {
         for (int idx = 0; idx < articlesAdapter.getCount(); idx++) {
             View item = articlesAdapter.getView(idx, null, null);
             holder.articlesList[idx] = (TextView) item;
-            convertView.addView(item);
+            ((LinearLayout)convertView).addView(item);
         }
 
         convertView.setTag(holder);
