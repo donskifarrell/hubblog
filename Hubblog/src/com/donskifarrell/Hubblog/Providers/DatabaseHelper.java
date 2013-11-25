@@ -42,12 +42,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     ArticleDataModel.TABLE_NAME + DOT + ArticleDataModel.COLUMN_ID + COMMA +
                     MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_ID + AS + MetadataTagDataModel.COLUMN_TAG_ID_ALIAS + COMMA +
                     MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_TAG + COMMA +
-                    MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_ARTICLE_ID + COMMA +
-                    "FROM " + ArticleDataModel.TABLE_NAME +
+                    MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_ARTICLE_ID +
+                    " FROM " + ArticleDataModel.TABLE_NAME +
                     " LEFT OUTER JOIN " + MetadataTagDataModel.TABLE_NAME +
                     " ON " +
                         ArticleDataModel.TABLE_NAME + DOT + ArticleDataModel.COLUMN_ID + "=" +
-                        MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_ID;
+                        MetadataTagDataModel.TABLE_NAME + DOT + MetadataTagDataModel.COLUMN_ARTICLE_ID;
 
     public DatabaseHelper(Context context, DatabaseProvider databaseProvider) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -148,19 +148,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private void bootstrapDB(SQLiteDatabase db) {
         numberToWords = new EnglishNumberToWords();
 
-        for (int siteCount = 0; siteCount < 4; siteCount++){
-            for (int postCount = 0; postCount < 8; postCount++){
+        for (int siteCount = 1; siteCount < 4; siteCount++){
+            for (int postCount = 1; postCount < 3; postCount++){
                 String siteName = "THE SITE " + numberToWords.convertLessThanOneThousand(siteCount).toUpperCase();
                 Article article = createArticle(siteName, postCount);
                 List<MetadataTag> tags = new LinkedList<MetadataTag>();
                 article.setMetadataTags(tags);
-                db.insertOrThrow(ArticleDataModel.TABLE_NAME, ArticleDataModel.COLUMN_TITLE, buildContentValuesFromArticle(article));
+                article.setId(db.insertOrThrow(ArticleDataModel.TABLE_NAME, ArticleDataModel.COLUMN_TITLE, buildContentValuesFromArticle(article)));
 
-                for (int tagCount = 0; tagCount < 4; tagCount++) {
+                for (int tagCount = 1; tagCount < 4; tagCount++) {
                     MetadataTag tag = new MetadataTag();
                     tag.setArticleId(article.getId());
-                    tag.setTag("TAG: " + numberToWords.convertLessThanOneThousand(tagCount).toUpperCase());
-                    db.insertOrThrow(MetadataTagDataModel.TABLE_NAME, MetadataTagDataModel.COLUMN_TAG, buildContentValuesFromMetadataTag(tag));
+                    tag.setTag("TAG: " + article.getSiteName() + " - " + postCount + " - tag " + numberToWords.convertLessThanOneThousand(tagCount).toUpperCase());
+                    tag.setTagId(db.insertOrThrow(MetadataTagDataModel.TABLE_NAME, MetadataTagDataModel.COLUMN_TAG, buildContentValuesFromMetadataTag(tag)));
                     tags.add(tag);
                 }
             }
@@ -170,11 +170,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private Article createArticle(String siteName, int idx){
         Article article = new Article();
         article.setSiteName(siteName);
-        article.setTitle("Article " + numberToWords.convertLessThanOneThousand(idx));
+        article.setTitle(siteName + ", Article " + numberToWords.convertLessThanOneThousand(idx));
         article.setCreatedDate(new Date());
         article.setLastModifiedDate(new Date());
-        article.setContent("## Heading2 for article " + numberToWords.convertLessThanOneThousand(idx) +
-                "\\n\\n **" + article.getFileTitle() + "**");
+        article.setContent("## Heading2 for site: " + siteName + " - article: " + numberToWords.convertLessThanOneThousand(idx) +
+                " Filetitle: **" + article.getFileTitle() + "**");
 
         if (idx % 2 == 0) {
             article.isDraft(false);

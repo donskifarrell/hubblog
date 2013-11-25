@@ -108,6 +108,7 @@ public class HubblogDataProvider implements DataProvider {
         newArticle.setSiteName(site.getSiteName());
         newArticle.isDraft(true);
         newArticle.setTitle(DEFAULT_NEW_ARTICLE_TITLE);
+        newArticle.setContent("");
 
         long articleId = databaseProvider.insertArticle(newArticle);
         if (articleId == -1) {

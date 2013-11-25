@@ -97,8 +97,6 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        Log.i("HUBBLOG", "CURSOR ID: " + loader.getId() + " > " + DatabaseUtils.dumpCursorToString(cursor));
-
         switch (loader.getId()) {
             case HUBBLOG_ARTICLE_LOADER:
                 for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
@@ -126,7 +124,7 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
                     // Get or create MetadataTag
                     MetadataTag tag = new MetadataTag();
-                    tag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
+                    tag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG_ID_ALIAS)));
                     idx = article.getMetadataTags().indexOf(tag);
                     if (idx == -1) {
                         tag = buildMetadataTagFromCursor(cursor);
@@ -178,7 +176,7 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
     private MetadataTag buildMetadataTagFromCursor(Cursor cursor) {
         MetadataTag metadataTag = new MetadataTag();
         metadataTag.setArticleId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
-        metadataTag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ID)));
+        metadataTag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG_ID_ALIAS)));
         metadataTag.setTag(cursor.getString(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_TAG)));
         return metadataTag;
     }
