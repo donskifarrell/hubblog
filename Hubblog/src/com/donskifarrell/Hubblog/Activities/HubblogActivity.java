@@ -6,16 +6,20 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.*;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Activities.Adapters.TabsAdapter;
-import com.donskifarrell.Hubblog.Activities.Fragments.AddSiteDialogFragment;
+import com.donskifarrell.Hubblog.Activities.Dialogs.AddSiteDialogFragment;
+import com.donskifarrell.Hubblog.Activities.Dialogs.DeleteArticleDialogFragment;
+import com.donskifarrell.Hubblog.Activities.Dialogs.EditArticleTitleDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
-import com.donskifarrell.Hubblog.Interfaces.SiteDialogListener;
+import com.donskifarrell.Hubblog.Interfaces.DialogListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
-import com.donskifarrell.Hubblog.Activities.Fragments.SelectSiteDialogFragment;
+import com.donskifarrell.Hubblog.Activities.Dialogs.SelectSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.donskifarrell.Hubblog.R;
@@ -31,7 +35,7 @@ import shared.ui.actionscontentview.ActionsContentView;
  */
 public class HubblogActivity extends RoboSherlockFragmentActivity
                              implements OnSidebarListItemSelected,
-                                        SiteDialogListener,
+                                        DialogListener,
                                         ActivityDataListener {
 
     private static final String STATE_POSITION = "state:layout_id";
@@ -43,6 +47,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     protected TabsAdapter tabsAdapter;
     protected UnderlinePageIndicator pageIndicator;
     protected ActionsContentView actionsContentView;
+    protected Article currentArticle;
     protected String currentArticleTitle;
     protected String currentArticleSubTitle;
 
@@ -61,6 +66,9 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         createSidebar();
 
         // todo: launch proper article or a help one?
+        // TODO :NEED TO AS IT WILL BREAK LOTS OF THINGS!
+        currentArticle = new Article();
+        currentArticle.setTitle("CHANGE!");
         //showArticle(hubblog.getSites().get(0).getArticles().get(0));
 
         final int selectedPosition;
@@ -74,6 +82,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
 
     /* Article Methods */
     public void showArticle(Article article) {
+        currentArticle = article;
         currentArticleTitle = article.getTitle();
         tabsAdapter.setArticle(article);
 
@@ -81,10 +90,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         actionsContentView.showContent();
 
         // load edit article fragment and generate html content
-        Toast.makeText(
-                this,
-                article.getTitle() + " showing!",
-                Toast.LENGTH_LONG).show();
+        Toast.makeText(this ,article.getTitle() + " showing!", Toast.LENGTH_LONG).show();
     }
 
     /* Action Bar Methods */
@@ -97,19 +103,12 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
 
         currentArticleSubTitle = this.getResources().getString(R.string.edit_article_subtitle);
         setActionBarSubTitle(currentArticleSubTitle);
+
+        setActionBarHomeIcon(false);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-
-            if (actionsContentView.isActionsShown()) {
-                actionsContentView.showContent();
-            } else {
-                actionsContentView.showActions();
-            }
-        }
-        return super.onOptionsItemSelected(item);
+    public void setActionBarHomeIcon(boolean show) {
+        getSupportActionBar().setDisplayShowHomeEnabled(show);
     }
 
     public void setActionBarTitle(String title) {
@@ -118,6 +117,60 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
 
     public void setActionBarSubTitle(String subTitle) {
         getSupportActionBar().setSubtitle(subTitle);
+    }
+
+    /* Action Bar Sub Menu Methods*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case (android.R.id.home):
+                if (actionsContentView.isActionsShown()) {
+                    actionsContentView.showContent();
+                } else {
+                    actionsContentView.showActions();
+                }
+                break;
+
+            case (R.id.menu_refresh_item):
+                Toast.makeText(this , "Refresh!", Toast.LENGTH_LONG).show();
+                break;
+
+            case (R.id.menu_item_invert_display):
+                Toast.makeText(this , "Invert!", Toast.LENGTH_LONG).show();
+                break;
+
+            case (R.id.menu_item_change_title):
+                DialogFragment editArticleTitleDialog = new EditArticleTitleDialogFragment(currentArticle.getTitle());
+                editArticleTitleDialog.show(getSupportFragmentManager(), "EditArticleTitleDialogFragment");
+                break;
+
+            case (R.id.menu_item_delete_article):
+                DialogFragment deleteArticleDialog = new DeleteArticleDialogFragment();
+                deleteArticleDialog.show(getSupportFragmentManager(), "DeleteArticleDialogFragment");
+                break;
+
+            case (R.id.menu_item_add_site):
+                DialogFragment addSiteDialog = new AddSiteDialogFragment();
+                addSiteDialog.show(getSupportFragmentManager(), "AddSiteDialogFragment");
+                break;
+
+            case (R.id.menu_item_default_tags):
+                Toast.makeText(this , "Tags!", Toast.LENGTH_LONG).show();
+                break;
+
+            case (R.id.menu_item_about):
+                Toast.makeText(this , "About!", Toast.LENGTH_LONG).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /* Tab Navigation Methods */
@@ -199,9 +252,11 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
                 if (isContentShowing){
                     setActionBarTitle(currentArticleTitle);
                     setActionBarSubTitle(currentArticleSubTitle);
+                    setActionBarHomeIcon(false);
                 } else {
                     setActionBarTitle(getResources().getString(R.string.sidebar_open_title));
                     setActionBarSubTitle(getResources().getString(R.string.sidebar_open_subtitle));
+                    setActionBarHomeIcon(true);
                 }
             }
         };
@@ -226,6 +281,11 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
                 }
             }
         };
+    }
+
+    public void addAndShowArticle(int selectedSite) {
+        Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
+        showArticle(article);
     }
 
     @Override
@@ -257,8 +317,18 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         addAndShowArticle(hubblog.getSites().indexOf(site));
     }
 
-    public void addAndShowArticle(int selectedSite) {
-        Article article = hubblog.addNewArticle(hubblog.getSites().get(selectedSite));
-        showArticle(article);
+    @Override
+    public void onSetDefaultTags() {
+    }
+
+    @Override
+    public void onChangeArticleTitlePositiveClick(String newArticleTitle) {
+        currentArticle.setTitle(newArticleTitle);
+        setActionBarTitle(newArticleTitle);
+    }
+
+    @Override
+    public void onDeleteArticlePositiveClick() {
+        Toast.makeText(this , "Delete!", Toast.LENGTH_LONG).show();
     }
 }

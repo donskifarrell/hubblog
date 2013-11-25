@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+            android:id="@+id/menu_refresh_item"
+            android:showAsAction="always"
+            android:icon="@drawable/refresh" />
+
+    <item
+            android:id="@+id/menu_dropdown_item"
+            android:showAsAction="always"
+            android:icon="@drawable/add">
+        <menu>
+            <item
+                    android:id="@+id/menu_item_invert_display"
+                    android:title="@string/ab_menu_invert_display"/>
+            <item
+                    android:id="@+id/menu_item_change_title"
+                    android:title="@string/ab_menu_change_title"/>
+            <item
+                    android:id="@+id/menu_item_delete_article"
+                    android:title="@string/ab_menu_delete_article"/>
+            <item
+                    android:id="@+id/menu_item_add_site"
+                    android:title="@string/ab_menu_add_site"/>
+            <item
+                    android:id="@+id/menu_item_default_tags"
+                    android:title="@string/ab_menu_default_tags"/>
+            <item
+                    android:id="@+id/menu_item_about"
+                    android:title="@string/ab_menu_about"/>
+        </menu>
+    </item>
+
+</menu>
+
