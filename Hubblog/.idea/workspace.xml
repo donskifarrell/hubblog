@@ -39,18 +39,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/donate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/github.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_about_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/add_site_dialog_layout.xml" afterPath="$PROJECT_DIR$/res/layout/add_site_dialog_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/dialog_about_layout.xml" afterPath="$PROJECT_DIR$/res/layout/dialog_about_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385412979561" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385417500257" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
     <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385402963519" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
@@ -122,8 +118,8 @@
     <file path="/DialogListener.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385407425631" ignored="false" />
     <file path="/add_site_dialog_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385409232519" ignored="false" />
     <file path="/AboutDialogFagment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385413023197" ignored="false" />
-    <file path="/AboutDialogFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385414874406" ignored="false" />
-    <file path="/dialog_about_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385414943492" ignored="false" />
+    <file path="/AboutDialogFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385417793422" ignored="false" />
+    <file path="/dialog_about_layout.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385417772758" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,25 +196,6 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="55" column="171" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.8148148">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Hubblog" />
@@ -228,7 +205,7 @@
       <file leaf-file-name="HubblogActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="0" selection-start="4355" selection-end="4355" vertical-scroll-proportion="0.0">
+            <state line="144" column="0" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#10349#11161#0" expanded="true" />
                 <element signature="e#11150#11151#0" expanded="true" />
@@ -240,11 +217,10 @@
       <file leaf-file-name="AboutDialogFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="83" selection-start="1385" selection-end="1385" vertical-scroll-proportion="0.0">
+            <state line="10" column="34" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1231#1458#0" expanded="true" />
-                <element signature="e#1447#1448#0" expanded="true" />
+                <element signature="e#1237#1464#0" expanded="true" />
+                <element signature="e#1453#1454#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -253,7 +229,7 @@
       <file leaf-file-name="AddSiteDialogFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AddSiteDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="602" selection-end="1671" vertical-scroll-proportion="0.0">
+            <state line="11" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -301,11 +277,20 @@
       </file>
       <file leaf-file-name="dialog_about_layout.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/dialog_about_layout.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state line="25" column="41" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="42" selection-start="317" selection-end="317" vertical-scroll-proportion="0.18036072">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="162" selection-start="2866" selection-end="2866" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -342,8 +327,8 @@
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFagment.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/add_site_dialog_layout.xml" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/dialog_about_layout.xml" />
       </list>
     </option>
@@ -638,7 +623,7 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/res/menu" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.23511904" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -1078,15 +1063,19 @@
       <created>1385412849572</created>
       <updated>1385412849572</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added about dialog with donate buttons">
+      <created>1385417504444</created>
+      <updated>1385417504444</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="29" width="1922" height="1177" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32870865" sideWeight="0.5532946" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3271078" sideWeight="0.5532946" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.6492248" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271078" sideWeight="0.6492248" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44670543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1389" y="447" width="1874" height="341" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1104,7 +1093,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.72771317" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19530416" sideWeight="0.5532946" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19551282" sideWeight="0.5532946" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35077518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1154,7 +1143,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added action bar menu and layouts for dialogs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added about dialog with donate buttons" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1168,7 +1157,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Added triggers to article and markdown fragments" />
     <MESSAGE value="Added null error checks and cleaned up trigger code. Removed unneeded interface" />
     <MESSAGE value="Added css elements for text area, but realised that textarea won't be useful :(. keeping around for reference tho." />
     <MESSAGE value="Removed .css file and renamed html file for previewing article" />
@@ -1193,6 +1181,7 @@
     <MESSAGE value="Chnaged data loading" />
     <MESSAGE value="Fixed metadata tags ID issue" />
     <MESSAGE value="Added action bar menu and layouts for dialogs" />
+    <MESSAGE value="Added about dialog with donate buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1216,16 +1205,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/SelectSiteDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="663" selection-end="755" vertical-scroll-proportion="0.22365806">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/menu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1259,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AddSiteDialogFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="602" selection-end="1671" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DialogListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="31" selection-start="433" selection-end="433" vertical-scroll-proportion="0.20874752">
@@ -1280,17 +1252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="83" selection-start="1385" selection-end="1385" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1231#1458#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/add_site_dialog_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1298,16 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="60" selection-start="520" selection-end="520" vertical-scroll-proportion="0.2907916">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="4355" selection-end="4355" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#10349#11161#0" expanded="true" />
-            <element signature="e#11150#11151#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,17 +1282,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="171" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.8148148">
+        <state line="51" column="162" selection-start="2866" selection-end="2866" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/dialog_about_layout.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/res/menu/menu.xml">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="251" selection-end="251" vertical-scroll-proportion="0.07692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="0" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#10349#11161#0" expanded="true" />
+            <element signature="e#11150#11151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AddSiteDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/AboutDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="34" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1237#1464#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/dialog_about_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="317" selection-end="317" vertical-scroll-proportion="0.18036072">
           <folding />
         </state>
       </provider>

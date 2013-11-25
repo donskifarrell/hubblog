@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello There"
+                android:id="@+id/textView" android:layout_gravity="center_horizontal" android:textSize="20dp"
+                android:textStyle="bold" android:singleLine="true" android:padding="5dp"/>
+        <TextView
+                android:id="@+id/dialog_about_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_about_message"
+                android:layout_gravity="center|left|top" android:padding="5dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello There"
-            android:id="@+id/textView" android:layout_gravity="center_horizontal" android:textSize="20dp"
-            android:textStyle="bold" android:singleLine="true" android:padding="5dp"/>
-    <TextView
-            android:id="@+id/dialog_about_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_about_message"
-            android:layout_gravity="center|left|top" android:padding="5dp"/>
-
-    <ImageButton
-            android:id="@+id/donate_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/donate"
-            android:background="@null"
-            android:padding="5dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_about_message_github"
-            android:id="@+id/textView1" android:layout_gravity="left|center_vertical" android:padding="5dp"/>
-    <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:id="@+id/imageButton" android:layout_gravity="center" android:padding="5dp"
-            android:src="@drawable/github" android:scaleType="fitCenter"
-            android:layout_marginLeft="60dp" android:layout_marginRight="60dp"/>
-</LinearLayout>
+        <ImageButton
+                android:id="@+id/donate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/donate"
+                android:background="@null"
+                android:padding="5dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_about_message_github"
+                android:id="@+id/textView1" android:layout_gravity="left|center_vertical" android:padding="5dp"/>
+        <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageButton" android:layout_gravity="center" android:padding="5dp"
+                android:src="@drawable/github" android:scaleType="fitCenter"
+                android:layout_marginLeft="60dp" android:layout_marginRight="60dp"/>
+    </LinearLayout>
+</ScrollView>

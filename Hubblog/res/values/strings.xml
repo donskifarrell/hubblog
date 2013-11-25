@@ -49,7 +49,7 @@
         This app was created to make it quick and easy to write articles while on the move.
         \nAs Hubblog only publishes to GitHub Pages, there is a restriction on writing articles in either Markdown or plain text.
         \n\nHubblog is in no way affiliated with GitHub and just connects to their fantastic service.
-        \n\nIf you like using this app and would like to donate, that would be much appreciated! The donate button below will open PayPal in a new browser window.
+        \n\nIf you like using this app and would like to donate, that would be much appreciated! The donate button below will open PayPal in a new browser window:
     </string>
 
     <string name="dialog_about_message_github">
