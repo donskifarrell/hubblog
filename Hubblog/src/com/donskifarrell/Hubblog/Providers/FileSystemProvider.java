@@ -38,7 +38,7 @@ public class FileSystemProvider {
 
                 if (fsItem.isDirectory()) {
                     Site site = new Site(fsItem.getName());
-                    site.setArticles(buildArticlesForSite(fsItem));
+                   // site.setArticles(buildArticlesForSite(fsItem)); TODO
                     sites.add(site);
                 }
             }

@@ -27,11 +27,6 @@ public class Site {
         return articles;
     }
 
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
-        sortArticlesByDraft();
-    }
-
     public void addNewArticle(Article article) {
         this.articles.add(article);
         sortArticlesByDraft();

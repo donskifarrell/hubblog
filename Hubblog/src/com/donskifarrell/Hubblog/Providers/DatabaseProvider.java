@@ -32,7 +32,6 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
     private DatabaseHelper databaseHelper;
 
     private static final int HUBBLOG_ARTICLE_LOADER = 0;
-    private static final int HUBBLOG_META_TAG_LOADER = 1;
 
     private List<Site> sites;
 
@@ -47,7 +46,6 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
         listener = activityDataListener;
         listener.getSupportLoaderManager().initLoader(HUBBLOG_ARTICLE_LOADER, null, this);
-        listener.getSupportLoaderManager().initLoader(HUBBLOG_META_TAG_LOADER, null, this);
     }
 
     public long insertArticle(Article article) {
@@ -83,10 +81,7 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
         switch (loaderID) {
             case HUBBLOG_ARTICLE_LOADER:
-                query = DatabaseHelper.ArticleDataModel.SELECT_ALL;
-                break;
-            case HUBBLOG_META_TAG_LOADER:
-                query = DatabaseHelper.MetadataTagDataModel.SELECT_ALL;
+                query = DatabaseHelper.JOIN_ARTICLES_WITH_METADATA_TAGS;
                 break;
         }
 
@@ -102,41 +97,42 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        Log.w("HUBBLOG", "CURSOR ID: " + loader.getId() + " > " + DatabaseUtils.dumpCursorToString(cursor));
+        Log.i("HUBBLOG", "CURSOR ID: " + loader.getId() + " > " + DatabaseUtils.dumpCursorToString(cursor));
 
         switch (loader.getId()) {
             case HUBBLOG_ARTICLE_LOADER:
                 for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-                    Article article = buildArticleFromCursor(cursor);
-                    Site site = new Site(article.getSiteName());
+                    int idx;
 
-                    if (sites.contains(site)) {
-                        int idx = sites.indexOf(site);
-                        List<Article> articles = sites.get(idx).getArticles();
-                        if (!articles.contains(article)) {
-                            articles.add(article);
-                        }
-                    } else {
-                        site.setArticles(new LinkedList<Article>());
-                        site.getArticles().add(article);
+                    // Get or create Site
+                    Site site = new Site(cursor.getString(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_SITE_NAME)));
+                    idx = sites.indexOf(site);
+                    if (idx == -1) {
                         sites.add(site);
+                    } else {
+                        site = sites.get(idx);
+                    }
+
+                    // Get or create Article
+                    Article article = new Article();
+                    article.setId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.ArticleDataModel.COLUMN_ID)));
+                    idx = site.getArticles().indexOf(article);
+                    if (idx == -1) {
+                        article = buildArticleFromCursor(cursor);
+                        site.getArticles().add(article);
+                    } else {
+                        article = site.getArticles().get(idx);
+                    }
+
+                    // Get or create MetadataTag
+                    MetadataTag tag = new MetadataTag();
+                    tag.setTagId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.MetadataTagDataModel.COLUMN_ARTICLE_ID)));
+                    idx = article.getMetadataTags().indexOf(tag);
+                    if (idx == -1) {
+                        tag = buildMetadataTagFromCursor(cursor);
+                        article.getMetadataTags().add(tag);
                     }
                 }
-
-                break;
-            case HUBBLOG_META_TAG_LOADER:
-                for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-                    MetadataTag tag = buildMetadataTagFromCursor(cursor);
-
-                    for (Site site : sites) {
-                        for (Article article : site.getArticles()) {
-                            if (article.getMetadataTags().contains(tag)) {
-                                article.getMetadataTags().add(tag);
-                            }
-                        }
-                    }
-                }
-
                 break;
         }
 

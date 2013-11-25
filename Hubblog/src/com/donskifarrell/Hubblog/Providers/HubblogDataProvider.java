@@ -99,7 +99,6 @@ public class HubblogDataProvider implements DataProvider {
     public Article addNewArticle(Site site){
         if (site == null) {
             site = new Site(DEFAULT_NEW_SITE_NAME);
-            site.setArticles(new LinkedList<Article>());
             sites.add(site);
         }
 

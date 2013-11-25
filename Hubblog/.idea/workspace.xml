@@ -39,18 +39,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385325779839" ignored="false" />
+    <file path="/Dummy.txt" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385333941980" ignored="false" />
     <file path="/pom.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384796683472" ignored="false" />
     <file path="/fragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385323578162" ignored="false" />
     <file path="/MainFragment.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1384797745157" ignored="false" />
@@ -98,10 +95,10 @@
     <file path="/FileSystem.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385118745557" ignored="false" />
     <file path="/HubblogDataProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385332089894" ignored="false" />
     <file path="/SharedPreferencesProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385237351037" ignored="false" />
-    <file path="/FileSystemProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385156536565" ignored="false" />
+    <file path="/FileSystemProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385338045654" ignored="false" />
     <file path="/roboguice.xml" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385139701985" ignored="false" />
     <file path="/BindingModule.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385139754534" ignored="false" />
-    <file path="/DatabaseProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385329337294" ignored="false" />
+    <file path="/DatabaseProvider.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385338823568" ignored="false" />
     <file path="/HubblogApplication.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226743242" ignored="false" />
     <file path="$PROJECT_DIR$/../ActionsContentView/project.properties" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226141342" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/donskifarrell/Hubblog/BuildConfig.java" changelist="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" time="1385226141342" ignored="false" />
@@ -232,6 +229,111 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" line="104" class="com.donskifarrell.Hubblog.Providers.DatabaseProvider" package="com.donskifarrell.Hubblog.Providers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" line="30" class="com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter" package="com.donskifarrell.Hubblog.Activities.Adapters">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" line="35" class="com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter" package="com.donskifarrell.Hubblog.Activities.Adapters">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" line="40" class="com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter" package="com.donskifarrell.Hubblog.Activities.Adapters">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" line="45" class="com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter" package="com.donskifarrell.Hubblog.Activities.Adapters">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" line="185" class="com.donskifarrell.Hubblog.Activities.HubblogActivity" package="com.donskifarrell.Hubblog.Activities">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" line="41" class="com.donskifarrell.Hubblog.Providers.DatabaseProvider" package="com.donskifarrell.Hubblog.Providers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -254,7 +356,7 @@
       <file leaf-file-name="SidebarAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0">
+            <state line="30" column="0" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -262,32 +364,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetadataAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java">
+      <file leaf-file-name="ActionsContentView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ActionsContentView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.0">
+            <state line="643" column="0" selection-start="20243" selection-end="20243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommitArticleFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1443#1596#0" expanded="true" />
-                <element signature="e#1585#1586#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HubblogActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HubblogActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="8" selection-start="7176" selection-end="7176" vertical-scroll-proportion="-0.35661766">
+            <state line="148" column="65" selection-start="5612" selection-end="5612" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -296,16 +385,16 @@
       <file leaf-file-name="DatabaseProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
+            <state line="41" column="0" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="14" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
+            <state line="56" column="30" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.7444853">
               <folding />
             </state>
           </provider>
@@ -314,7 +403,7 @@
       <file leaf-file-name="HubblogDataProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="0" selection-start="4173" selection-end="4173" vertical-scroll-proportion="0.0">
+            <state line="100" column="51" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -338,22 +427,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/TabsAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/RefreshActivityDataListener.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/BasePageFragment.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/MetadataTag.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/ActivityDataListener.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/MetadataAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java" />
       </list>
     </option>
   </component>
@@ -1055,7 +1144,11 @@
       <created>1385322814099</created>
       <updated>1385322814100</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Got data flow more or less working. Some tweaks to DB still remain">
+      <created>1385333948019</created>
+      <updated>1385333948019</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1066,8 +1159,9 @@
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1389" y="447" width="1874" height="341" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.7257752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.40794572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40794572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44864342" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1085,7 +1179,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.9563953" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.7257752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1131,7 +1224,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified all data models;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got data flow more or less working. Some tweaks to DB still remain" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1145,7 +1238,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="ArticleWebView is now updated with article content" />
     <MESSAGE value="Renamed Post to Article" />
     <MESSAGE value="Added methods / interface for fragments to trigger updates in each other" />
     <MESSAGE value="Refactored article fragment classes to use a base fragment" />
@@ -1170,6 +1262,7 @@
     <MESSAGE value="Ahh" />
     <MESSAGE value="Data Model moving and shuffling.." />
     <MESSAGE value="Modified all data models;" />
+    <MESSAGE value="Got data flow more or less working. Some tweaks to DB still remain" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1183,29 +1276,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/TabsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="18" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/MetadataTagListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="62" selection-start="324" selection-end="324" vertical-scroll-proportion="0.18274112">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/MetadataTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="25" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/ActivityDataListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="37" selection-start="250" selection-end="250" vertical-scroll-proportion="0.1640159">
@@ -1222,25 +1292,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Article.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="111" column="0" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="51" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1252,23 +1306,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1443#1596#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-          </folding>
+        <state line="40" column="74" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,30 +1320,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="14" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="0" selection-start="4173" selection-end="4173" vertical-scroll-proportion="0.0">
+        <state line="100" column="51" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/Data/Site.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="5" selection-start="559" selection-end="559" vertical-scroll-proportion="0.61737806">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="51" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Fragments/CommitArticleFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.3323486">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1443#1596#0" expanded="true" />
+            <element signature="e#1585#1586#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/SidebarAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Adapters/TabsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="43" selection-start="1953" selection-end="1953" vertical-scroll-proportion="1.3072379">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ActionsContentView/src/shared/ui/actionscontentview/ActionsContentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="643" column="0" selection-start="20243" selection-end="20243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="8" selection-start="7176" selection-end="7176" vertical-scroll-proportion="-0.35661766">
+        <state line="148" column="65" selection-start="5612" selection-end="5612" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="30" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.7444853">
           <folding />
         </state>
       </provider>
