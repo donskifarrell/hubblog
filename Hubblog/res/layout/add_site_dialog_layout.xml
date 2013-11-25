@@ -8,7 +8,9 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" android:layout_gravity="center|left" android:text="@string/dialog_add_site_message"/>
+            android:id="@+id/textView"
+            android:layout_gravity="center|left"
+            android:text="@string/dialog_add_site_message"/>
     <EditText
             android:id="@+id/add_site_text"
             android:inputType="textAutoComplete"

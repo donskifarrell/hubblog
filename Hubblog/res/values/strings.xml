@@ -44,4 +44,16 @@
     <string name="dialog_add_site_title">Delete Article</string>
     <string name="dialog_add_site_message">Enter the title of your new site. Note: there is no need to add the GH-Pages domain (e.g github.io) as this will be added automatically.</string>
 
+    <string name="dialog_about_title">About</string>
+    <string name="dialog_about_message">
+        This app was created to make it quick and easy to write articles while on the move.
+        \nAs Hubblog only publishes to GitHub Pages, there is a restriction on writing articles in either Markdown or plain text.
+        \n\nHubblog is in no way affiliated with GitHub and just connects to their fantastic service.
+        \n\nIf you like using this app and would like to donate, that would be much appreciated! The donate button below will open PayPal in a new browser window.
+    </string>
+
+    <string name="dialog_about_message_github">
+        This app is open source. You can view all of the latest code at the GitHub repository by clicking on the button below. Again, it will open in a new browser window.
+    </string>
+
 </resources>

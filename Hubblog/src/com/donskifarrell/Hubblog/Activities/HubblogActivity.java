@@ -11,15 +11,12 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Activities.Adapters.SidebarAdapter;
 import com.donskifarrell.Hubblog.Activities.Adapters.TabsAdapter;
-import com.donskifarrell.Hubblog.Activities.Dialogs.AddSiteDialogFragment;
-import com.donskifarrell.Hubblog.Activities.Dialogs.DeleteArticleDialogFragment;
-import com.donskifarrell.Hubblog.Activities.Dialogs.EditArticleTitleDialogFragment;
+import com.donskifarrell.Hubblog.Activities.Dialogs.*;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
 import com.donskifarrell.Hubblog.Interfaces.DialogListener;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
-import com.donskifarrell.Hubblog.Activities.Dialogs.SelectSiteDialogFragment;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
 import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.donskifarrell.Hubblog.R;
@@ -166,7 +163,8 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
                 break;
 
             case (R.id.menu_item_about):
-                Toast.makeText(this , "About!", Toast.LENGTH_LONG).show();
+                DialogFragment aboutDialog = new AboutDialogFragment();
+                aboutDialog.show(getSupportFragmentManager(), "AboutDialogFragment");
                 break;
         }
 
