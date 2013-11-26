@@ -31,7 +31,7 @@ public class EditArticleTitleDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        LinearLayout dialog = (LinearLayout) inflater.inflate(R.layout.edit_article_title_dialog_layout, null);
+        LinearLayout dialog = (LinearLayout) inflater.inflate(R.layout.dialog_edit_article_title_layout, null);
 
         editText = (EditText) dialog.findViewById(R.id.edit_article_title_text);
         editText.setText(articleTitle);

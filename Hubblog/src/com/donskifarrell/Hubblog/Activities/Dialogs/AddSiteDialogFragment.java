@@ -26,7 +26,7 @@ public class AddSiteDialogFragment extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         // todo:
-        builder.setView(inflater.inflate(R.layout.select_site_dialog_layout, null));
+        builder.setView(inflater.inflate(R.layout.dialog_select_site_layout, null));
         builder.setTitle(R.string.dialog_select_site_title);
         builder.setPositiveButton(R.string.ok_btn, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {

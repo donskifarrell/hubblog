@@ -21,7 +21,7 @@ public class EditMarkdownFragment extends BasePageFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ScrollView scrollView = (ScrollView) inflater.inflate(R.layout.edit_markdown_layout, container, false);
+        ScrollView scrollView = (ScrollView) inflater.inflate(R.layout.tab_edit_markdown_layout, container, false);
         scrollView.setSmoothScrollingEnabled(true);
 
         editMarkdown = (EditText) scrollView.findViewById(R.id.edit_markdown);

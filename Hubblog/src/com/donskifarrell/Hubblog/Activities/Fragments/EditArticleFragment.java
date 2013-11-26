@@ -21,7 +21,7 @@ public class EditArticleFragment extends BasePageFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View articleLayout = inflater.inflate(R.layout.edit_article_layout, container, false);
+        View articleLayout = inflater.inflate(R.layout.tab_edit_article_layout, container, false);
         browser = (WebView) articleLayout.findViewById(R.id.article_web_view);
 
         setupWebViewClient();

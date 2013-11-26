@@ -28,7 +28,7 @@ public class CommitArticleFragment extends BasePageFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewGroup = container;
 
-        View commitArticle = inflater.inflate(R.layout.commit_article_layout, container, false);
+        View commitArticle = inflater.inflate(R.layout.tab_commit_article_layout, container, false);
 
         metadataTagList = (LinearLayout) commitArticle.findViewById(R.id.metadata_tag_list);
 
