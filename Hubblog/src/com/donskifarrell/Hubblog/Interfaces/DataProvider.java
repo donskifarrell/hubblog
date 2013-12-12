@@ -14,8 +14,11 @@ import java.util.List;
  * Time: 11:04
  */
 public interface DataProvider {
+    public void getGitHubDetails();
+
     public Account getAccountDetails();
     public boolean setAccountDetails(Account account);
+    public boolean assertAccountDetails();
 
     public List<String> getSiteNames();
     public List<Site> getSites();

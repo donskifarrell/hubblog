@@ -15,6 +15,7 @@ import com.donskifarrell.Hubblog.Activities.Dialogs.*;
 import com.donskifarrell.Hubblog.Interfaces.DataProvider;
 import com.donskifarrell.Hubblog.Interfaces.ActivityDataListener;
 import com.donskifarrell.Hubblog.Interfaces.DialogListener;
+import com.donskifarrell.Hubblog.Providers.Data.Account;
 import com.donskifarrell.Hubblog.Providers.Data.Article;
 import com.donskifarrell.Hubblog.Providers.Data.Site;
 import com.donskifarrell.Hubblog.Interfaces.OnSidebarListItemSelected;
@@ -22,7 +23,19 @@ import com.donskifarrell.Hubblog.Providers.HubblogDataProvider;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 import com.viewpagerindicator.UnderlinePageIndicator;
+import org.eclipse.egit.github.core.Authorization;
+import org.eclipse.egit.github.core.Repository;
+import org.eclipse.egit.github.core.client.GitHubClient;
+import org.eclipse.egit.github.core.service.OAuthService;
+import org.eclipse.egit.github.core.service.RepositoryService;
 import shared.ui.actionscontentview.ActionsContentView;
+
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,10 +67,11 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.base_layout);
 
         hubblog = new HubblogDataProvider(this);
+        assertAccountDetailsAvailable();
+
         createActionBar();
         createTabPager();
         createSidebar();
@@ -75,6 +89,49 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
             // todo: show help article?
             selectedPosition = 0;
         }
+    }
+
+    private void assertAccountDetailsAvailable() {
+        // todo: assert fail?
+        if (!hubblog.assertAccountDetails()) {
+            editAccountDetails();
+        }
+    }
+
+    private void editAccountDetails() {
+        DialogFragment notificationDialog = new NotificationDialogFragment(R.string.dialog_account_needed_title, R.string.dialog_account_needed_message);
+        notificationDialog.show(getSupportFragmentManager(), "NotificationDialogFragment");
+        // load settings
+
+        hubblog.getGitHubDetails();
+
+       /* OAuthService service = new OAuthService();
+        //service.getClient().setCredentials("donskifarrell", );
+
+        int scopeCount = 2;
+        List<String> scopes = new LinkedList<String>();
+        scopes.add("repo");
+        try {
+            service.setScopes(scopeCount, scopes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        Authorization auth = new Authorization();
+        auth.setScopes(Arrays.asList("repo"));
+        try {
+            auth = service.createAuthorization(auth);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String token = auth.getToken();*/
+
+/*        RepositoryService rservice = new RepositoryService();
+        for (Repository repo : rservice.getRepositories(user))
+            System.out.println(MessageFormat.format(format, count++,
+                    repo.getName(), repo.getCreatedAt()));*/
     }
 
     /* Article Methods */
@@ -119,6 +176,9 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     /* Action Bar Sub Menu Methods*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
+        // create 'Settings' menu item.
+
         MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;

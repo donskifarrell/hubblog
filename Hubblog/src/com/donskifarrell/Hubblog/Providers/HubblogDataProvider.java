@@ -40,10 +40,14 @@ public class HubblogDataProvider implements DataProvider {
 
         sites = new LinkedList<Site>();
 
-        preferencesProvider = new SharedPreferencesProvider();
+        preferencesProvider = new SharedPreferencesProvider(listener.getContext());
         databaseProvider = new DatabaseProvider(listener, this);
         fileSystemProvider = new FileSystemProvider();
-        gitHubProvider = new GitHubProvider();
+        gitHubProvider = new GitHubProvider(listener.getContext());
+    }
+
+    public void getGitHubDetails(){
+        gitHubProvider.execute();
     }
 
     /* Account Data */
@@ -65,6 +69,18 @@ public class HubblogDataProvider implements DataProvider {
             // todo: feedback to user?
             return false;
         }
+    }
+
+    public boolean assertAccountDetails() {
+        Account account = getAccountDetails();
+
+        if (account.getAccountName().isEmpty() ||
+            account.getAuthKey().isEmpty() ||
+            account.getUsername().isEmpty() ||
+            account.getPassword().isEmpty()) {
+            return false;
+        }
+        return true;
     }
 
     /* Site Data */

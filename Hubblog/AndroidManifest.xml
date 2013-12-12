@@ -11,11 +11,39 @@
             android:icon="@drawable/ic_launcher"
             android:theme="@style/Theme.Hubblog">
 
-        <activity android:name=".Activities.HubblogActivity">
+        <activity android:name=".Activities.StartupActivity"
+                  android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".Activities.HubblogActivity">
+        </activity>
+
+        <service
+                android:name=".GitHub.AccountAuthenticatorService"
+                android:exported="false"
+                android:process=":auth" >
+            <intent-filter>
+                <action android:name=".Providers.GitHub.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                    android:name=".Providers.GitHub.AccountAuthenticator"
+                    android:resource="@xml/authenticator" />
+        </service>
+
+        <activity
+                android:name=".Activities.LoginActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:excludeFromRecents="true" >
+
+            <!--
+                No intent-filter here! This activity is only ever launched by
+                someone who explicitly knows the class name
+            -->
         </activity>
 
     </application>
@@ -25,4 +53,6 @@
             android:authorities="com.donskifarrell.Hubblog.Providers"
             android:exported="false" >
     </provider>
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

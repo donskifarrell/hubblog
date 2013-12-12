@@ -2,6 +2,15 @@
 <resources>
     <string name="app_name">Hubblog</string>
 
+    <!-- Login -->
+    <string name="password">Password</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="show_password">Show password</string>
+    <string name="authenticator_conflict_message">Another installed app is already configured for GitHub authentication.\n\nYou must remove the other app from the Accounts &amp; sync settings and uninstall it before the GitHub app can be used.</string>
+    <string name="authenticator_conflict_title">App Conflict</string>
+    <string name="signup_link">New to GitHub? &lt;a href=\"https://github.com/plans\">Click here&lt;/a> to sign up</string>
+    <string name="login_activity_authenticating">Logging in…</string>
+
     <!-- Sidebar -->
     <string name="sidebar_open_title">All Articles</string>
     <string name="sidebar_open_subtitle">Select an article to view</string>
@@ -30,6 +39,10 @@
     <string name="ab_menu_default_tags">Set Default Tags</string>
     <string name="ab_menu_about">About</string>
 
+    <!-- Preferences -->
+    <string name="pref_account_details_title">GitHub Account Details</string>
+
+
     <!-- Dialogs -->
     <string name="ok_btn">Ok</string>
     <string name="cancel_btn">Cancel</string>
@@ -56,4 +69,8 @@
         This app is open source. You can view all of the latest code at the GitHub repository by clicking on the button below. Again, it will open in a new browser window.
     </string>
 
+    <string name="dialog_account_needed_title">Account Details</string>
+    <string name="dialog_account_needed_message">
+        In order to properly use Hubblog, details of your GitHub account need to be provided. You can change them at any time via the settings menu.
+    </string>
 </resources>

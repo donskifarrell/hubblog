@@ -1,6 +1,7 @@
 package com.donskifarrell.Hubblog.Providers;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import com.donskifarrell.Hubblog.Providers.Data.Account;
 import com.google.inject.Inject;
@@ -12,16 +13,20 @@ import com.google.inject.Inject;
  * Time: 11:15
  */
 public class SharedPreferencesProvider {
-    @Inject protected Application application;
+    private Context context;
 
     private final static String PREF_ACCOUNT = "Account";
     private final static String PREF_ACCOUNT_NAME = "AccountName";
     private final static String PREF_ACCOUNT_USER = "Username";
     private final static String PREF_ACCOUNT_PASS = "Password";
 
+    public SharedPreferencesProvider(Context aContext) {
+        context = aContext;
+    }
+
     public Account getAccount() {
         Account account = new Account();
-        SharedPreferences prefAccount = application.getSharedPreferences(PREF_ACCOUNT, 0);
+        SharedPreferences prefAccount = context.getSharedPreferences(PREF_ACCOUNT, 0);
         account.setAccountName(prefAccount.getString(PREF_ACCOUNT_NAME, ""));
         account.setUsername(prefAccount.getString(PREF_ACCOUNT_USER, ""));
         account.setPassword(prefAccount.getString(PREF_ACCOUNT_PASS, ""));
@@ -29,7 +34,7 @@ public class SharedPreferencesProvider {
     }
 
     public boolean setAccount(Account account) {
-        SharedPreferences settings = application.getSharedPreferences(PREF_ACCOUNT, 0);
+        SharedPreferences settings = context.getSharedPreferences(PREF_ACCOUNT, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(PREF_ACCOUNT_NAME, account.getAccountName());
         editor.putString(PREF_ACCOUNT_USER, account.getUsername());

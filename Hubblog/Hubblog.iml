@@ -10,15 +10,19 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
-    <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/assets" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="actionbarsherlock-4.4.0" level="project" />
+    <orderEntry type="library" name="android-support-v13" level="project" />
+    <orderEntry type="module" module-name="ActionsContentView" />
+    <orderEntry type="module" module-name="ViewPagerIndicator" />
+    <orderEntry type="library" name="CWAC-LoaderEx" level="project" />
     <orderEntry type="library" name="Maven: com.github.rtyley:roboguice-sherlock:1.5" level="project" />
     <orderEntry type="library" name="Maven: org.roboguice:roboguice:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject:guice:no_aop:4.0-beta" level="project" />
@@ -28,11 +32,7 @@
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.2" level="project" />
-    <orderEntry type="library" name="actionbarsherlock-4.4.0" level="project" />
-    <orderEntry type="library" name="android-support-v13" level="project" />
-    <orderEntry type="module" module-name="ActionsContentView" />
-    <orderEntry type="module" module-name="ViewPagerIndicator" />
-    <orderEntry type="library" name="CWAC-LoaderEx" level="project" />
+    <orderEntry type="library" name="Maven: com.github.kevinsawicki:http-request:5.5" level="project" />
   </component>
 </module>
 

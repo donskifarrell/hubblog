@@ -34,6 +34,12 @@
             <artifactId>org.eclipse.egit.github.core</artifactId>
             <version>2.1.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.kevinsawicki</groupId>
+            <artifactId>http-request</artifactId>
+            <version>5.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>

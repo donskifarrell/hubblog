@@ -32,6 +32,7 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
     private DatabaseHelper databaseHelper;
 
     private static final int HUBBLOG_ARTICLE_LOADER = 0;
+    private static final int HUBBLOG_DEFAULT_TAGS_LOADER = 1;
 
     private List<Site> sites;
 
@@ -46,6 +47,8 @@ public class DatabaseProvider implements LoaderManager.LoaderCallbacks<Cursor> {
 
         listener = activityDataListener;
         listener.getSupportLoaderManager().initLoader(HUBBLOG_ARTICLE_LOADER, null, this);
+        // todo:
+        // listener.getSupportLoaderManager().initLoader(HUBBLOG_DEFAULT_TAGS_LOADER, null, this);
     }
 
     public long insertArticle(Article article) {
