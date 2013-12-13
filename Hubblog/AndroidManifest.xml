@@ -23,7 +23,7 @@
         </activity>
 
         <service
-                android:name=".GitHub.Accounts.AccountAuthenticatorService"
+                android:name="com.github.mobile.Accounts.AccountAuthenticatorService"
                 android:exported="false"
                 android:process=":auth" >
             <intent-filter>

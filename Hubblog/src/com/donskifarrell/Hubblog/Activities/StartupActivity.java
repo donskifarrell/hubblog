@@ -2,7 +2,7 @@ package com.donskifarrell.Hubblog.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticatorService;
+import com.github.mobile.Accounts.AccountAuthenticatorService;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 
 /**
