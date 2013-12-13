@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -21,7 +21,7 @@ import org.eclipse.egit.github.core.service.OAuthService;
 import org.eclipse.egit.github.core.service.UserService;
 import roboguice.util.RoboAsyncTask;
 
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.*;
+import static com.donskifarrell.Hubblog.GitHub.Accounts.AccountConstants.*;
 import static com.donskifarrell.Hubblog.Activities.LoginActivity.configureSyncFor;
 
 /**

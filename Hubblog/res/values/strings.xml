@@ -10,6 +10,7 @@
     <string name="authenticator_conflict_title">App Conflict</string>
     <string name="signup_link">New to GitHub? &lt;a href=\"https://github.com/plans\">Click here&lt;/a> to sign up</string>
     <string name="login_activity_authenticating">Logging in…</string>
+    <string name="error_orgs_load">Loading account &amp; organizations failed</string>
 
     <!-- Sidebar -->
     <string name="sidebar_open_title">All Articles</string>

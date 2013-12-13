@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 /**
  * Created with IntelliJ IDEA.

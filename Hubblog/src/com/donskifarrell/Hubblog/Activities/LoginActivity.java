@@ -19,7 +19,7 @@ import android.widget.*;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.donskifarrell.Hubblog.Activities.Dialogs.LightProgressDialog;
-import com.donskifarrell.Hubblog.GitHub.*;
+import com.donskifarrell.Hubblog.GitHub.Accounts.*;
 import com.donskifarrell.Hubblog.R;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockAccountAuthenticatorActivity;
 import org.eclipse.egit.github.core.User;
@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.*;
+import static com.donskifarrell.Hubblog.GitHub.Accounts.AccountConstants.*;
 import static android.accounts.AccountManager.KEY_ACCOUNT_NAME;
 import static android.accounts.AccountManager.KEY_ACCOUNT_TYPE;
 import static android.accounts.AccountManager.KEY_AUTHTOKEN;

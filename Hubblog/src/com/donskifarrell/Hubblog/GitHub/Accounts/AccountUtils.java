@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 /*
  * Copyright 2012 GitHub Inc.
@@ -19,7 +19,7 @@ package com.donskifarrell.Hubblog.GitHub;
 import static android.accounts.AccountManager.KEY_ACCOUNT_NAME;
 import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static android.util.Log.DEBUG;
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.ACCOUNT_TYPE;
+import static com.donskifarrell.Hubblog.GitHub.Accounts.AccountConstants.ACCOUNT_TYPE;
 import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 import android.accounts.Account;
 import android.accounts.AccountManager;

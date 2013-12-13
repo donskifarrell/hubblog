@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 import android.app.Service;
 import android.content.Intent;

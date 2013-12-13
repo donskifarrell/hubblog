@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 import android.accounts.*;
 import android.content.Context;
@@ -20,10 +20,6 @@ import static android.accounts.AccountManager.KEY_ACCOUNT_TYPE;
 import static android.accounts.AccountManager.KEY_AUTHTOKEN;
 import static android.accounts.AccountManager.KEY_BOOLEAN_RESULT;
 import static android.accounts.AccountManager.KEY_INTENT;
-
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.ACCOUNT_TYPE;
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.APP_NOTE;
-import static com.donskifarrell.Hubblog.GitHub.AccountConstants.APP_NOTE_URL;
 
 import static com.donskifarrell.Hubblog.Activities.LoginActivity.PARAM_AUTHTOKEN_TYPE;
 import static com.donskifarrell.Hubblog.Activities.LoginActivity.PARAM_USERNAME;
@@ -85,10 +81,10 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
         if (auth == null)
             return false;
 
-        if (!APP_NOTE.equals(auth.getNote()))
+        if (!AccountConstants.APP_NOTE.equals(auth.getNote()))
             return false;
 
-        if (!APP_NOTE_URL.equals(auth.getNoteUrl()))
+        if (!AccountConstants.APP_NOTE_URL.equals(auth.getNoteUrl()))
             return false;
 
         List<String> scopes = auth.getScopes();
@@ -97,7 +93,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 
     private Intent createLoginIntent(final AccountAuthenticatorResponse response) {
         final Intent intent = new Intent(context, LoginActivity.class);
-        intent.putExtra(PARAM_AUTHTOKEN_TYPE, ACCOUNT_TYPE);
+        intent.putExtra(PARAM_AUTHTOKEN_TYPE, AccountConstants.ACCOUNT_TYPE);
         intent.putExtra(KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
         return intent;
     }
@@ -125,8 +121,8 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
      */
     public static String createAuthorization(final OAuthService service) throws IOException {
         Authorization auth = new Authorization();
-        auth.setNote(APP_NOTE);
-        auth.setNoteUrl(APP_NOTE_URL);
+        auth.setNote(AccountConstants.APP_NOTE);
+        auth.setNoteUrl(AccountConstants.APP_NOTE_URL);
         auth.setScopes(SCOPES);
         auth = service.createAuthorization(auth);
         return auth != null ? auth.getToken() : null;
@@ -140,7 +136,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 
         final Bundle bundle = new Bundle();
 
-        if (!ACCOUNT_TYPE.equals(authTokenType))
+        if (!AccountConstants.ACCOUNT_TYPE.equals(authTokenType))
             return bundle;
 
         AccountManager am = AccountManager.get(context);
@@ -168,7 +164,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
             bundle.putParcelable(KEY_INTENT, createLoginIntent(response));
         else {
             bundle.putString(KEY_ACCOUNT_NAME, account.name);
-            bundle.putString(KEY_ACCOUNT_TYPE, ACCOUNT_TYPE);
+            bundle.putString(KEY_ACCOUNT_TYPE, AccountConstants.ACCOUNT_TYPE);
             bundle.putString(KEY_AUTHTOKEN, authToken);
             am.clearPassword(account);
         }
@@ -177,7 +173,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 
     @Override
     public String getAuthTokenLabel(final String authTokenType) {
-        if (ACCOUNT_TYPE.equals(authTokenType))
+        if (AccountConstants.ACCOUNT_TYPE.equals(authTokenType))
             return authTokenType;
         else
             return null;

@@ -1,4 +1,4 @@
-package com.donskifarrell.Hubblog.GitHub;
+package com.donskifarrell.Hubblog.GitHub.Accounts;
 
 import com.github.kevinsawicki.http.HttpRequest;
 import org.eclipse.egit.github.core.client.GitHubClient;
