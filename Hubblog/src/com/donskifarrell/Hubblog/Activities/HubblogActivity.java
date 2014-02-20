@@ -104,34 +104,6 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
         // load settings
 
         hubblog.getGitHubDetails();
-
-       /* OAuthService service = new OAuthService();
-        //service.getClient().setCredentials("donskifarrell", );
-
-        int scopeCount = 2;
-        List<String> scopes = new LinkedList<String>();
-        scopes.add("repo");
-        try {
-            service.setScopes(scopeCount, scopes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        Authorization auth = new Authorization();
-        auth.setScopes(Arrays.asList("repo"));
-        try {
-            auth = service.createAuthorization(auth);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        String token = auth.getToken();*/
-
-/*        RepositoryService rservice = new RepositoryService();
-        for (Repository repo : rservice.getRepositories(user))
-            System.out.println(MessageFormat.format(format, count++,
-                    repo.getName(), repo.getCreatedAt()));*/
     }
 
     /* Article Methods */
@@ -177,7 +149,7 @@ public class HubblogActivity extends RoboSherlockFragmentActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        // create 'Settings' menu item.
+        // todo: create 'Settings' menu item.
 
         MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.menu, menu);

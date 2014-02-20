@@ -38,66 +38,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Hubblog" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="Adding lots of GitHub auth code - basically taking it all from GitHub android app! Yea!&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/AccountDataManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountScope.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ActivityUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/AsyncLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AuthenticatedUserLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AuthenticatedUserTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/CacheHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/CursorAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/DatabaseCache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/DatabaseHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/DecodeBitmapTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/EditTextUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/Gestures.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/GitHubAccount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ImageViewBitmapTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/IssueFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/Keyboard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/LightDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/LocationUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/MultiTypeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/OnDoubleTapAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/OrganizationLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/OrganizationRepositories.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/Organizations.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/PersistableResource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestCodes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestFuture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/ScopeBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/SectionFinder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/SectionMultiTypeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/SectionSingleTypeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/SingleTypeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/SingleTypeCursorAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/ToastUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/Toaster.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/TypeAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/TypefaceUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/UserComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ViewFinder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ViewUpdater.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ViewUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/AccountAuthenticator.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/AccountAuthenticatorService.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticatorService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/AccountConstants.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountConstants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/AccountUtils.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/DefaultClient.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/DefaultClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/TwoFactorAuthActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/TwoFactorAuthClient.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/TwoFactorAuthException.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthException.java" />
+    <list default="true" id="573cc5ca-05ce-4ad7-b8c1-c1301e800d47" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_11_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_no_aop_4_0_beta.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hubblog.iml" afterPath="$PROJECT_DIR$/Hubblog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/LoginActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/StartupActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/StartupActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" afterPath="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hubblog.iws" />
@@ -174,7 +124,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="57" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="57" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -189,7 +139,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="41" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="41" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -204,7 +154,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="67" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="67" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -219,7 +169,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="80" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="80" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -234,7 +184,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="94" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="94" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -249,7 +199,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="108" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="108" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -264,7 +214,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="122" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="122" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -279,7 +229,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="134" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="134" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -294,7 +244,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="175" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="175" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -309,7 +259,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="185" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="185" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -324,7 +274,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java" line="194" class="com.donskifarrell.Hubblog.GitHub.Accounts.AccountAuthenticator" package="com.donskifarrell.Hubblog.GitHub.Accounts">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java" line="194" class="com.github.mobile.Accounts.AccountAuthenticator" package="com.github.mobile.Accounts">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -384,6 +334,51 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationLoader.java" line="56" class="com.github.mobile.Persistence.OrganizationLoader" package="com.github.mobile.Persistence">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationLoader.java" line="64" class="com.github.mobile.Persistence.OrganizationLoader" package="com.github.mobile.Persistence">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationLoader.java" line="69" class="com.github.mobile.Persistence.OrganizationLoader" package="com.github.mobile.Persistence">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -393,7 +388,59 @@
     <favorites_list name="Hubblog" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="GitHubProvider.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.62439495" vertical-offset="0" max-vertical-offset="1033">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1607#1608#0" expanded="true" />
+                <element signature="e#1634#1635#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="0" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="2610">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrganizationLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="0" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1095">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HubblogDataProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="54" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="2655">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HubblogActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="57" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0" vertical-offset="149" max-vertical-offset="4935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -415,7 +462,6 @@
         <option value="$PROJECT_DIR$/res/xml/preferences.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/ActivityDataListener.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/SharedPreferencesProvider.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Interfaces/DataProvider.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHub/DefaultClient.java" />
         <option value="$PROJECT_DIR$/res/xml/authenticator.xml" />
@@ -435,9 +481,6 @@
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/LoginActivity.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHub/TwoFactorAuthActivity.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/StartupActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java" />
-        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountScope.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AuthenticatedUserTask.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/LoginActivity.java" />
@@ -454,7 +497,6 @@
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestReader.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestFuture.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestCodes.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/OrganizationRepositories.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/ToastUtils.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/UserComparator.java" />
@@ -462,6 +504,11 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/IssueFilter.java" />
         <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/AccountDataManager.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java" />
       </list>
     </option>
   </component>
@@ -560,6 +607,16 @@
               <option name="myItemId" value="Hubblog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -588,6 +645,66 @@
               <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hubblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -633,7 +750,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
+              <option name="myItemId" value="Providers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -647,25 +764,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hubblog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Hubblog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
+              <option name="myItemId" value="Activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -697,6 +808,8 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="397" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -708,15 +821,15 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.donskifarrell.Hubblog.Interfaces" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/menu" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.github.mobile" />
       <recent name="com.donskifarrell.Hubblog.GitHub.Accounts" />
       <recent name="com.donskifarrell.Hubblog" />
       <recent name="com.donskifarrell.Hubblog.Activities.Dialogs" />
       <recent name="com.donskifarrell.Hubblog.Activities" />
-      <recent name="com.donskifarrell.Hubblog.Providers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/menu" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.Hubblog">
@@ -849,7 +962,7 @@
     </configuration>
     <configuration default="false" name="Hubblog" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="Hubblog" />
-      <option name="ACTIVITY_CLASS" value="com.donskifarrell.Hubblog.Activities.StartupActivity" />
+      <option name="ACTIVITY_CLASS" value="com.donskifarrell.Hubblog.Activities.HubblogActivity" />
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -1174,7 +1287,15 @@
       <created>1386890712538</created>
       <updated>1386890712538</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Added much more github account files">
+      <created>1386893653708</created>
+      <updated>1386893653708</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Moved GitHub code to separate package">
+      <created>1386893845628</created>
+      <updated>1386893845628</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1182,23 +1303,25 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.6492248" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4463277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44622642" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271078" sideWeight="0.6492248" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.7257752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3767313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3764151" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3772011" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4198113" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3875969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-55" y="46" width="1368" height="745" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23216188" sideWeight="0.72771317" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24440895" sideWeight="0.5532946" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715655" sideWeight="0.5532946" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35077518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1389" y="447" width="1874" height="341" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1206,8 +1329,6 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.7257752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="-1" y="29" width="1368" height="745" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13901761" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1223,8 +1344,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added commit article fragment with rough layout" />
-    <MESSAGE value="Tweaked commit article layout. Set button background to transparent (lost onclick highlight tho..)" />
     <MESSAGE value="A mess - trying to get commit article to dynamically add/maintain metadata list" />
     <MESSAGE value="Not the greatest code, but dynamic metadata is working." />
     <MESSAGE value="Added focus request when new metadata entry is added" />
@@ -1248,7 +1367,9 @@
     <MESSAGE value="Updated about dialog with scroll view" />
     <MESSAGE value="Renamed several layout files." />
     <MESSAGE value="Adding lots of GitHub auth code - basically taking it all from GitHub android app! Yea!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding lots of GitHub auth code - basically taking it all from GitHub android app! Yea!" />
+    <MESSAGE value="Added much more github account files" />
+    <MESSAGE value="Moved GitHub code to separate package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved GitHub code to separate package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1262,55 +1383,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/drawable/edit_text_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1034" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/list_divider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1034" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/header_separator_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1034" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/edit_text_cursor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="57" selection-start="843" selection-end="843" vertical-scroll-proportion="0.31912878" vertical-offset="8" max-vertical-offset="2655">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/sign_up_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/login_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="33" selection-start="1300" selection-end="1320" vertical-scroll-proportion="-20.192308" vertical-offset="0" max-vertical-offset="1095">
-          <folding>
-            <element signature="e#1255#1282#0" expanded="false" />
-            <element signature="e#1842#1860#0" expanded="false" />
-            <element signature="e#2399#2422#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/Dialogs/LightAlertDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="22" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1290" />
+        <state line="76" column="22" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1290">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
@@ -1334,33 +1411,12 @@
         <state line="26" column="19" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="41" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.39130434" vertical-offset="0" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/StartupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="445" selection-end="445" vertical-scroll-proportion="0.17391305" vertical-offset="0" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/dialog_progress.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="40" selection-start="406" selection-end="406" vertical-scroll-proportion="0.14866205" vertical-offset="0" max-vertical-offset="1009">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="52" selection-start="4155" selection-end="4155" vertical-scroll-proportion="0.3194579" vertical-offset="750" max-vertical-offset="5355">
           <folding />
         </state>
       </provider>
@@ -1379,13 +1435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="62" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.52274925" vertical-offset="1170" max-vertical-offset="2205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/kevinsawicki/wishlist/ActivityUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="38" selection-start="657" selection-end="657" vertical-scroll-proportion="0.014492754" vertical-offset="0" max-vertical-offset="1035">
@@ -1400,24 +1449,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="13" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountClient.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="13" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1065">
           <folding>
-            <element signature="e#0#1982#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#1967#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountAuthenticatorService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountAuthenticatorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="55" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <folding>
@@ -1426,28 +1475,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="7" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountScope.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountScope.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="13" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AccountUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AccountUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="301" column="35" selection-start="10609" selection-end="10609" vertical-scroll-proportion="0.0" vertical-offset="3375" max-vertical-offset="4635">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AuthenticatedUserLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AuthenticatedUserLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="3" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="1395">
           <folding>
@@ -1456,44 +1505,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/AuthenticatedUserTask.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/AuthenticatedUserTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="22" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/DefaultClient.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/DefaultClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="28" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/GitHubAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/ScopeBase.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/ScopeBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="22" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/TwoFactorAuthActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="165" column="37" selection-start="5065" selection-end="5065" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="3285">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthClient.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/TwoFactorAuthClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="126" column="21" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="2070">
           <folding>
@@ -1502,88 +1542,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Accounts/TwoFactorAuthException.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/TwoFactorAuthException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="33" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/CacheHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/CacheHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="13" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/DatabaseCache.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/DatabaseCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="13" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/Organizations.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/Organizations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="13" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/PersistableResource.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/PersistableResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="24" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestCodes.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Requests/RequestCodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="17" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestFuture.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Requests/RequestFuture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="17" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestReader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Requests/RequestReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="13" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Requests/RequestWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Requests/RequestWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="13" selection-start="934" selection-end="934" vertical-scroll-proportion="0.11594203" vertical-offset="0" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/OrganizationRepositories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="49" selection-start="997" selection-end="997" vertical-scroll-proportion="0.14492753" vertical-offset="15" max-vertical-offset="2685">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/UserComparator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Utils/UserComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="696" selection-end="696" vertical-scroll-proportion="0.057971016" vertical-offset="0" max-vertical-offset="1035">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/ToastUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Utils/ToastUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="10" selection-start="993" selection-end="993" vertical-scroll-proportion="0.26086956" vertical-offset="0" max-vertical-offset="1170">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1595,30 +1628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/OrganizationLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="679" selection-end="679" vertical-scroll-proportion="0.04347826" vertical-offset="0" max-vertical-offset="1095">
-          <folding>
-            <element signature="e#2377#2401#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="21" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.4347826" vertical-offset="0" max-vertical-offset="1080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Utils/IssueFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.20289855" vertical-offset="0" max-vertical-offset="4110">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/GitHub/Persistence/AccountDataManager.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/AccountDataManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="163" column="61" selection-start="4717" selection-end="4717" vertical-scroll-proportion="2.1304348" vertical-offset="0" max-vertical-offset="4440">
           <folding>
@@ -1632,6 +1642,132 @@
         <state line="56" column="13" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="7050">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Accounts/GitHubAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="13" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.24685383" vertical-offset="0" max-vertical-offset="1275">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Utils/IssueFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="13" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.49370766" vertical-offset="0" max-vertical-offset="4110">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="25" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/StartupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="4" selection-start="417" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#298#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../Dependencies/android-support-v4.jar!/android/support/v4/app/LoaderManagerImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="0" selection-start="4253" selection-end="4253" vertical-scroll-proportion="-21.24" vertical-offset="849" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationRepositories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="37" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.59148264" vertical-offset="720" max-vertical-offset="2685">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/SharedPreferencesProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/HubblogDataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="54" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="2655">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="568" selection-end="568" vertical-scroll-proportion="0.23659305" vertical-offset="0" max-vertical-offset="3150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/FileSystemProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="468" selection-end="468" vertical-scroll-proportion="0.23659305" vertical-offset="0" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/mylyn/github/org.eclipse.egit.github.core/2.1.5/org.eclipse.egit.github.core-2.1.5.jar!/org/eclipse/egit/github/core/User.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.07440476" vertical-offset="0" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/DatabaseProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/mobile/Persistence/OrganizationLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1095">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Activities/HubblogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="57" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0" vertical-offset="149" max-vertical-offset="4935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/donskifarrell/Hubblog/Providers/GitHubProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.62439495" vertical-offset="0" max-vertical-offset="1033">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
           </folding>
         </state>
       </provider>

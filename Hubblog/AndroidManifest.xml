@@ -11,15 +11,19 @@
             android:icon="@drawable/ic_launcher"
             android:theme="@style/Theme.Hubblog">
 
-        <activity android:name=".Activities.StartupActivity"
+<!--        <activity android:name=".Activities.StartupActivity"
                   android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>-->
 
         <activity android:name=".Activities.HubblogActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <service

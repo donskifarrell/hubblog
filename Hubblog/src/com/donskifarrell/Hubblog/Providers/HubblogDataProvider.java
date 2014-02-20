@@ -43,12 +43,14 @@ public class HubblogDataProvider implements DataProvider {
         preferencesProvider = new SharedPreferencesProvider(listener.getContext());
         databaseProvider = new DatabaseProvider(listener, this);
         fileSystemProvider = new FileSystemProvider();
-        gitHubProvider = new GitHubProvider(listener.getContext());
+        gitHubProvider = new GitHubProvider(listener);
     }
 
     public void getGitHubDetails(){
-        gitHubProvider.execute();
+        gitHubProvider.getUsers();
     }
+
+    // todo: OnResume of app/activity - reload all data?
 
     /* Account Data */
     public Account getAccountDetails() {
